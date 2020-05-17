@@ -1,0 +1,9 @@
+[user]
+	name = Martin Walls
+	email = 44908692+martin-walls@users.noreply.github.com
+[credential]
+	helper = store
+[alias]
+	cm = commit
+	st = status
+	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
