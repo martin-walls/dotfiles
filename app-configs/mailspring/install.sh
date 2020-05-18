@@ -30,12 +30,6 @@ case $INSTALL_MODE in
     snap)
         ln -svf $DOTFILES/app-configs/mailspring/keymap.json ~/snap/mailspring/common/keymap.json
 
-        if [ -f ~/snap/mailspring/common/config.json ]; then
-            mv ~/snap/mailspring/common/config.json ~/snap/mailspring/common/config.json.original
-        fi
-
-        ln -svf $DOTFILES/app-configs/mailspring/config.json ~/snap/mailspring/common/config.json
-
-        echo "Linked config files to ~/snap/mailspring"
+        echo "Symlinked config files to ~/snap/mailspring"
         ;;
 esac
