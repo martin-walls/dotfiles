@@ -6,6 +6,9 @@
 [alias]
 	cm = commit
 	st = status
+	br = branch
 	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	unstage = reset HEAD --
+	last = log -1 HEAD
 [core]
 	excludesFile = /home/martin/.gitignore_global
