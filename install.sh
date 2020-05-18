@@ -14,25 +14,25 @@ if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
 	if [ -L "$DOTFILES" ]; then
 		unlink "$DOTFILES"
 	fi
-	ln -sf $REPO_DIR $DOTFILES
+	ln -svf $REPO_DIR $DOTFILES
 
 	# ~/.bashrc
-	ln -sf $DOTFILES/bashrc ~/.bashrc
+	ln -svf $DOTFILES/bashrc ~/.bashrc
 
 	# ~/.bash_aliases
-	ln -sf $DOTFILES/bash_aliases ~/.bash_aliases
+	ln -svf $DOTFILES/bash_aliases ~/.bash_aliases
 
 	# ~/.gitconfig
-	ln -sf $DOTFILES/gitconfig ~/.gitconfig
+	ln -svf $DOTFILES/gitconfig ~/.gitconfig
 
 	# ~/.gitignore_global
-	ln -sf $DOTFILES/gitignore_global ~/.gitignore_global
+	ln -svf $DOTFILES/gitignore_global ~/.gitignore_global
 
 	# libinput-gestures.conf
-	ln -sf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
+	ln -svf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
 	# bundled.desktop
-	ln -sf $DOTFILES/applications/bundled.desktop ~/.local/share/applications/bundled.desktop
+	ln -svf $DOTFILES/applications/bundled.desktop ~/.local/share/applications/bundled.desktop
 
 	echo "Symlinks created."
 else 
