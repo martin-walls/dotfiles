@@ -4,5 +4,5 @@ Terminal=false
 Name=Bundled
 Exec=firefox bundlednotes.com
 Type=Application
-Icon=/home/martin/.dotfiles/applications/icons/bundled-icon.png
+Icon=/home/martin/.dotfiles/applications/icons/bundled.png
 NoDisplay=false
