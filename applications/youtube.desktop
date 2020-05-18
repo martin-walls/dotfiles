@@ -1,0 +1,8 @@
+[Desktop Entry]
+Comment=Open YouTube
+Terminal=false
+Name=YouTube
+Exec=firefox youtube.com
+Type=Application
+Icon=/home/martin/.dotfiles/applications/icons/youtube.png
+NoDisplay=false

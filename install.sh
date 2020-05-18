@@ -34,6 +34,9 @@ if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
 	# bundled.desktop
 	ln -svf $DOTFILES/applications/bundled.desktop ~/.local/share/applications/bundled.desktop
 
+	# youtube.desktop
+	ln -svf $DOTFILES/applications/youtube.desktop ~/.local/share/applications/youtube.desktop
+
 	echo "Symlinks created."
 else 
 	echo "Cancelled."
