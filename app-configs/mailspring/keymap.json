@@ -1,0 +1,11 @@
+{
+  "core:remove-and-previous": [
+    "{",
+    "["
+  ],
+  "core:remove-and-next": [
+    "}",
+    "]"
+  ],
+  "multiselect-list:select-all": "mod+a"
+}

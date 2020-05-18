@@ -1,0 +1,304 @@
+{
+  "*": {
+    "env": "production",
+    "core": {
+      "themes": [
+        "ui-light"
+      ],
+      "disabledPackages": [
+        "message-view-on-github",
+        "personal-level-indicators",
+        "phishing-detection",
+        "nylas-private-salesforce",
+        "github-contact-card",
+        "keybase",
+        "composer-markdown",
+        "composer-scheduler",
+        "composer-mail-merge",
+        "send-and-archive",
+        "main-calendar"
+      ],
+      "workspace": {
+        "mode": "list",
+        "hiddenLocations": {
+          "MessageListSidebar": {
+            "id": "MessageListSidebar",
+            "Toolbar": {
+              "id": "MessageListSidebar:Toolbar"
+            }
+          }
+        },
+        "use24HourClock": true,
+        "menubarStyle": "default",
+        "systemTray": true
+      },
+      "keymapTemplate": "Gmail",
+      "tutorial": {
+        "seen": [
+          "ThreadSearchBar",
+          "ActivityListButton",
+          "ToolbarSnooze"
+        ]
+      },
+      "sending": {
+        "defaultReplyType": "reply",
+        "undoSend": 15000
+      },
+      "theme": "ui-light",
+      "reading": {
+        "markAsReadDelay": 0
+      },
+      "notifications": {
+        "enabled": false,
+        "enabledForRepeatedTrackingEvents": false,
+        "sounds": false,
+        "unsnoozeToTop": false
+      }
+    },
+    "identity": {
+      "id": "0a033d1c-c8fd-4508-b02c-b01c7e7363dd",
+      "firstName": "Martin",
+      "lastName": "Walls",
+      "emailAddress": "snailschmail+mailspring@gmail.com",
+      "object": "identity",
+      "createdAt": "2020-05-16T09:39:01.000Z",
+      "stripePlan": "Basic",
+      "stripePlanEffective": "Basic",
+      "stripeCustomerId": "cus_HHwMFZlkQbQxwp",
+      "stripePeriodEnd": "2020-06-16T09:39:01.000Z",
+      "featureUsage": {
+        "snooze": {
+          "quota": 15,
+          "period": "weekly",
+          "usedInPeriod": 1,
+          "featureLimitName": "basic-limit"
+        },
+        "send-later": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "thread-sharing": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "link-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 1,
+          "featureLimitName": "basic-limit"
+        },
+        "open-tracking": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 1,
+          "featureLimitName": "basic-limit"
+        },
+        "contact-profiles": {
+          "quota": 3,
+          "period": "weekly",
+          "usedInPeriod": 1,
+          "featureLimitName": "basic-limit"
+        },
+        "send-reminders": {
+          "quota": 5,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        },
+        "translation": {
+          "quota": 50,
+          "period": "weekly",
+          "usedInPeriod": 0,
+          "featureLimitName": "basic-limit"
+        }
+      }
+    },
+    "accounts": [
+      {
+        "id": "ec6a337f",
+        "metadata": [],
+        "name": "Martin Walls",
+        "provider": "gmail",
+        "emailAddress": "wallsmartin50@gmail.com",
+        "settings": {
+          "imap_allow_insecure_ssl": false,
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_security": "SSL / TLS",
+          "imap_username": "wallsmartin50@gmail.com",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com",
+          "smtp_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_security": "STARTTLS",
+          "smtp_username": "wallsmartin50@gmail.com"
+        },
+        "label": "wallsmartin50@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589621965.442,
+        "__cls": "Account"
+      },
+      {
+        "id": "f65fbce7",
+        "metadata": [],
+        "name": "Martin",
+        "provider": "gmail",
+        "emailAddress": "snailschmail@gmail.com",
+        "settings": {
+          "imap_allow_insecure_ssl": false,
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_security": "SSL / TLS",
+          "imap_username": "snailschmail@gmail.com",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com",
+          "smtp_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_security": "STARTTLS",
+          "smtp_username": "snailschmail@gmail.com"
+        },
+        "label": "snailschmail@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589622343.599,
+        "__cls": "Account"
+      },
+      {
+        "id": "17fbaa6a",
+        "metadata": [],
+        "name": "Martin Walls",
+        "provider": "gmail",
+        "emailAddress": "themartinwalls@gmail.com",
+        "settings": {
+          "imap_allow_insecure_ssl": false,
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_security": "SSL / TLS",
+          "imap_username": "themartinwalls@gmail.com",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com",
+          "smtp_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_security": "STARTTLS",
+          "smtp_username": "themartinwalls@gmail.com"
+        },
+        "label": "themartinwalls@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589622376.589,
+        "__cls": "Account"
+      },
+      {
+        "id": "a0cb88ee",
+        "metadata": [],
+        "name": "Martin Walls",
+        "provider": "gmail",
+        "emailAddress": "martinwallssoftware@gmail.com",
+        "settings": {
+          "imap_allow_insecure_ssl": false,
+          "imap_host": "imap.gmail.com",
+          "imap_port": 993,
+          "imap_security": "SSL / TLS",
+          "imap_username": "martinwallssoftware@gmail.com",
+          "refresh_client_id": "662287800555-0a5h4ii0e9hsbpq0mqtul7fja0jhf9uf.apps.googleusercontent.com",
+          "smtp_allow_insecure_ssl": false,
+          "smtp_host": "smtp.gmail.com",
+          "smtp_port": 587,
+          "smtp_security": "STARTTLS",
+          "smtp_username": "martinwallssoftware@gmail.com"
+        },
+        "label": "martinwallssoftware@gmail.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589622412.287,
+        "__cls": "Account"
+      },
+      {
+        "id": "8c102d83",
+        "metadata": [],
+        "name": "Martin Walls",
+        "provider": "outlook",
+        "emailAddress": "wallsmartin@outlook.com",
+        "settings": {
+          "imap_allow_insecure_ssl": false,
+          "imap_host": "imap-mail.outlook.com",
+          "imap_port": 993,
+          "imap_security": "SSL / TLS",
+          "imap_username": "wallsmartin@outlook.com",
+          "smtp_allow_insecure_ssl": false,
+          "smtp_host": "smtp-mail.outlook.com",
+          "smtp_port": 587,
+          "smtp_security": "STARTTLS",
+          "smtp_username": "wallsmartin@outlook.com"
+        },
+        "label": "wallsmartin@outlook.com",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589623359.923,
+        "__cls": "Account"
+      },
+      {
+        "id": "d3ccbd8e",
+        "metadata": [],
+        "name": "Martin Walls",
+        "provider": "office365",
+        "emailAddress": "13wallsma@ripley.lancs.sch.uk",
+        "settings": {
+          "imap_host": "outlook.office365.com",
+          "imap_port": 993,
+          "imap_username": "13wallsma@ripley.lancs.sch.uk",
+          "imap_security": "SSL / TLS",
+          "imap_allow_insecure_ssl": false,
+          "smtp_host": "smtp.office365.com",
+          "smtp_port": 587,
+          "smtp_username": "13wallsma@ripley.lancs.sch.uk",
+          "smtp_security": "STARTTLS",
+          "smtp_allow_insecure_ssl": false
+        },
+        "label": "13wallsma@ripley.lancs.sch.uk",
+        "autoaddress": {
+          "type": "bcc",
+          "value": ""
+        },
+        "aliases": [],
+        "syncState": "ok",
+        "authedAt": 1589624228.457,
+        "__cls": "Account"
+      }
+    ],
+    "accountsVersion": 9,
+    "defaultSignatures": {
+      "wallsmartin50@gmail.com": null,
+      "snailschmail@gmail.com": null,
+      "themartinwalls@gmail.com": null,
+      "martinwallssoftware@gmail.com": null,
+      "wallsmartin@outlook.com": null
+    },
+    "signatures": {}
+  }
+}
