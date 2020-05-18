@@ -10,10 +10,11 @@ echo "This script will symlink the files in this repo to their corresponding loc
 echo "Proceed? (Y/n)"
 read resp
 if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
-	# if symlink to dotfiles doesn't exist, create it
-	if [ ! -L "$DOTFILES" ]; then
-		ln -sf $REPO_DIR $DOTFILES
+	# if symlink to dotfiles already exists, unlink it first
+	if [ -L "$DOTFILES" ]; then
+		unlink "$DOTFILES"
 	fi
+	ln -sf $REPO_DIR $DOTFILES
 
 	# ~/.bashrc
 	ln -sf $DOTFILES/bashrc ~/.bashrc
