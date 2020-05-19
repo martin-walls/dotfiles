@@ -3,4 +3,4 @@ alias trash='trashy'
 alias bat='batcat'
 alias mandown='~/mandown/mandown'
 alias lll='ll'
-
+alias showpath='echo $PATH | tr ":" "\n"'
