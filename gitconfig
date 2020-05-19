@@ -11,6 +11,8 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
+	acm = !git add . && git cm -m
+	p = push
 [core]
 	excludesFile = /home/martin/.gitignore_global
 [include]
