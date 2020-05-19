@@ -5,14 +5,12 @@
 	helper = store
 [alias]
 	cm = commit
-	st = status
+	st = status -sb
 	br = branch
 	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
-	acm = !git add . && git cm -m
-	p = push
 [core]
 	excludesFile = /home/martin/.gitignore_global
 [include]
