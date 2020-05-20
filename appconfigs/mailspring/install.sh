@@ -33,7 +33,7 @@ fi
 case $INSTALL_MODE in
     snap)
         # link files to snap dir
-        ln -svf $DOTFILES/app-configs/mailspring/keymap.json ~/snap/mailspring/common/keymap.json
+        ln -svf $DOTFILES/appconfigs/mailspring/keymap.json ~/snap/mailspring/common/keymap.json
 
         echo "Symlinked config files to ~/snap/mailspring"
         ;;
