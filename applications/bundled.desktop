@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=Open Bundled Notes
-Terminal=false
-Name=Bundled
-Exec=firefox bundlednotes.com
-Type=Application
-Icon=/home/martin/.dotfiles/applications/icons/bundled.png
-NoDisplay=false

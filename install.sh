@@ -31,9 +31,6 @@ if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
 	# libinput-gestures.conf
 	ln -svf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
-	# youtube.desktop
-	ln -svf $DOTFILES/applications/youtube.desktop ~/.local/share/applications/youtube.desktop
-
 	echo "Symlinks created."
 else 
 	echo "Cancelled."
