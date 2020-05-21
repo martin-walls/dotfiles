@@ -11,6 +11,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
+	master = checkout master
 [core]
 	excludesFile = /home/martin/.gitignore_global
 [include]
