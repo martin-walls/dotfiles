@@ -114,3 +114,6 @@ fi
 # dotfiles /bin dir to $PATH
 export PATH=~/.dotfiles/bin:${PATH}
 
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
