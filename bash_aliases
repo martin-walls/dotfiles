@@ -12,7 +12,6 @@ alias showpath='echo $PATH | tr ":" "\n"'
 alias hm='cmatrix -b'
 alias trash='trashy'
 alias bat='batcat'
-alias mandown='~/mandown/mandown'
 
 # interact with git in dotfiles repo from anywhere
 alias dotgit='git -C ~/.dotfiles'
