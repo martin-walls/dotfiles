@@ -111,8 +111,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# dotfiles /bin dir to $PATH
-export PATH=~/.dotfiles/bin:${PATH}
+# set PATH variables
+export PATH=~/.dotfiles/bin:~/bin:${PATH}
 
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
