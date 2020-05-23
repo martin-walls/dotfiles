@@ -117,3 +117,13 @@ export PATH=~/.dotfiles/bin:~/bin:${PATH}
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
+
+if [ -f ~/.git-prompt.sh ] ; then
+    . ~/.git-prompt.sh
+    PROMPT_COMMAND='__git_ps1 "\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWUPSTREAM="auto verbose"
+    GIT_PS1_SHOWCOLORHINTS=1
+fi
+
