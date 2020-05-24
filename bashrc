@@ -114,10 +114,12 @@ fi
 # set PATH variables
 export PATH=~/.dotfiles/bin:~/bin:${PATH}
 
+# load local config file if it exists
 if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
 
+# show git status in prompt
 if [ -f ~/.git-prompt.sh ] ; then
     . ~/.git-prompt.sh
     PROMPT_COMMAND='__git_ps1 "\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
@@ -127,3 +129,5 @@ if [ -f ~/.git-prompt.sh ] ; then
     GIT_PS1_SHOWCOLORHINTS=1
 fi
 
+# shorten pwd in prompt to only show 2 dirs
+PROMPT_DIRTRIM=2
