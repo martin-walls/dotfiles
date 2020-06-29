@@ -119,6 +119,11 @@ if [ -f ~/.bashrc_local ]; then
     . ~/.bashrc_local
 fi
 
+# load local aliases file if it exists
+if [ -f ~/.bash_aliases_local ]; then
+	. ~/.bash_aliases_local
+fi
+
 # show git status in prompt
 if [ -f ~/.git-prompt.sh ] ; then
     . ~/.git-prompt.sh
@@ -132,3 +137,7 @@ fi
 
 # shorten pwd in prompt to only show 2 dirs
 PROMPT_DIRTRIM=2
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
