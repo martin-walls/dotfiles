@@ -124,16 +124,22 @@ if [ -f ~/.bash_aliases_local ]; then
 	. ~/.bash_aliases_local
 fi
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    prompt_host="@\h"
+fi
+
 # show git status in prompt
 if [ -f ~/.git-prompt.sh ] ; then
     . ~/.git-prompt.sh
-    PROMPT_COMMAND='__git_ps1 "\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+    PROMPT_COMMAND="__git_ps1 '\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u${prompt_host}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]' '\\\$ '"
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUPSTREAM="auto verbose"
     GIT_PS1_SHOWCOLORHINTS=1
 fi
+
+unset prompt_host
 
 # shorten pwd in prompt to only show 2 dirs
 PROMPT_DIRTRIM=2
