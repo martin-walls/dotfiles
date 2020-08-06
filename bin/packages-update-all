@@ -1,5 +1,11 @@
 #!/bin/bash
 
+YELLOW="\033[1;33m"
+NC="\033[0m"
+
+echo -e "\n${YELLOW}Updating apt packages${NC}\n"
 sudo apt update
 sudo apt upgrade
+
+echo -e "\n${YELLOW}Updating flatpaks${NC}\n"
 flatpak update
