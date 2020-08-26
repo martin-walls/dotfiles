@@ -9,7 +9,6 @@ alias ..='cd ..'
 # ech $PATH with line breaks
 alias showpath='echo $PATH | tr ":" "\n"'
 
-alias hm='cmatrix -b'
 alias trash='trashy'
 alias cat='batcat'
 
