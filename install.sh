@@ -28,6 +28,9 @@ if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
 	# ~/.gitignore_global
 	ln -svf $DOTFILES/gitignore_global ~/.gitignore_global
 
+	# ~/.vimrc
+	ln -svf $DOTFILES/vimrc ~/.vimrc
+
 	# libinput-gestures.conf
 	ln -svf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
