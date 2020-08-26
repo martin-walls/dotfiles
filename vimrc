@@ -5,3 +5,5 @@ set expandtab
 
 " show line numbers
 set number
+
+set autoindent
