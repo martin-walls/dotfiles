@@ -34,6 +34,8 @@ if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
 	# libinput-gestures.conf
 	ln -svf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
 
+	ln -svf $DOTFILES/dircolors ~/.dircolors
+
 	echo "Symlinks created."
 else 
 	echo "Cancelled."
