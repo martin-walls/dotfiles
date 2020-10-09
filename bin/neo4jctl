@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+# neo4j database start/stop commands
+
+BASE_DIR="neo4j-community-4.1.3"
+UNAME="neo4j"
+PASSWD="passive-valid-input-child-cowboy-2563"
+
+case "$1" in
+  "start" )
+    ${BASE_DIR}/bin/neo4j start
+    exit $?
+  ;;
+  "stop" )
+    ${BASE_DIR}/bin/neo4j stop
+    exit $?
+  ;;
+  "status" )
+    ${BASE_DIR}/bin/neo4j status
+    exit $?
+  ;;
+  "console" )
+    ${BASE_DIR}/bin/cypher-shell -a bolt://localhost:7687 -u ${UNAME} -p ${PASSWD}
+    exit $?
+  ;;
+  *)
+    echo "Usage: $0 [start|stop|console|status]"
+    exit 1
+  ;;
+esac
