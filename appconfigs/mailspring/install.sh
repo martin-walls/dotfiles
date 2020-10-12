@@ -18,13 +18,10 @@ done
 # if no flags passed, prompt user to choose install mode.
 # s/S: snap
 if [ "$INSTALL_MODE" = "none" ]; then
-    echo "Choose install mode (snap)"
+    echo "Choose install mode ([s]nap)"
     read resp
     case $resp in
-        s)
-            INSTALL_MODE="snap"
-            ;;
-        S)
+        s|S|snap)
             INSTALL_MODE="snap"
             ;;
     esac
