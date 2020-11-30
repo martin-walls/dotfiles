@@ -2,7 +2,7 @@
 
 # neo4j database start/stop commands
 
-BASE_DIR="~/neo4j-community-4.1.3"
+BASE_DIR="/home/martin/neo4j-community-4.1.3"
 UNAME="neo4j"
 PASSWD="passive-valid-input-child-cowboy-2563"
 
