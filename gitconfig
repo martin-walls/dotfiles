@@ -1,8 +1,6 @@
 [user]
 	name = Martin Walls
 	email = 44908692+martin-walls@users.noreply.github.com
-[credential]
-	helper = store
 [alias]
 	cm = commit
 	st = status -sb
