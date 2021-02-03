@@ -1,8 +1,8 @@
 # Dotfiles
 
-Run `install.sh` to symlink dotfiles to their corresponding locations on the system.
+Install script based from [holman/dotfiles](https://github.com/holman/dotfiles/blob/master/script/bootstrap)
 
-
+Run `install.sh` to install dotfiles.
 
 `/app-configs/` contains application specific config files such as keymaps.
 

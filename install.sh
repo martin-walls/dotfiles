@@ -1,42 +1,142 @@
 #!/bin/bash
+#
+# This script mainly based from github.com/holman/dotfiles/script/bootstrap
+# 
+# The MIT License
+#
+# Copyright (c) Zach Holman, http://zachholman.com
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 
-# location of dotfiles repo
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# symlink to dotfiles repo
-DOTFILES="$HOME/.dotfiles"
+DOTFILES_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
 
-	
-echo "This script will symlink the files in this repo to their corresponding locations on the system."
-echo "Proceed? (Y/n)"
-read resp
-if [ "$resp" = 'y' -o "$resp" = 'Y' -o "$resp" = '' ]; then
-	# if symlink to dotfiles already exists, unlink it first
-	if [ -L "$DOTFILES" ]; then
-		unlink "$DOTFILES"
-	fi
-	ln -svf $REPO_DIR $DOTFILES
+# stop execution of the script immediately if a command has an error
+set -e
 
-	# ~/.bashrc
-	ln -svf $DOTFILES/bashrc ~/.bashrc
+echo ''
 
-	# ~/.bash_aliases
-	ln -svf $DOTFILES/bash_aliases ~/.bash_aliases
+# output messages
+info () {
+  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
 
-	# ~/.gitconfig
-	ln -svf $DOTFILES/gitconfig ~/.gitconfig
+user () {
+  printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+}
 
-	# ~/.gitignore_global
-	ln -svf $DOTFILES/gitignore_global ~/.gitignore_global
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
 
-	# ~/.vimrc
-	ln -svf $DOTFILES/vimrc ~/.vimrc
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
 
-	# libinput-gestures.conf
-	ln -svf $DOTFILES/config/libinput-gestures.conf ~/.config/libinput-gestures.conf
+link_file () {
+	local src=$1 dst=$2
 
-	ln -svf $DOTFILES/dircolors ~/.dircolors
+	local overwrite= backup= skip=
+	local action=
 
-	echo "Symlinks created."
-else 
-	echo "Cancelled."
-fi
+  # if destination file exists, or exists and is a directory, or exists and is a symlink
+	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ] 
+  then
+
+    if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
+    then
+
+      local currentSrc="$(readlink $dst)"
+
+      # if pointing to the same location we want it to
+      if [ "$currentSrc" == "$src" ]
+      then
+        skip=true
+      else
+        user "File already exists: $dst ($basename "$src")), what do you want to do\n\
+        [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        read -n 1 action
+
+        case "$action" in
+          o )
+            overwrite=true;;
+          O )
+            overwrite_all=true;;
+          b )
+            backup=true;;
+          B )
+            backup_all=true;;
+          s )
+            skip=true;;
+          S )
+            skip_all=true;;
+          * )
+            ;;
+        esac
+      fi
+    fi
+
+    # if overwrite is unset, set it to value of overwrite_all
+    overwrite=${overwrite:-$overwrite_all}
+    backup=${backup:-$backup_all}
+    skip=${skip:-skip_all}
+
+    if [ "$overwrite" == "true" ]
+    then
+      rm -rf "$dst"
+      success "removed $dst"
+    fi
+
+    if [ "$backup" == "true" ]
+    then
+      mv "$dst" "${dst}.backup"
+      success "moved $dst to ${dst}.backup"
+    fi
+
+    if [ "$skip" == "true" ]
+    then
+      success "skipped $src"
+    fi
+  fi
+
+  # if not skipping this file
+  if [ "$skip" != "true" ] # "false" or empty
+  then 
+    ln -s "$src" "$dst"
+    success "linked $src to $dst"
+  fi
+}
+
+install_dotfiles () {
+  info 'installing dotfiles'
+
+  local overwrite_all=false backup_all=false skip_all=false
+
+	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+	do
+		dst="$HOME/.$(basename "${src%.*}")"
+		link_file "$src" "$dst"
+	done
+}
+
+install_dotfiles
+
+echo ''
+echo '  All installed!'
