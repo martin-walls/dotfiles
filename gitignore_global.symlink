@@ -17,6 +17,8 @@
 \#*\#
 \.#*
 .ipynb_checkpoints/
+.idea/
+.vscode/
 
 # Logs and databases #
 ######################
@@ -33,3 +35,34 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# LaTeX generated files #
+#########################
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.lof
+*.lot
+*.fls
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+__latexindent_temp.tex
+
+# bibtex auxiliary files
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+# minted output
+_minted*/
+
+# caption protect
+*.cpt
