@@ -38,6 +38,7 @@ Thumbs.db
 
 # LaTeX generated files #
 #########################
+.latex_tmp/
 *.aux
 *.log
 *.out
