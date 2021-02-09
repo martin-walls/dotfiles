@@ -1,0 +1,9 @@
+#!/bin/bash
+
+OUTPUT_DIR=".temp"
+
+mkdir -p "$OUTPUT_DIR"
+
+pdflatex -output-directory="$OUTPUT_DIR" "$@"
+
+cp ".temp/${@: -1}.pdf" "${@: -1}.pdf"
