@@ -9,8 +9,8 @@ alias ..='cd ..'
 # ech $PATH with line breaks
 alias showpath='echo $PATH | tr ":" "\n"'
 
-alias trash='trashy'
-alias cat='batcat'
+#alias trash='trashy'
+#alias cat='batcat'
 
 # mkdir and cd into it
 mcd () {
