@@ -158,7 +158,7 @@ eval "$(dircolors ~/.dircolors)" # load custom ls colors
 # kills the agent when the last bash shell is exited
 SSH_ENV="$HOME/.ssh/agent.env"
 # add ssh identities that should be added to agent automatically here
-ssh_identities=( "$HOME/.ssh/id_github" "$HOME/.ssh/id_gitlab" "$HOME/.ssh/id_chime" )
+ssh_identities=( "$HOME/.ssh/id_ed25519" )
 
 start_ssh_agent () {
     echo "Initialising new SSH agent..."
@@ -183,14 +183,16 @@ kill_ssh_agent () {
     fi
 }
 
-# source SSH settings if applicable
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    kill -0 $SSH_AGENT_PID 2>/dev/null || {
+# source SSH settings if applicables
+ssh-init () {
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        kill -0 $SSH_AGENT_PID 2>/dev/null || {
+            start_ssh_agent
+        }
+    else
         start_ssh_agent
-    }
-else
-    start_ssh_agent
-fi
+    fi
+}
 
 trap kill_ssh_agent EXIT
