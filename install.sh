@@ -47,5 +47,7 @@ install_dotfiles () {
 
 install_dotfiles
 
+# TODO clone and install .vim repo
+
 echo ''
 echo '  All installed!'
