@@ -53,6 +53,7 @@ Thumbs.db
 *.cb2
 .*.lb
 __latexindent_temp.tex
+*.fdb_latexmk
 
 # bibtex auxiliary files
 *.bbl
