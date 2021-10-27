@@ -196,3 +196,7 @@ ssh-init () {
 }
 
 trap kill_ssh_agent EXIT
+
+# set default editor to vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
