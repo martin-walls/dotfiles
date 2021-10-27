@@ -11,6 +11,7 @@
 	co = checkout
 [core]
 	excludesFile = /home/martin/.gitignore_global
+	editor = vim
 [include]
 	path = ~/.gitconfig_local
 [init]
