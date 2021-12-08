@@ -54,6 +54,8 @@ Thumbs.db
 .*.lb
 __latexindent_temp.tex
 *.fdb_latexmk
+*.dvi
+*.xdv
 
 # bibtex auxiliary files
 *.bbl
@@ -68,3 +70,9 @@ _minted*/
 
 # caption protect
 *.cpt
+
+
+*.swo
+
+# vim sessions
+Session.vim
