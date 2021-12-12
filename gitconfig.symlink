@@ -12,6 +12,8 @@
 [core]
 	excludesFile = /home/martin/.gitignore_global
 	editor = vim
+	eol = lf
+	autocrlf = input
 [include]
 	path = ~/.gitconfig_local
 [init]
