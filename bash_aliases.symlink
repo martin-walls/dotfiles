@@ -12,6 +12,7 @@ alias showpath='echo $PATH | tr ":" "\n"'
 #alias trash='trashy'
 alias cat='batcat'
 alias catt='/usr/bin/cat'
+alias fd='fdfind'
 
 # mkdir and cd into it
 mcd () {
