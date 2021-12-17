@@ -1,0 +1,27 @@
+[global_config]
+  title_hide_sizetext = True
+  inactive_color_offset = 0.803030303030303
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, OpenAnyFile
+[keybindings]
+[profiles]
+  [[default]]
+    background_color = "#282c34"
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Monospace 16
+    foreground_color = "#abb2bf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#282c34:#d5424e:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#abb2bf:#3b414c:#e06c75:#c2e9a6:#f5d8a0:#92c6f1:#dda0ef:#ade7ee:#eef0f4"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
