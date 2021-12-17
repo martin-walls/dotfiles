@@ -57,8 +57,8 @@ install_configs () {
 		dst="$DOT_CONFIG/$src"
 		# create parent dir if it doesn't exist
 		if [ ! -d "$(dirname "$dst")" ] ; then
-			info "creating directory $(dirname "$dst")"
 			mkdir -p "$(dirname "$dst")"
+			success "creating directory $(dirname "$dst")"
 		fi
 		link_file "$DOTFILES_ROOT/.config/$src" "$dst"
 	done
