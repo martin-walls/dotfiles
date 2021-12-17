@@ -5,6 +5,7 @@
 # The MIT License
 #
 # Copyright (c) Zach Holman, http://zachholman.com
+# (c) Martin Walls
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +26,7 @@
 # THE SOFTWARE.
 
 DOTFILES_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
+DOT_CONFIG="$HOME/.config"
 
 # stop execution of the script immediately if a command has an error
 set -e
@@ -38,14 +40,32 @@ install_dotfiles () {
 
   local overwrite_all=false backup_all=false skip_all=false
 
-	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+	for src in $(find -H "$DOTFILES_ROOT" -maxdepth 1 -name '*.symlink' -not -path '*.git*')
 	do
 		dst="$HOME/.$(basename "${src%.*}")"
 		link_file "$src" "$dst"
 	done
 }
 
+install_configs () {
+	info 'installing .config'
+
+	local overwrite_all=false backup_all=false skip_all=false
+
+	for src in $(cd "$DOTFILES_ROOT/.config" && find -H -not -path '*.git*' -type f | cut -c 3-)
+	do
+		dst="$DOT_CONFIG/$src"
+		# create parent dir if it doesn't exist
+		if [ ! -d "$(dirname "$dst")" ] ; then
+			mkdir -p "$(dirname "$dst")"
+			success "creating directory $(dirname "$dst")"
+		fi
+		link_file "$DOTFILES_ROOT/.config/$src" "$dst"
+	done
+}
+
 install_dotfiles
+install_configs
 
 echo ''
 echo '  All installed!'

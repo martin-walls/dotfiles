@@ -131,13 +131,16 @@ fi
 # show git status in prompt
 if [ -f ~/.git-prompt.sh ] ; then
     . ~/.git-prompt.sh
-    PROMPT_COMMAND="__git_ps1 '\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u${prompt_host}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]' '\\\$ '"
+    # PROMPT_COMMAND="__git_ps1 '\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u${prompt_host}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]' '\\\$ '"
+    PROMPT_COMMAND="__git_ps1 '\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]' '\n\\\$ '"
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWUNTRACKEDFILES=1
     GIT_PS1_SHOWSTASHSTATE=1
     GIT_PS1_SHOWUPSTREAM="auto verbose"
     GIT_PS1_SHOWCOLORHINTS=1
 fi
+
+# PROMPT_COMMAND="\[\e]0;\u@\h: \w\a${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u${prompt_host}\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 
 unset prompt_host
 
@@ -149,3 +152,52 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(dircolors ~/.dircolors)" # load custom ls colors
+
+
+# set up ssh-agent
+# makes sure there is one shared instance of ssh-agent between all bash shells
+# kills the agent when the last bash shell is exited
+SSH_ENV="$HOME/.ssh/agent.env"
+# add ssh identities that should be added to agent automatically here
+ssh_identities=( "$HOME/.ssh/id_ed25519" )
+
+start_ssh_agent () {
+    echo "Initialising new SSH agent..."
+    touch $SSH_ENV
+    chmod 600 "${SSH_ENV}"
+    ssh-agent | sed 's/^echo/#echo/' >> "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    ssh-add "${ssh_identities[@]}"
+}
+
+kill_ssh_agent () {
+    bash_count=$(pgrep -c bash)
+    if [ $bash_count -gt 2 ]; then
+        # don't kill agent when there's still a bash shell running;
+        # because this function is executed from inside a bash shell,
+        # 2 bash processes will be found when the last real bash shell is exited
+        true
+    else 
+        # kill agent since this is the last bash shell
+        eval $(ssh-agent -k)
+        rm "${SSH_ENV}"
+    fi
+}
+
+# source SSH settings if applicables
+ssh-init () {
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        kill -0 $SSH_AGENT_PID 2>/dev/null || {
+            start_ssh_agent
+        }
+    else
+        start_ssh_agent
+    fi
+}
+
+trap kill_ssh_agent EXIT
+
+# set default editor to vim
+export VISUAL=vim
+export EDITOR="$VISUAL"
