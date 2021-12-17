@@ -13,6 +13,7 @@ alias showpath='echo $PATH | tr ":" "\n"'
 alias cat='batcat'
 alias catt='/usr/bin/cat'
 alias fd='fdfind'
+alias v="vim"
 
 # mkdir and cd into it
 mcd () {
