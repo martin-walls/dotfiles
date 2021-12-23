@@ -1,3 +1,4 @@
+# vim:filetype=sh
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -177,7 +178,7 @@ kill_ssh_agent () {
         # because this function is executed from inside a bash shell,
         # 2 bash processes will be found when the last real bash shell is exited
         true
-    else 
+    else
         # kill agent since this is the last bash shell
         eval $(ssh-agent -k)
         rm "${SSH_ENV}"
@@ -201,3 +202,7 @@ trap kill_ssh_agent EXIT
 # set default editor to vim
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+if [[ $- == *i* && -e ~/.dotfiles/header.sh ]] ; then
+    ~/.dotfiles/header.sh
+fi
