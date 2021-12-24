@@ -53,3 +53,7 @@
 "Walking on water and developing software from a specification are easy if both are frozen."\n~ Edward V. Berard
 "Be curious. Read widely. Try new things. I think a lot of what people call intelligence boils down to curiosity."\n~ Aaron Swartz
 "What one programmer can do in one month, two programmers can do in two months."\n~ Frederick P. Brooks
+"To achieve great things, two things are needed: a plan, and not quite enough time."\n~ Leonard Bernstein
+"They say nothing is impossible, but I do nothing every day."\n~ Winnie the Pooh
+"Anything is a smoke machine if you use it wrong enough."
+O(1) = O(yeah)\nO(log n) = O(nice)\nO(n) = O(ok)\nO(n^2) = O(my)\nO(2^n) = O(no)\nO(n!) = O(mg!)
