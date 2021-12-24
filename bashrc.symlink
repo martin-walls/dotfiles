@@ -203,6 +203,6 @@ trap kill_ssh_agent EXIT
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-if [[ $- == *i* && -e ~/.dotfiles/term_header/header.sh ]] ; then
+if [[ $- == *i* && -e ~/.dotfiles/terminal_header/header.sh ]] ; then
     ~/.dotfiles/terminal_header/header.sh
 fi
