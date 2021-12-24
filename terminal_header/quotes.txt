@@ -1,0 +1,55 @@
+# vim:commentstring=#%s
+"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."\n~ Brian Kernighan
+"If you don't finish then you're just busy, not productive."
+"Adapting old programs to fit new machines usually means adapting new machines to behave like old ones."\n~ Alan Perlis
+"Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it."\n~ Alan Perlis
+"It is easier to change the specification to fit the program than vice versa."\n~ Alan Perlis
+"It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures."\n~ Alan Perlis
+"There is nothing quite so useless as doing with great efficiency something that should not be done at all."\n~ Peter Drucker
+"If you don't fail at least 90%% of the time, you're not aiming high enough."\n~ Alan Kay
+"I would rather die of passion than of boredom."\n~ Vincent Van Gogh
+"The computing scientist's main challenge is not to get confused by the complexities of his own making."\n~ Edsger W. Dijkstra
+# "The essence of XML is this: the problem it solves is not hard, and it does not solve the problem well."\n~ Phil Wadler
+"A good programmer is someone who always looks both ways before crossing a one-way street."\n~ Doug Linder
+"Unix was not designed to stop its users from doing stupid things, as that would also stop them from doing clever things."
+"Contrary to popular belief, Unix is user friendly. It just happens to be very selective about who it decides to make friends with."
+"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
+"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies."\n~ C.A.R. Hoare
+"If you don't make mistakes, you're not working on hard enough problems."\n~ Frank Wilczek
+# "If you don't start with a spec, every piece of code you write is a patch."\n~ Leslie Lamport
+"Abstraction is not about vagueness, it is about being precise at a new semantic level."\n~ Edsger W. Dijkstra
+"dd is horrible on purpose. It's a joke about OS/360 JCL. But today it's an internationally standardized joke. I guess that says it all."\n~ Rob Pike
+"All loops are infinite ones for faulty RAM modules."
+"All idioms must be learned. Good idioms only need to be learned once."\n~ Alan Cooper
+"Almost every programming language is overrated by its practitioners."\n~ Larry Wall
+"Fancy algorithms are slow when n is small, and n is usually small."\n~ Rob Pike
+"Test your software, or your users will."
+"Keep knowledge in plain text. Plain text won't become obsolete."
+"Sign your work. Craftsmen of an earlier age were proud to sign their work. You should be, too."
+"Why do we never have time to do it right, but always have time to do it over?"
+"Weeks of programming can save you hours of planning."
+"To iterate is human, to recurse divine."\n~ L. Peter Deutsch
+"The question of whether computers can think is like the question of whether submarines can swim."\n~ Edsger W. Dijkstra
+# "It's ridiculous to live 100 years and only be able to remember 30 million bytes. You know, less than a compact disc. The human condition is really becoming more obsolete every minute."\n~ Marvin Minsky
+"The city's central computer told you? R2D2, you know better than to trust a strange computer!"\n~ C3PO
+# "Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves."\n~ Alan Kay
+"I've finally learned what 'upward compatible' means. It means we get to keep all our old mistakes."\n~ Dennie van Tassel
+"Controlling complexity is the essence of computer programming."\n~ Brian Kernighan
+"The function of good software is to make the complex appear to be simple."\n~ Grady Booch
+"There's an old story about the person who wished his computer were as easy to use as his telephone. That wish has come true, since I no longer know how to use my telephone."\n~ Bjarne Stroustrup
+"First, solve the problem. Then, write the code."\n~ John Johnson
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight."\n~ Bill Gates
+"Don't worry if it doesn't work right. If everything did, you'd be out of a job."\n~ Mosher's Law of Software Engineering
+"All problems in computer science can be solved with another level of indirection."\n~ David Wheeler
+"Nothing is more permanent than a temporary solution."
+"If you can't explain something to a six-year-old, you really don't understand it yourself."\n~ Albert Einstein
+"They did not know it was impossible, so they did it!"\n~ Mark Twain
+"The object-oriented model makes it easy to build up programs by accretion. What this often means, in practice, is that it provides a structured way to write spaghetti code."\n~ Paul Graham
+"The first 90%% of the code accounts for the first 90%% of the development time. The remaining 10%% of the code accounts for the other 90%% of the development time."\n~ Tom Cargill
+"If debugging is the process of removing bugs, then programming must be the process of putting them in."\n~ Edsger W. Dijkstra
+"To understand recursion, one must first understand recursion."\n~ Stephen Hawking
+"Every great developer you know got there by solving problems they were unqualified to solve until they actually did it."\n~ Patrick McKenzie
+"The average user doesn't give a damn what happens, as long as (1) it works and (2) it's fast."\n~ Daniel J. Bernstein
+"Walking on water and developing software from a specification are easy if both are frozen."\n~ Edward V. Berard
+"Be curious. Read widely. Try new things. I think a lot of what people call intelligence boils down to curiosity."\n~ Aaron Swartz
+"What one programmer can do in one month, two programmers can do in two months."\n~ Frederick P. Brooks
