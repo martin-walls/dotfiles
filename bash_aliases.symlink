@@ -26,3 +26,11 @@ cdl () {
 	cd $1
 	ll
 }
+
+# git aliases
+alias ga='git add'
+alias gs='git st'
+alias gc='git cm'
+alias gp='git push'
+
+alias ranger=". ranger"
