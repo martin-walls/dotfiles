@@ -57,3 +57,4 @@
 O(1) = O(yeah)\nO(log n) = O(nice)\nO(n) = O(ok)\nO(n^2) = O(my)\nO(2^n) = O(no)\nO(n!) = O(mg!)
 "Somewhere beyond right and wrong, there is a garden. I will meet you there."\n~ Rumi
 "One of the biggest traps for smart engineers is optimising a thing that shouldn't exist"\n~ Elon Musk
+"How lovely yellow is! It stands for the sun."\n~ Vincent van Gogh
