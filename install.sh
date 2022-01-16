@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # This script mainly based from github.com/holman/dotfiles/script/bootstrap
-# 
+#
 # The MIT License
 #
 # Copyright (c) Zach Holman, http://zachholman.com
@@ -26,7 +26,6 @@
 # THE SOFTWARE.
 
 DOTFILES_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)
-DOT_CONFIG="$HOME/.config"
 
 # stop execution of the script immediately if a command has an error
 set -e
@@ -52,15 +51,13 @@ install_configs () {
 
 	local overwrite_all=false backup_all=false skip_all=false
 
-	for src in $(cd "$DOTFILES_ROOT/.config" && find -H -not -path '*.git*' -type f | cut -c 3-)
-	do
-		dst="$DOT_CONFIG/$src"
-		# create parent dir if it doesn't exist
-		if [ ! -d "$(dirname "$dst")" ] ; then
-			mkdir -p "$(dirname "$dst")"
-			success "creating directory $(dirname "$dst")"
-		fi
-		link_file "$DOTFILES_ROOT/.config/$src" "$dst"
+	if [ ! -d "$HOME/.config" ] ; then
+		mkdir -p "$HOME/.config"
+		success "created directory $HOME/.config"
+	fi
+
+	for f in $DOTFILES_ROOT/.config/*; do
+		link_file "$f" "$HOME/.config/$(basename $f)"
 	done
 }
 
