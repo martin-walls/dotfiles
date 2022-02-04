@@ -40,7 +40,7 @@
 # "First, solve the problem. Then, write the code."\n~ John Johnson
 "Measuring programming progress by lines of code is like measuring aircraft building progress by weight."\n~ Bill Gates
 "Don't worry if it doesn't work right. If everything did, you'd be out of a job."\n~ Mosher's Law of Software Engineering
-# "All problems in computer science can be solved with another level of indirection."\n~ David Wheeler
+"All problems in computer science can be solved with another level of indirection."\n~ David Wheeler
 "Nothing is more permanent than a temporary solution."
 "If you can't explain something to a six-year-old, you really don't understand it yourself."\n~ Albert Einstein
 "They did not know it was impossible, so they did it!"\n~ Mark Twain
