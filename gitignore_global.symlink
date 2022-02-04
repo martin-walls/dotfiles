@@ -43,6 +43,7 @@ Thumbs.db
 *.log
 *.out
 *.synctex.gz
+*.synctex(busy)
 *.lof
 *.lot
 *.fls
