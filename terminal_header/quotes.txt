@@ -58,3 +58,19 @@ O(1) = O(yeah)\nO(log n) = O(nice)\nO(n) = O(ok)\nO(n^2) = O(my)\nO(2^n) = O(no)
 "Somewhere beyond right and wrong, there is a garden. I will meet you there."\n~ Rumi
 "One of the biggest traps for smart engineers is optimising a thing that shouldn't exist"\n~ Elon Musk
 "How lovely yellow is! It stands for the sun."\n~ Vincent van Gogh
+#
+#
+#
+#
+Be still, and know that I am God.\n~ Psalm 46:10 ~
+We take captive every thought to make it obedient to Christ.\n~ 2 Corinthians 10:5 ~
+The night is nearly over; the day is almost here. So let us put aside the deeds of darkness and put on the armour of light.\n~ Romans 13:12 ~
+What then? Shall we sin because we are not under the law but under grace? By no means! Don't you know that when you offer yourselves to someone as obedient slaves, you are slaves of the one you obey - whether you are slaves to sin, which leads to death, or to obedience, which leads to righteousness? But thanks be to God that, though you used to be slaves to sin, you have come to obey from your heart the pattern of teaching that has now claimed your allegiance. You have been set free from sin and have become slaves to righteousness.\n~ Romans 6:15-18 ~
+Have no fear of sudden disaster or of the ruin that overtakes the wicked, for the lord will be at your side and will keep your foot from being snared.\n~ Proverbs 3:25-26 ~
+Above all else, guard your heart, for everything you do flows from it.\n~ Proverbs 4:23 ~
+Do not be wise in your own eyes; fear the Lord and shun evil.\n~ Proverbs 3:7 ~
+Evil people are trapped by sin, but the righteous escape, shouting for joy.\n~ Proverbs 29:6 ~
+Whover conceals their sin does not prosper, but the one who confesses and renounces them finds mercy.\n~ Proverbs 28:13 ~
+Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It doe not dishonour others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs. Love does not delight in evil but rejoices with the truth. It always protects, always trusts, always hopes, always perseveres. Love never fails.\n~ 1 Corinthians 13:4-8 ~
+I have hidden your word in my heart, that I might not sin against you.\n~ Psalm 119:11 ~
+For we are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.\n~ Ephesians 2:10 ~

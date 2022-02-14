@@ -1,8 +1,8 @@
 #!/bin/bash
 
 HEADER_FILE="$HOME/.dotfiles/terminal_header/asciiheader.txt"
-# QUOTE_FILE="$HOME/.dotfiles/terminal_header/quotes.txt"
-QUOTE_FILE="$HOME/.dotfiles/terminal_header/bibleverses.txt"
+QUOTE_FILE="$HOME/.dotfiles/terminal_header/quotes.txt"
+# QUOTE_FILE="$HOME/.dotfiles/terminal_header/bibleverses.txt"
 declare -i TERM_COLS="$(tput cols)"
 
 function print_header {
