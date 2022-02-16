@@ -33,5 +33,8 @@ alias gc='git cm'
 alias gp='git push'
 alias gd='git diff'
 alias gpl='git pull'
+alias gbr='git br'
+alias gsw='git switch'
+alias glgb='git lgb'
 
 alias ranger=". ranger"
