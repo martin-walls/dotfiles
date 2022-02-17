@@ -9,6 +9,8 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	co = checkout
+	sw = switch
+	df = diff
 [core]
 	excludesFile = /home/martin/.gitignore_global
 	editor = vim
