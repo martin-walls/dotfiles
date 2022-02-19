@@ -10,7 +10,7 @@ alias ..='cd ..'
 alias showpath='echo $PATH | tr ":" "\n"'
 
 #alias trash='trashy'
-alias cat='batcat'
+alias cat='batcat --tabs=2'
 alias fd='fdfind'
 alias v="vim"
 
