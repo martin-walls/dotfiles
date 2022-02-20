@@ -1,0 +1,47 @@
+# Dependencies
+# - zsh-syntax-highlighting
+# - git-prompt.sh (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+
+HISTFILE=~/.cache/zshhistory
+HISTSIZE=10000
+SAVEHIST=10000
+
+# use emacs keybindings
+bindkey -e
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/martin/.zshrc'
+
+# case insensitive completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' menu select
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+EDITOR=vim
+
+source ~/.git-prompt.sh
+
+setopt prompt_subst
+
+
+# __git_ps1 takes two args, pre and post, to show before and after
+# the git prompt
+# precmd () { __git_ps1 "%B%F{blue}%2~%f%b" " %(!.#.:) " }
+
+PROMPT='%B%F{blue}%2~%f%b %(!.#.:) '
+RPROMPT='$(__git_ps1)'
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="verbose"
+
+# Load aliases
+[ -f "$HOME/.config/zsh/aliases" ] && source "$HOME/.config/zsh/aliases"
+
+# Load plugins (should be at end of .zshrc)
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
