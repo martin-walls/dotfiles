@@ -2,9 +2,18 @@
 # - zsh-syntax-highlighting
 # - git-prompt.sh (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# show terminal header
+~/.dotfiles/terminal_header/header.sh
+
 HISTFILE=~/.cache/zshhistory
 HISTSIZE=10000
 SAVEHIST=10000
+
+# enable colours
+autoload -U colors && colors
 
 # use emacs keybindings
 bindkey -e
@@ -24,16 +33,16 @@ EDITOR=vim
 
 source ~/.git-prompt.sh
 
+
+
+
+# Prompt config
 setopt prompt_subst
-
-
-# __git_ps1 takes two args, pre and post, to show before and after
-# the git prompt
-# precmd () { __git_ps1 "%B%F{blue}%2~%f%b" " %(!.#.:) " }
-
-PROMPT='%B%F{blue}%2~%f%b %(!.#.:) '
+PROMPT='%B%F{blue}%(3~|.../%2~|%~)%f%b %(!.#.:) '
+# __git_ps1 optionally takes two args, pre and post, to show before
+# and after the git prompt
 RPROMPT='$(__git_ps1)'
-
+# config git prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWSTASHSTATE=1
@@ -42,6 +51,13 @@ GIT_PS1_SHOWUPSTREAM="verbose"
 
 # Load aliases
 [ -f "$HOME/.config/zsh/aliases" ] && source "$HOME/.config/zsh/aliases"
+
+# set PATH variables
+export PATH=~/.dotfiles/bin:~/bin:${PATH}
+
+# set tabstop to 2
+tabs 2
+
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
