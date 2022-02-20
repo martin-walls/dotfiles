@@ -1,1 +1,44 @@
-alias ll='ls -AlFhgG --color'
+# vim:filetype=zsh
+
+# enable colors of commands
+alias ls='ls --color'
+alias grep='grep --color'
+
+# ls aliases
+# long list without owner, hide group, show almost all, show type, human readable sizes
+alias l='ls -gGAFh'
+# long list, show almost all, show type, human readable sizes
+alias ll='ls -lAFh'
+
+# parent directory
+alias ..='cd ..'
+
+# mkdir and cd into it
+mcd () {
+  mkdir -p $1
+  cd $1
+}
+
+# confirmation before deleting
+alias rm='rm -I'
+# confirmation before overwrite
+alias mv='mv -i'
+alias cp='cp -i'
+
+# Git aliases
+alias ga='git add'
+alias gs='git st'
+alias gc='git cm'
+alias gp='git push'
+alias gd='git diff'
+alias gpl='git pull'
+alias gg='git lgb'
+
+# nicer cat output
+alias cat='batcat --tabs=2'
+# fd (fdfind): alternative to find, for finding files in the filesystem
+alias fd='fdfind'
+
+alias v='vim'
+
+alias rg=". ranger"
