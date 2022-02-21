@@ -61,6 +61,10 @@ install_configs () {
 	done
 }
 
+# install submodules
+info 'installing submodules'
+git submodule update --init --recursive
+
 install_dotfiles
 install_configs
 

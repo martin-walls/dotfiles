@@ -1,0 +1,3 @@
+[submodule ".zsh.symlink/zsh-autosuggestions"]
+	path = .zsh.symlink/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -58,6 +58,6 @@ export PATH=~/.dotfiles/bin:~/bin:${PATH}
 # set tabstop to 2
 tabs 2
 
-
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
