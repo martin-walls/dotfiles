@@ -1,6 +1,7 @@
 # Dependencies
 # - zsh-syntax-highlighting
 # - git-prompt.sh (https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh)
+# - autojump
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -29,12 +30,9 @@ zstyle ':completion:*' menu select
 autoload -Uz compinit
 compinit
 
-EDITOR=vim
-
 source ~/.git-prompt.sh
 
-
-
+precmd () { echo -ne "\033]0;$(print -P '%(3~|.../%2~|%~)')\007" }
 
 # Prompt config
 setopt prompt_subst
@@ -58,3 +56,4 @@ tabs 2
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/autojump/autojump.zsh 2>/dev/null
