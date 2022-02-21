@@ -15,19 +15,19 @@ SAVEHIST=10000
 # enable colours
 autoload -U colors && colors
 
+eval "$(dircolors ~/.dircolors)"
+
 # use emacs keybindings
 bindkey -e
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/martin/.zshrc'
 
+
+# Completion
+# zstyle :compinstall filename '/home/martin/.zshrc'
 # case insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-
 zstyle ':completion:*' menu select
-
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
 EDITOR=vim
 
@@ -50,10 +50,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="verbose"
 
 # Load aliases
-[ -f "$HOME/.config/zsh/aliases" ] && source "$HOME/.config/zsh/aliases"
-
-# set PATH variables
-export PATH=~/.dotfiles/bin:~/bin:${PATH}
+[ -f "$HOME/.zsh/aliases" ] && source "$HOME/.zsh/aliases"
 
 # set tabstop to 2
 tabs 2
