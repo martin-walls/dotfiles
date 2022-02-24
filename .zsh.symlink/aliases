@@ -42,3 +42,6 @@ alias fd='fdfind'
 alias v='vim'
 
 alias rg=". ranger"
+
+# kitty image preview kitten
+alias icat="kitty +kitten icat"
