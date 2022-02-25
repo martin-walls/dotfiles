@@ -1,0 +1,1 @@
+/home/martin/.vim/pack/mrw/start/vim-kitty-navigator/neighboring_window.py

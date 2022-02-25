@@ -61,12 +61,24 @@ install_configs () {
 	done
 }
 
+install_vim_kitty_navigator_links () {
+	info 'linking vim-kitty-navigator'
+
+	local overwrite_all=true backup_all=false skip_all=false
+
+	for file in $HOME/.vim/pack/mrw/start/vim-kitty-navigator/*.py; do
+		f=$(basename $file)
+		link_file "$HOME/.vim/pack/mrw/start/vim-kitty-navigator/$f" "$DOTFILES_ROOT/.config/kitty/$f"
+	done
+}
+
 # install submodules
 info 'installing submodules'
 git submodule update --init --recursive
 
 install_dotfiles
 install_configs
+install_vim_kitty_navigator_links
 
 echo ''
 echo '  All installed!'
