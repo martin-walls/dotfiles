@@ -48,15 +48,21 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="verbose"
 
 # Load aliases
-[ -f "$HOME/.zsh/aliases" ] && source "$HOME/.zsh/aliases"
+[ -f "$HOME/.config/zsh/aliases" ] && source "$HOME/.config/zsh/aliases"
 
 # set tabstop to 2
-tabs 2
+tabs -2
+
+# ctrl + arrow keys
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+# ctrl + backspace to delete last word
+bindkey "^H" backward-kill-word
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/autojump/autojump.zsh 2>/dev/null
