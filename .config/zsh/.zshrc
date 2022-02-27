@@ -41,7 +41,7 @@ setopt prompt_subst
 PROMPT='%B%F{blue}%(3~|.../%2~|%~)%f%b %(!.#.:) '
 # __git_ps1 optionally takes two args, pre and post, to show before
 # and after the git prompt
-RPROMPT='$(__git_ps1)'
+RPROMPT='$(__git_ps1 "(%%F{green}%%f %s)")'
 # config git prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWCOLORHINTS=1
