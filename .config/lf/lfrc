@@ -18,7 +18,7 @@ set shellopts '-eu'
 set ifs "\n"
 
 # leave some space at the top and the bottom of the screen
-set scrolloff 10
+set scrolloff 6
 
 # use enter for shell commands
 map <enter> shell
@@ -114,3 +114,6 @@ map j push :aj<space>
 
 # show filetype icons
 set icons
+
+# show hidden files
+set hidden
