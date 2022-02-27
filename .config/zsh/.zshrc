@@ -63,7 +63,7 @@ bindkey "^H" backward-kill-word
 
 # use lf to also switch directories, bind it to ctrl-o
 [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
-bindkey -s '^o' 'lfcd\n'
+bindkey -s '^f' 'lfcd\n'
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
