@@ -22,13 +22,15 @@ eval "$(dircolors ~/.dircolors)"
 bindkey -e
 
 
-# Completion
-# zstyle :compinstall filename '/home/martin/.zshrc'
+# Basic Completion
 # case insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 autoload -Uz compinit
 compinit
+# include hidden files in completion results without explicitly
+# specifying the dot
+_comp_options+=(globdots)
 
 source ~/.git-prompt.sh
 
