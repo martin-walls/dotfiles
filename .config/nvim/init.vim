@@ -184,3 +184,11 @@ command Vter vsplit terminal
 " open terminal in horizontal split
 command Ter split terminal
 " }}}
+
+" ┌─────────┐
+" │ Plugins │
+" └─────────┘
+source ~/.config/nvim/plugin_config/coc.vim
+source ~/.config/nvim/plugin_config/gitgutter.vim
+source ~/.config/nvim/plugin_config/lightline.vim
+source ~/.config/nvim/plugin_config/pear-tree.vim

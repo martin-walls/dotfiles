@@ -1,0 +1,823 @@
+##### GLOBAL PYTHON #####
+global !p
+def math():
+  return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def comment():
+  return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+  [x,y] = vim.eval("vimtex#env#is_inside('" + name + "')")
+  return x != '0' and y != '0'
+
+def list():
+  return env("enumerate") or env("itemize")
+endglobal
+
+
+
+########## ENVIRONMENTS ##########
+# generic environment snippet
+snippet beg "Begin/end environment" bA
+\begin{$1}
+$0
+\end{$1}
+endsnippet
+snippet \begin "Begin/end environment"
+\begin{$1}
+$0
+\end{$1}
+endsnippet
+
+snippet "(t?)ben" "Enumerate environment" brA
+\begin{enumerate}
+\item % (${1:1})`!p snip.rv = " TODO" if match.group(1) else ""`
+$0
+\end{enumerate}
+endsnippet
+
+snippet "(\d+)(t?)ben" "enumerate" brA
+\begin{enumerate}
+\item % (1)`!p snip.rv = " TODO" if match.group(2) else ""`
+$0
+`!p
+snip.rv = ''
+numitems = max(int(match.group(1)), 1) - 1
+for i in range(numitems):
+	snip.rv += '\\item % ({})'.format(i+2)
+	if match.group(2):
+		snip.rv += ' TODO'
+	snip.rv += '\n'
+snip.rv = snip.rv[:-1]
+`
+\end{enumerate}
+endsnippet
+
+# snippet "(\d+)aben" "enumerate" brA
+# \begin{enumerate}
+# \item % (a)
+# $0
+# `!p
+# snip.rv = ''
+# numitems = max(int(match.group(1)), 1) - 1
+# for i in range(numitems):
+# 	snip.rv += '\\item % ({})\n'.format(chr(ord('a') + i+1))
+# `
+# \end{enumerate}
+# endsnippet
+
+snippet "([a-z])(t?)ben" "enumerate" brA
+\begin{enumerate}
+\item % (a)`!p snip.rv = " TODO" if match.group(2) else ""`
+$0
+`!p
+snip.rv = ''
+numitems = ord(match.group(1)) - ord('a')
+for i in range(numitems):
+	snip.rv += '\\item % ({})'.format(chr(ord('b') + i))
+	if match.group(2):
+		snip.rv += ' TODO'
+	snip.rv += '\n'
+snip.rv = snip.rv[:-1]
+`
+\end{enumerate}
+endsnippet
+
+snippet "(\d+)i(t?)ben" "enumerate" brA
+\begin{enumerate}
+\item % (i)`!p snip.rv = " TODO" if match.group(2) else ""`
+$0
+`!p
+roman = ["ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
+snip.rv = ""
+numitems = max(int(match.group(1)), 1) - 1
+for i in range(numitems):
+	snip.rv += "\\item % ({})".format(roman[i])
+	if match.group(2):
+		snip.rv += ' TODO'
+	snip.rv += '\n'
+snip.rv = snip.rv[:-1]
+`
+\end{enumerate}
+endsnippet
+
+snippet bit "Itemize environment" bA
+\begin{itemize}
+\item $0
+\end{itemize}
+endsnippet
+
+snippet "(\d+)bit" "Itemize environment" brA
+\begin{itemize}
+\item $0
+`!p
+snip.rv = ''
+numitems = max(int(match.group(1)), 1) - 1
+for i in range(numitems):
+	snip.rv += '\\item\n'
+snip.rv = snip.rv[:-1]
+`
+\end{itemize}
+endsnippet
+
+snippet examq "Exam question environment" bA
+% $1 Paper $2 Question $3
+\begin{examquestion}{$1}{$2}{$3}
+$0
+\end{examquestion}
+endsnippet
+
+snippet bqst "Question environment" bA
+\begin{question}[$1 marks]
+$0
+\end{question}
+endsnippet
+
+snippet bfr "Frame environment" bA
+\begin{frame}
+\frametitle{$1}
+$0
+\end{frame}
+endsnippet
+
+snippet bfrit "Itemized frame environment" bA
+\begin{frame}
+\frametitle{$1}
+\begin{itemize}
+\item $0
+\end{itemize}
+\end{frame}
+endsnippet
+
+snippet bfi "Figure" bA
+\begin{figure}[${1:htbp}]
+	\centering
+	${2:\includegraphics[width=${4:0.8}\textwidth]{$3}}
+	\caption{$5}
+	\label{fig:$6}
+\end{figure}
+endsnippet
+
+snippet fig "Figure reference" w
+Figure~\ref{fig:$1}$0
+endsnippet
+
+snippet blst "Listings" bA
+\begin{lstlisting}[style=${1:code}]
+$0
+\end{lstlisting}
+endsnippet
+
+snippet btbl "Tabular" b
+\begin{tabular}{$1}
+$0
+\end{tabular}
+endsnippet
+
+snippet "btbl(\d+)x(\d+)" "tabular mxn" wrA
+\begin{tabular}{`!p snip.rv = 'c'*int(match.group(1))`}
+$0`!p
+row = ' & ' * (int(match.group(1)) - 1) + ' \\\\'
+snip.rv = (row + '\n') * (int(match.group(2)) - 1) + row
+`
+\end{tabular}
+endsnippet
+
+
+##### MATH ENVIRONMENTS #####
+snippet beq "Equation" bA
+\begin{equation}
+$0
+\end{equation}
+endsnippet
+
+snippet bseq "Equation*" bA
+\begin{equation*}
+$0
+\end{equation*}
+endsnippet
+
+snippet bal "Align" bA
+\begin{align}
+$0
+\end{align}
+endsnippet
+
+snippet bsal "Align*" bA
+\begin{align*}
+$0
+\end{align*}
+endsnippet
+
+snippet dm "Display math" bA
+\begin{align*}
+$0
+\end{align*}
+endsnippet
+
+snippet mk "Inline math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
+
+context "math()"
+snippet bcase "cases" wA
+\begin{cases}
+$0
+\end{cases}
+endsnippet
+
+########## FRACTIONS ##########
+context "math()"
+snippet // "Fraction" iA
+\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+# find brackets on top of fraction
+context "math()"
+priority 1000
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+context "math()"
+snippet 10e "Scientific form" wA
+\times 10^{$1}$0
+endsnippet
+
+
+##### DERIVATIVES #####
+context "math()"
+snippet dd "d/dx" wA
+\frac{\mathrm{d} $1}{\mathrm{d} $2}$0
+endsnippet
+
+context "math()"
+snippet partdd "partial d/dx" wA
+\frac{\partial $1}{\partial $2}$0
+endsnippet
+
+
+##### OPERATORS #####
+context "math()"
+snippet sqrt "sqrt" iA
+\sqrt{${1:${VISUAL}}}$0
+endsnippet
+
+context "math()"
+snippet sr "^2" iA
+^2
+endsnippet
+
+context "math()"
+snippet cb "^3" iA
+^3
+endsnippet
+
+context "math()"
+snippet xx "times" iA
+\times
+endsnippet
+
+context "math()"
+snippet ** "cdot" iA
+\cdot
+endsnippet
+
+context "math()"
+snippet ceil "ceil" wA
+\left\lceil $1 \right\rceil $0
+endsnippet
+
+context "math()"
+snippet floor "floor" wA
+\left \lfloor $1 \right\rfloor $0
+endsnippet
+
+# context "math()"
+# snippet "(?<!\\)(max|sin|cos)" "functions" rwA
+# \\`!p snip.rv = match.group(1)`
+# endsnippet
+
+context "math()"
+snippet sumi "sum" wA
+\sum_{${1:i}=${2:1}}^{$3}$0
+endsnippet
+
+context "math()"
+snippet +- "plusminus" iA
+\pm
+endsnippet
+
+context "math()"
+snippet ^, "prime" iA
+^\prime
+endsnippet
+
+context "math()"
+snippet |- "vdash" iA
+\vdash
+endsnippet
+
+context "math()"
+snippet |= "vDash" iA
+\vDash
+endsnippet
+
+context "math()"
+snippet ¬ "neg" iA
+\neg $0
+endsnippet
+
+
+########## EQUALITY ##########
+# align equals
+context "env('align') or env('align*')"
+snippet == "= in align" wA
+&=
+endsnippet
+
+context "math()"
+snippet != "not equals" iA
+\neq
+endsnippet
+
+context "math()"
+snippet ~= "approx" iA
+\approx
+endsnippet
+
+context "math()"
+snippet =~ "simeq" iA
+\simeq
+endsnippet
+
+context "math()"
+snippet >= "greater than equal to" iA
+\geqslant
+endsnippet
+
+context "math()"
+snippet <= "less than equal to" iA
+\leqslant
+endsnippet
+
+
+########## ARROWS ##########
+context "math()"
+priority 10
+snippet => "Rightarrow" iA
+\Rightarrow
+endsnippet
+
+context "math()"
+priority 100
+snippet ==> "Longrightarrow" iA
+\Longrightarrow
+endsnippet
+
+context "math()"
+snippet ~~ "sim" iA
+\sim
+endsnippet
+
+context "math()"
+priority 10
+snippet -> "right arrow" iA
+\rightarrow
+endsnippet
+
+context "math()"
+priority 10
+snippet <- "left arrow" iA
+\leftarrow
+endsnippet
+
+context "math()"
+priority 100
+snippet --> "long right arrow" iA
+\longrightarrow
+endsnippet
+
+context "math()"
+priority 100
+snippet <-- "long left arrow" iA
+\longleftarrow
+endsnippet
+
+context "math()"
+priority 100
+snippet lr-> "left right arrow" iA
+\leftrightarrow
+endsnippet
+
+
+########## SUPERSCRIPT & SUBSCRIPT ##########
+context "math()"
+snippet "([A-Za-z])(\d)" "auto subscript single digit" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+context "math()"
+snippet "([A-Za-z])_(\d\d)" "auto subscript double digit" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+context "math()"
+snippet __ "subscript" iA
+_{$1}$0
+endsnippet
+
+context "math()"
+snippet ^^ "superscript" iA
+^{$1}$0
+endsnippet
+
+context "math()"
+snippet xii "x_i" iA
+x_{i}
+endsnippet
+
+context "math()"
+snippet xjj "x_j" iA
+x_{j}
+endsnippet
+
+context "math()"
+snippet xnn "x_n" iA
+x_{n}
+endsnippet
+
+context "math()"
+snippet xmm "x_m" iA
+x_{m}
+endsnippet
+
+context "math()"
+snippet yii "y_i" iA
+y_{i}
+endsnippet
+
+context "math()"
+snippet yjj "y_j" iA
+y_{j}
+endsnippet
+
+context "math()"
+snippet ynn "y_n" iA
+y_{n}
+endsnippet
+
+context "math()"
+snippet ymm "y_m" iA
+y_{m}
+endsnippet
+
+
+########## BRACKETS ##########
+context "math()"
+snippet () "left( right)" i
+\left( ${1:${VISUAL}} \right)$0
+endsnippet
+
+# brackets with left/right
+context "math()"
+snippet @( "Round brackets" iA
+\left ( $1 \right )$0
+endsnippet
+
+context "math()"
+snippet @[ "Square brackets" iA
+\left [ $1 \right ]$0
+endsnippet
+
+context "math()"
+snippet @{ "Curly brackets" iA
+\left \{ $1 \right \}$0
+endsnippet
+
+context "math()"
+snippet \{ "curly brackets escape" iA
+\\{ $0 \\}
+endsnippet
+
+context "math()"
+snippet @< "Angle brackets" iA
+\langle $1 \rangle$0
+endsnippet
+
+context "math()"
+snippet "^.*\)lr" "turn brackets into left( right)" wrA
+`!p
+line = match.string[:-2]
+depth = 0
+i = len(line) - 1
+while True:
+	if line[i] == ")": depth += 1
+	elif line[i] == "(": depth -= 1
+	if depth == 0: break
+	i -= 1
+snip.rv = line[0:i] + "\\left(" + line[i+1:-1] + "\\right)"
+`$0
+endsnippet
+
+context "math()"
+snippet "^.*\]lr" "turn brackets into left[ right]" wrA
+`!p
+line = match.string[:-2]
+depth = 0
+i = len(line) - 1
+while True:
+	if line[i] == "]": depth += 1
+	elif line[i] == "[": depth -= 1
+	if depth == 0: break
+	i -= 1
+snip.rv = line[0:i] + "\\left[" + line[i+1:-1] + "\\right]"
+`$0
+endsnippet
+
+
+########## OTHER ##########
+priority 10
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+priority 100
+snippet \... "literal ellipsis" iA
+...
+endsnippet
+
+context "math()"
+snippet \rm "mathrm" iA
+\mathrm{$1}$0
+endsnippet
+
+context "math()"
+snippet txt "text in math mode" wA
+\text{$1}$0
+endsnippet
+
+########## LETTER MODIFIERS ##########
+context "math()"
+priority 10
+snippet "(?<!\\)bar" "bar" wrA
+\overline{$1}$0
+endsnippet
+context "math()"
+priority 100
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv = match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet "(?<!\\)hat" "hat" wrA
+\hat{$1}$0
+endsnippet
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv = match.group(1)`}
+endsnippet
+
+
+########## GENERAL ##########
+context "env('enumerate')"
+snippet item "Item" bW
+\item % ($1)
+$0
+endsnippet
+
+context "env('itemize')"
+snippet item "Item" bW
+\item $0
+endsnippet
+
+snippet verb "Inline verbatim" w
+\verb|$1|$0
+endsnippet
+
+snippet bigo "Big-O notation in normal text" wA
+\$O($1)\$$0
+endsnippet
+
+snippet eg. "eg" wA
+e.g.\\$0
+endsnippet
+
+snippet ie. "ie" wA
+i.e.\\$0
+endsnippet
+
+
+########## BOLD/ITALIC ETC ##########
+snippet fbf "bold text" w
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+priority 10
+snippet \bf "bold text" wA
+\textbf{${1:${VISUAL}}}$0
+endsnippet
+context "math()"
+priority 100
+snippet \bf "bold text" wA
+\mathbf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet fit "italic text" w
+\textit{${1:${VISUAL}}}$0
+endsnippet
+snippet \it "italic text" w
+\textit{${1:${VISUAL}}}$0
+endsnippet
+
+snippet ftt "monospace text" w
+\texttt{${1:${VISUAL}}}$0
+endsnippet
+snippet \tt "monospace text" wA
+\texttt{${1:${VISUAL}}}$0
+endsnippet
+
+snippet \sf "sans serif text" wA
+\textsf{${1:${VISUAL}}}$0
+endsnippet
+
+snippet \sc "textsc" w
+\textsc{${1:${VISUAL}}}$0
+endsnippet
+
+context "math()"
+snippet \bb "mathbb" iA
+\mathbb{${1:${VISUAL}}}$0
+endsnippet
+
+########## GREEK CHARACTERS ##########
+context "math()"
+snippet @a "alpha" iA
+\alpha
+endsnippet
+context "math()"
+snippet @b "beta" iA
+\beta
+endsnippet
+context "math()"
+snippet @d "delta" iA
+\delta
+endsnippet
+context "math()"
+snippet @e "epsilon" iA
+\epsilon
+endsnippet
+context "math()"
+snippet @ve "varepsilon" iA
+\varepsilon
+endsnippet
+context "math()"
+snippet @f "phi" iA
+\phi
+endsnippet
+context "math()"
+snippet @g "gamma" iA
+\gamma
+endsnippet
+context "math()"
+snippet @k "kappa" iA
+\kappa
+endsnippet
+context "math()"
+snippet @l "lambda" iA
+\lambda
+endsnippet
+context "math()"
+snippet @m "mu" iA
+\mu
+endsnippet
+context "math()"
+snippet @n "nu" iA
+\nu
+endsnippet
+context "math()"
+snippet @p "pi" iA
+\pi
+endsnippet
+context "math()"
+snippet @r "rho" iA
+\rho
+endsnippet
+context "math()"
+snippet @q "theta" iA
+\theta
+endsnippet
+context "math()"
+snippet @s "sigma" iA
+\sigma
+endsnippet
+context "math()"
+snippet @t "tau" iA
+\tau
+endsnippet
+context "math()"
+snippet @o "omega" iA
+\omega
+endsnippet
+
+context "math()"
+snippet @D "Delta" iA
+\Delta
+endsnippet
+context "math()"
+snippet @F "Phi" iA
+\Phi
+endsnippet
+context "math()"
+snippet @G "Gamma" iA
+\Gamma
+endsnippet
+context "math()"
+snippet @P "Pi" iA
+\Pi
+endsnippet
+context "math()"
+snippet @Q "Theta" iA
+\Theta
+endsnippet
+context "math()"
+snippet @S "Sigma" iA
+\Sigma
+endsnippet
+context "math()"
+snippet @O "Omega" iA
+\Omega
+endsnippet
+
+
+########## SUPO WORK TEMPLATE ##########
+snippet supoworktemplate "Supo work default template" wA
+\documentclass[10pt,twoside,a4paper]{article}
+
+% Name and email
+\newcommand{\studentname}{Martin Walls}
+\newcommand{\studentemail}{mrw64@cam.ac.uk}
+\newcommand{\svvenue}{${1:supo venue}}
+\newcommand{\svrname}{${2:supervisor name}}
+
+% Details of supervision
+\newcommand{\svcourse}{CST Part IB: ${3:course name}}
+\newcommand{\svnumber}{${4:supo number}}
+\newcommand{\svdate}{${5:supo date}}
+\newcommand{\svtime}{${6:supo time}}
+
+% Pull in the supo work template
+% uncomment this line for compiling on windows
+% \input{\string C:/Users/walls/UNI/supo-work-template/template/template.tex}
+% uncomment this line for compiling on windows/wsl
+\input{\string ~/UNI/supo-work-template/template/template.tex}
+
+% Additional \usepackage commands etc here
+
+\begin{document}
+
+$0
+
+\end{document}
+endsnippet
+
+
+# ┌───────────────┐
+# │ Exam template │
+# └───────────────┘
+snippet examtemplate "Exam template" wA
+\documentclass[12pt,a4paper]{article}
+
+\newcommand{\papernumber}{$1}
+\newcommand{\questionnumber}{$2}
+\newcommand{\studentid}{$3}
+
+\input{\string ~/UNI/supo-work-template/template/exampreamble.tex}
+
+\begin{document}
+$0
+\end{document}
+endsnippet
+
+# vim:ft=snippets
