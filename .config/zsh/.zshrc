@@ -65,6 +65,9 @@ bindkey "^H" backward-kill-word
 [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
 bindkey -s '^f' 'lfcd\n'
 
+# use ctrl-shift-l to clear screen, cos ctrl-l is used by vim-kitty-navigator
+bindkey "^[[108;6u" clear-screen
+
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
