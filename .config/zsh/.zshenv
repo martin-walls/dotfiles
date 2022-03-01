@@ -1,8 +1,8 @@
 # set PATH variables
 export PATH=~/.dotfiles/bin:~/bin:~/.local/bin${PATH}
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # coloured manpages
 export LESS_TERMCAP_mb=$'\e[1;32m'

@@ -39,7 +39,7 @@ alias cat='batcat --tabs=2'
 # fd (fdfind): alternative to find, for finding files in the filesystem
 alias fd='fdfind'
 
-alias v='vim'
+alias v='nvim'
 
 alias rg=". ranger"
 
