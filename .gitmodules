@@ -22,3 +22,24 @@
 [submodule ".config/nvim/pack/mrw/start/ultisnips"]
 	path = .config/nvim/pack/mrw/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".config/nvim/pack/mrw/start/commentary"]
+	path = .config/nvim/pack/mrw/start/commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".config/nvim/pack/mrw/start/fugitive"]
+	path = .config/nvim/pack/mrw/start/fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".config/nvim/pack/mrw/start/vim-kitty-navigator"]
+	path = .config/nvim/pack/mrw/start/vim-kitty-navigator
+	url = https://github.com/knubie/vim-kitty-navigator
+[submodule ".config/nvim/pack/mrw/start/polyglot"]
+	path = .config/nvim/pack/mrw/start/polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".config/nvim/pack/mrw/start/startify"]
+	path = .config/nvim/pack/mrw/start/startify
+	url = https://github.com/mhinz/vim-startify
+[submodule ".config/nvim/pack/mrw/start/vimtex"]
+	path = .config/nvim/pack/mrw/start/vimtex
+	url = https://github.com/lervag/vimtex
+[submodule ".config/nvim/pack/mrw/start/arduino"]
+	path = .config/nvim/pack/mrw/start/arduino
+	url = https://github.com/stevearc/vim-arduino

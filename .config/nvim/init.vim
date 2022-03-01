@@ -188,7 +188,12 @@ command Ter split terminal
 " ┌─────────┐
 " │ Plugins │
 " └─────────┘
+source ~/.config/nvim/plugin_config/arduino.vim
 source ~/.config/nvim/plugin_config/coc.vim
+source ~/.config/nvim/plugin_config/fugitive.vim
 source ~/.config/nvim/plugin_config/gitgutter.vim
 source ~/.config/nvim/plugin_config/lightline.vim
 source ~/.config/nvim/plugin_config/pear-tree.vim
+source ~/.config/nvim/plugin_config/startify.vim
+source ~/.config/nvim/plugin_config/ultisnips.vim
+source ~/.config/nvim/plugin_config/vimtex.vim

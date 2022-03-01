@@ -17,7 +17,7 @@ endfunction
 " ┌──────────┐
 " │ Mappings │
 " └──────────┘
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger = '<f2>'
+let g:UltiSnipsJumpForwardTrigger = '<f2>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-f2>'
 let g:UltiSnipsEditSplit = 'context'

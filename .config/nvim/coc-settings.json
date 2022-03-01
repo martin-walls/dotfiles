@@ -1,0 +1,30 @@
+{
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.errorSign": "✖",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
+  "git.enableGutters": true,
+  "git.addedSign.text": "┃",
+  "git.changedSign.text": "┃",
+  "git.removedSign.text": "▁",
+  "git.topRemovedSign.text": "▔",
+  "git.changeRemovedSign.text": "▔",
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tsserver.formatOnType": true,
+  "coc.preferences.formatOnType": true
+}
