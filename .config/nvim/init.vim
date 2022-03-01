@@ -28,6 +28,7 @@ set list
 set listchars=tab:»-,trail:·
 " tab completion
 set wildmode=longest,list,full
+set wildignorecase
 " don't wrap in middle of word
 set linebreak
 " mouse support
@@ -37,8 +38,6 @@ set foldmethod=manual
 set foldcolumn=2
 set fillchars+=fold:\ ,foldopen:┍,foldsep:│
 set foldtext=gitgutter#fold#foldtext()
-" minimum number of lines for fastfold to be enabled
-let g:fastfold_minlines=0
 
 set spelllang=en
 
@@ -101,8 +100,6 @@ inoremap <Up> <c-o>gk
 inoremap <Down> <c-o>gj
 
 " home/end for line as it appears on screen
-" set <Home>=OH
-" set <End>=OF
 noremap <Home> g^
 noremap <End> g$
 inoremap <Home> <c-o>g^
@@ -115,53 +112,22 @@ nnoremap <c-l> <c-w>l
 nnoremap <c-h> <c-w>h
 
 " Move lines up/down (and reindent to match new pos)
-" set <A-j>=j
-" set <A-k>=k
 nnoremap <A-j> :m.+1<CR>==
 nnoremap <A-k> :m.-2<CR>==
 inoremap <A-j> <Esc>:m.+1<CR>==gi
 inoremap <A-k> <Esc>:m.-2<CR>==gi
 vnoremap <A-j> :m'>+1<CR>gv=gv
 vnoremap <A-k> :m'<-2<CR>gv=gv
-" also allow using arrow keys
-map <A-Down> <A-j>
-map <A-Up> <A-k>
+" also using arrow keys
+nnoremap <A-Down> :m.+1<CR>==
+nnoremap <A-Up> :m.-2<CR>==
+inoremap <A-Down> <Esc>:m.+1<CR>==gi
+inoremap <A-Up> <Esc>:m.-2<CR>==gi
+vnoremap <A-Down> :m'>+1<CR>gv=gv
+vnoremap <A-Up> :m'<-2<CR>gv=gv
 
 " }}}
 
-" ┌──────────────────┐
-" │ General AutoCmds │
-" └──────────────────┘
-" {{{
-
-augroup GeneralAutocmd
-  au!
-  " strip trailing spaces on save
-  au BufWritePre * %s/\s\+$//e
-augroup END
-
-" cursorline only in focused window
-augroup CursorLine
-  au!
-  au VimEnter * setlocal cursorline
-  au WinEnter * setlocal cursorline
-  au BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
-
-" }}}
-
-" ┌────────────────┐
-" │ File templates │
-" └────────────────┘
-" {{{
-
-augroup file_templates
-  au!
-  " Supo work template and preamble
-  au BufNewFile mrw64*.tex 0r ~/.config/nvim/templates/supotemplate.tex
-  au BufNewFile preamble.tex 0r ~/.config/nvim/templates/supopreamble.tex
-augroup END
 
 " }}}
 
@@ -169,31 +135,23 @@ augroup END
 " │ Inbuilt Terminal Settings │
 " └───────────────────────────┘
 " {{{
-augroup TerminalConfig
-  au!
-  au TermOpen * setlocal nonumber foldcolumn=0
-augroup END
+" augroup TerminalConfig
+"   au!
+"   au TermOpen * setlocal nonumber foldcolumn=0
+" augroup END
 
-" go into normal mode in terminal
-if exists(':tnoremap')
-  tnoremap <Esc><Esc> <c-\><c-n>
-endif
+" " go into normal mode in terminal
+" if exists(':tnoremap')
+"   tnoremap <Esc><Esc> <c-\><c-n>
+" endif
 
-" open terminal in vertical split
-command Vter vsplit terminal
-" open terminal in horizontal split
-command Ter split terminal
+" " open terminal in vertical split
+" command Vter vsplit terminal
+" " open terminal in horizontal split
+" command Ter split terminal
 " }}}
 
 " ┌─────────┐
 " │ Plugins │
 " └─────────┘
-source ~/.config/nvim/plugin_config/arduino.vim
-source ~/.config/nvim/plugin_config/coc.vim
-source ~/.config/nvim/plugin_config/fugitive.vim
-source ~/.config/nvim/plugin_config/gitgutter.vim
-source ~/.config/nvim/plugin_config/lightline.vim
-source ~/.config/nvim/plugin_config/pear-tree.vim
-source ~/.config/nvim/plugin_config/startify.vim
-source ~/.config/nvim/plugin_config/ultisnips.vim
-source ~/.config/nvim/plugin_config/vimtex.vim
+runtime! packconfig/*
