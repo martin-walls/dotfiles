@@ -29,7 +29,7 @@ zstyle ':completion:*' menu select
 autoload -Uz compinit
 compinit
 # include hidden files in completion results without explicitly
-# specifying the dot
+# specifying the dot (TODO not working?)
 _comp_options+=(globdots)
 
 source ~/.git-prompt.sh
