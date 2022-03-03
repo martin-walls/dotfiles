@@ -21,6 +21,7 @@ set sidescrolloff=8
 set autowrite
 set autowriteall
 set clipboard=unnamedplus
+set cursorline
 " vertical window separator between splits
 set fillchars+=vert:┃
 " show whitespace: tabs, trailing spaces
@@ -128,8 +129,12 @@ vnoremap <A-Up> :m'<-2<CR>gv=gv
 
 " }}}
 
+augroup FileTemplates
+  au!
+  au BufNewFile mrw64*.tex 0r ~/.config/nvim/templates/supotemplate.tex
+  au BufNewFile preamble.tex 0r ~/.config/nvim/templates/supopreamble.tex
+augroup END
 
-" }}}
 
 " ┌───────────────────────────┐
 " │ Inbuilt Terminal Settings │
