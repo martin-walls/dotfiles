@@ -23,6 +23,4 @@ set foldexpr=vimtex#fold#level(v:lnum)
 set foldtext=vimtex#fold#text()
 set foldcolumn=4
 
-" file templates
-au BufNewFile mrw64*.tex 0r ~/.config/nvim/templates/supotemplate.tex
-au BufNewFile preamble.tex 0r ~/.config/nvim/templates/supopreamble.tex
+let g:coc_disable_hover_documentation = 1

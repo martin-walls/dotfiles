@@ -88,7 +88,9 @@ function! CocShowDocumentationIfNoDiagnostic(timer_id)
 endfunction
 
 function s:show_hover_documentation()
-  call timer_start(500, 'CocShowDocumentationIfNoDiagnostic')
+  if (!exists("g:coc_disable_hover_documentation"))
+    call timer_start(500, 'CocShowDocumentationIfNoDiagnostic')
+  endif
 endfunction
 
 augroup CocCursorHoldActions
