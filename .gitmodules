@@ -43,3 +43,6 @@
 [submodule ".config/nvim/pack/mrw/start/arduino"]
 	path = .config/nvim/pack/mrw/start/arduino
 	url = https://github.com/stevearc/vim-arduino
+[submodule ".config/nvim/pack/mrw/start/devicons"]
+	path = .config/nvim/pack/mrw/start/devicons
+	url = https://github.com/ryanoasis/vim-devicons.git

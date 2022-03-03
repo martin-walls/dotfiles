@@ -47,11 +47,13 @@ function! LightlinePercent() abort
 endfunction
 
 function! LightlineFiletype() abort
-  if winwidth(0) < 55
+  if winwidth(0) < 40
     return ''
+  elseif winwidth(0) < 55
+    return WebDevIconsGetFileTypeSymbol()
   endif
 
-  return &filetype
+  return &filetype . ' ' . WebDevIconsGetFileTypeSymbol()
 endfunction
 
 function! LightlineMode() abort
