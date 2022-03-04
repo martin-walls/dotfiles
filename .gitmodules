@@ -46,3 +46,6 @@
 [submodule ".config/nvim/pack/mrw/start/devicons"]
 	path = .config/nvim/pack/mrw/start/devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule ".config/awesome/widgets/awesome-wm-widgets"]
+	path = .config/awesome/awesome-wm-widgets
+	url = https://github.com/streetturtle/awesome-wm-widgets.git

@@ -88,6 +88,8 @@ vnoremap > >gv
 " allow gf to edit non-existent files
 map gf :edit <cfile><CR>
 
+noremap <silent> <Esc> :let @/=""<CR><Esc>
+
 " }}}
 
 " ┌──────────┐
