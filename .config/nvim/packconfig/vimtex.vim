@@ -59,3 +59,5 @@ let g:vimtex_quickfix_ignore_filters = [
   \ "\\fancy.*option without twoside",
   \ "Marginpar on page",
   \ ]
+" never open quickfix window automatically
+let g:vimtex_quickfix_mode = 0
