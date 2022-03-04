@@ -6,3 +6,6 @@
 autorandr --force
 
 flameshot
+
+# network manager tray icon
+nm-applet
