@@ -12,6 +12,7 @@
 HISTFILE=~/.cache/zshhistory
 HISTSIZE=10000
 SAVEHIST=10000
+setopt share_history
 
 # enable colours
 autoload -U colors && colors
@@ -65,8 +66,11 @@ bindkey "^H" backward-kill-word
 [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
 bindkey -s '^f' 'lfcd\n'
 
-# use ctrl-shift-l to clear screen, cos ctrl-l is used by vim-kitty-navigator
-bindkey "^[[108;6u" clear-screen
+# use ctrl-n to clear screen, cos ctrl-l is used by vim-kitty-navigator
+bindkey "^N" clear-screen
+
+# ssh handler
+source ~/.config/zsh/ssh_agent_handler.zsh
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
