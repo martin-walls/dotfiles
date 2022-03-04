@@ -13,9 +13,10 @@
 	df = difftool --no-symlinks --dir-diff
 [core]
 	excludesFile = /home/martin/.gitignore_global
-	editor = vim
+	editor = nvim
 	eol = lf
 	autocrlf = input
+	pager = less -S
 [include]
 	path = ~/.gitconfig_local
 [init]
