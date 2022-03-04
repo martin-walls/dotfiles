@@ -1,5 +1,5 @@
 # set PATH variables
-export PATH=~/.dotfiles/bin:~/bin:~/.local/bin${PATH}
+export PATH=~/.dotfiles/bin:~/bin:~/.local/bin:${PATH}
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -27,6 +27,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # opam configuration
 test -r /home/martin/.opam/opam-init/init.sh && . /home/martin/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export GO111MODULE=on
 
 # filetype icons
 export LF_ICONS="\
