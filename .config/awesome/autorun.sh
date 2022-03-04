@@ -1,3 +1,8 @@
 #!/bin/bash
 
-~/.config/screenlayout/main.sh
+# don't need this with autorandr
+# ~/.config/screenlayout/main.sh
+# autorandr --change
+autorandr --force
+
+flameshot

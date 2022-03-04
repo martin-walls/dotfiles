@@ -22,6 +22,15 @@ require("awful.hotkeys_popup.keys")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
+-- volume widget
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+-- battery widget
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+-- logout menu widget
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+-- run prompt
+local run_shell = require("awesome-wm-widgets.run-shell.run-shell")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -222,12 +231,21 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             mylauncher,
             s.mytaglist,
-            s.mypromptbox,
+            -- s.mypromptbox,
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            volume_widget{
+                widget_type = "arc"
+            },
+            batteryarc_widget({
+                show_current_level = true,
+                show_notification_mode = "on_click",
+                warning_msg_position = "top_right"
+            }),
+            logout_menu_widget(),
+            -- mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -328,7 +346,10 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    --           {description = "run prompt", group = "launcher"}),
+    awful.key({ modkey },            "r",
+        function () run_shell.launch() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -343,7 +364,32 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    -- sleep
+    awful.key({modkey, "Control" }, "l",
+        function ()
+            awful.util.spawn("sync")
+            awful.util.spawn("xautolock -locknow")
+        end),
+    -- volume controls
+    awful.key({ }, "XF86AudioRaiseVolume",
+        function ()
+            -- awful.util.spawn("amixer -D pulse sset Master 5%+", false)
+            -- awful.util.spawn("notify-send -t 500 -- 'Increase volume'")
+            volume_widget:inc(5)
+        end),
+    awful.key({ }, "XF86AudioLowerVolume",
+        function ()
+            -- awful.util.spawn("amixer -D pulse sset Master 5%-", false)
+            -- awful.util.spawn("notify-send -t 500 -- 'Decrease volume'")
+            volume_widget:dec(5)
+        end),
+    awful.key({ }, "XF86AudioMute",
+        function ()
+            -- awful.util.spawn("amixer -D pulse sset Master toggle", false)
+            -- awful.util.spawn("notify-send -t 500 -- 'Mute'")
+            volume_widget:toggle()
+        end)
 )
 
 clientkeys = gears.table.join(
@@ -507,7 +553,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false } -- Disable titlebars
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -581,5 +627,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+awful.spawn.with_shell("~/.config/awesome/autolocker.sh")
+awful.spawn.once("xfce4-power-manager")
+awful.spawn.with_shell("~/.config/awesome/xfce4-power-manager-config.sh")
+
 
 -- vim:foldmethod=marker
