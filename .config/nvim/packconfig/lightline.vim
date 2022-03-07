@@ -12,7 +12,7 @@ let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename', 'modified' ] ],
-  \   'right': [ [ 'gitbranch' ], [ 'percent', 'lineinfo' ], [ 'filetype' ] ]
+  \   'right': [ [ 'gitbranch' ], [ 'lineinfo' ], [ 'filetype' ] ]
   \ },
   \ 'inactive': {
   \   'left': [[ 'filename', 'modified' ]]
