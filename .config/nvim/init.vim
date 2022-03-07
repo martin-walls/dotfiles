@@ -70,6 +70,8 @@ nnoremap <leader>R :source $MYVIMRC<CR>
 nnoremap <F6> :%s/\<<C-r><C-w>\>//g<Left><Left>
 " general find and replace shortcut
 nnoremap S :%s//g<Left><Left>
+" search for word under cursor
+nnoremap F /<C-r><C-w><CR>
 
 " add undo action per word
 inoremap <Space> <Space><C-g>u
