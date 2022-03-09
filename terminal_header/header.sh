@@ -1,26 +1,30 @@
 #!/bin/bash
 
-HEADER_FILE="$HOME/.dotfiles/terminal_header/asciiheader.txt"
+HEADER_FILE="$HOME/.dotfiles/terminal_header/asciiheader_small.txt"
+HEADER_WIDTH=19
 QUOTE_FILE="$HOME/.dotfiles/terminal_header/quotes.txt"
 # QUOTE_FILE="$HOME/.dotfiles/terminal_header/bibleverses.txt"
+# QUOTE_COLOR="\e[30m"
+QUOTE_COLOR=$(tput setaf 5)
+NORMAL=$(tput sgr0)
 declare -i TERM_COLS="$(tput cols)"
 
 function print_header {
   # get maximum width of header
-  declare -i maxw=0
-  while IFS= read -r line ; do
-    if [[ ${#line} -gt $maxw ]] ; then
-      maxw="${#line}"
-    fi
-  done < "$1"
+  # declare -i maxw=0
+  # while IFS= read -r line ; do
+  #   if [[ ${#line} -gt $maxw ]] ; then
+  #     maxw="${#line}"
+  #   fi
+  # done < "$1"
 
-  if [[ $maxw -ge $TERM_COLS ]] ; then
-    printf "%s" "$(<"$1")"
+  if [[ $HEADER_WIDTH -ge $TERM_COLS ]] ; then
+    printf "%s" "$(<"$HEADER_FILE")"
     return 0
   fi
 
   # calculate how much padding is needed
-  declare -i padding_len="$(( (TERM_COLS - maxw) / 2 ))"
+  declare -i padding_len="$(( (TERM_COLS - HEADER_WIDTH) / 2 ))"
   # padding="$(printf "a%.0s" {1.."$padding_len"})"
   padding=""
   for ((i=0; i < $padding_len; i++)); do
@@ -29,8 +33,8 @@ function print_header {
 
   # print header with padding
   while IFS= read -r line ; do
-    printf "%s%s\n" "$padding" "$line"
-  done < "$1"
+    printf "%s%b\n" "$padding" "$line"
+  done < "$HEADER_FILE"
 
   return 0
 }
@@ -84,9 +88,9 @@ function print_quote {
       for ((i=0; i < $extrapadding_len; i++)) ; do
         extrapadding="$extrapadding "
       done
-      printf "%s%s%s\n" "$padding" "$extrapadding" "$line"
+      printf "%s%s$QUOTE_COLOR%s$NORMAL\n" "$padding" "$extrapadding" "$line"
     else
-      printf "%s%s\n" "$padding" "$line"
+      printf "%s$QUOTE_COLOR%s$NORMAL\n" "$padding" "$line"
     fi
   done
 
@@ -94,6 +98,7 @@ function print_quote {
   return 0
 }
 
-print_header "$HEADER_FILE" | lolcat
-print_quote | lolcat
+print_header #| lolcat
+printf "\n"
+print_quote #| lolcat
 echo
