@@ -7,6 +7,9 @@ set laststatus=2
 " disable default -- INSERT -- etc
 set noshowmode
 
+" to show bufferlist
+set showtabline=2
+
 let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ 'active': {
@@ -17,6 +20,10 @@ let g:lightline = {
   \ 'inactive': {
   \   'left': [[ 'filename', 'modified' ]]
   \ },
+  \ 'tabline': {
+  \   'left': [[ 'buffers' ]],
+  \   'right': [[ ]]
+  \ },
   \ 'component_function': {
   \   'gitbranch': 'LightlineGitBranch',
   \   'lineinfo': 'LightlineLineInfo',
@@ -24,7 +31,20 @@ let g:lightline = {
   \   'filetype': 'LightlineFiletype',
   \   'mode': 'LightlineMode'
   \ },
+  \ 'component_expand': {
+  \   'buffers': 'lightline#bufferline#buffers'
+  \ },
+  \ 'component_type': {
+  \   'buffers': 'tabsel'
+  \ },
+  \ 'component_raw': {
+  \   'buffers': 1
+  \ },
   \ }
+" \ 'separator': {
+" \   'left': '',
+" \   'right': ''
+" \ }
 
 function! LightlineLineInfo() abort
   if winwidth(0) < 75

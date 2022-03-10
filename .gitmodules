@@ -49,3 +49,6 @@
 [submodule ".config/awesome/widgets/awesome-wm-widgets"]
 	path = .config/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets.git
+[submodule ".config/nvim/pack/mrw/start/lightline-bufferline"]
+	path = .config/nvim/pack/mrw/start/lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline.git
