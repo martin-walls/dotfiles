@@ -12,10 +12,18 @@ call extend(b:pear_tree_pairs, g:pear_tree_pairs)
 setlocal spell
 
 " autosave on write
-augroup autosave_on_write
-  au!
-  au TextChanged,TextChangedI <buffer> if &readonly == 0 && filereadable(bufname('%')) | silent write | endif
-augroup END
+"   Put it in a function so it can be called again if needed.
+"   For some reason switching away from a Tex buffer and back again
+"   disables the autosave, so it's useful to have the option to
+"   enable it again.
+function! TexEnableAutoSaveOnWrite()
+  augroup autosave_on_write
+    au!
+    au TextChanged,TextChangedI <buffer> if &readonly == 0 && filereadable(bufname('%')) | silent write | endif
+  augroup END
+endfunction
+
+call TexEnableAutoSaveOnWrite()
 
 " vimtex folding
 set foldmethod=expr
