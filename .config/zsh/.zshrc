@@ -72,6 +72,15 @@ bindkey "^N" clear-screen
 # ssh handler
 source ~/.config/zsh/ssh_agent_handler.zsh
 
+# Better history searching
+# See https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey $key[Up] up-line-or-beginning-search   # Up
+bindkey $key[Down] down-line-or-beginning-search # Down
+
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
