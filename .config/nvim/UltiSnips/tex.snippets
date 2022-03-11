@@ -158,6 +158,10 @@ snippet bfi "Figure" bA
 \end{figure}
 endsnippet
 
+snippet inclgr "Include graphics" wA
+\includegraphics[width=$3${2:\linewidth}]{$1}$0
+endsnippet
+
 snippet fig "Figure reference" w
 Figure~\ref{fig:$1}$0
 endsnippet
@@ -215,13 +219,17 @@ $0
 \end{align*}
 endsnippet
 
+# snippet mk "Inline math" wA
+# $${1}$`!p
+# if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';']:
+# 	snip.rv = ' '
+# else:
+# 	snip.rv = ''
+# `$2
+# endsnippet
+
 snippet mk "Inline math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';']:
-	snip.rv = ' '
-else:
-	snip.rv = ''
-`$2
+$$1$$0
 endsnippet
 
 context "math()"
@@ -557,10 +565,10 @@ endsnippet
 
 
 ########## OTHER ##########
-priority 10
-snippet ... "ldots" iA
-\ldots
-endsnippet
+# priority 10
+# snippet ... "ldots" iA
+# \ldots
+# endsnippet
 
 priority 100
 snippet \... "literal ellipsis" iA
