@@ -5,7 +5,7 @@
 # autorandr --change
 autorandr --force
 
-flameshot
+flameshot &
 
 # network manager tray icon
-nm-applet
+nm-applet &

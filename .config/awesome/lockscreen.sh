@@ -17,4 +17,4 @@
 #   -i /tmp/lock_screenshot_blur.png \
 #   -e -t
 
-~/bin/i3lockmore/i3lockmore --blur 1.5 --lock-icon ~/bin/i3lockmore/lock-icon.png
+# ~/bin/i3lockmore/i3lockmore --blur 1.5 --lock-icon ~/bin/i3lockmore/lock-icon.png
