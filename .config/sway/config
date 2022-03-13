@@ -233,6 +233,12 @@ bindsym $mod+r mode "resize"
     bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
     bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
     bindsym XF86AudioMute exec amixer sset Master toggle
+#
+# Media controls
+#
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioNext exec playerctl next
+    bindsym XF86AudioPrev exec playerctl previous
 
 #
 # Status Bar:
