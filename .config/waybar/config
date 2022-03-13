@@ -8,7 +8,7 @@
     "max-length": 50
   },
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""],
     "states": {
       "full": 95,
@@ -31,14 +31,15 @@
     "tooltip": false
   },
   "network": {
-    "format-wifi": "直{essid}",
+    "format": "直 {essid}",
     "format-ethernet": " eth",
     "format-disconnected": "",
     "max-length": 20,
-    "tooltip": false
+    "tooltip": false,
+    "interval": 30
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon}  {format_source}",
     "format-muted": "0% {icon}",
     "format-source": "{volume}% ",
@@ -52,7 +53,7 @@
     "on-click": "pavucontrol"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
+    "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"
