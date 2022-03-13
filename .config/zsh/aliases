@@ -35,7 +35,7 @@ alias gpl='git pull'
 alias gg='git lgb'
 
 # nicer cat output
-alias cat='batcat --tabs=2'
+alias cat='bat --tabs=2'
 # fd (fdfind): alternative to find, for finding files in the filesystem
 alias fd='fdfind'
 

@@ -82,7 +82,8 @@ bindkey $key[Up] up-line-or-beginning-search   # Up
 bindkey $key[Down] down-line-or-beginning-search # Down
 
 # Load plugins (should be at end of .zshrc)
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -1,0 +1,63 @@
+{
+  "layer": "top",
+  "spacing": 4, // gaps between modules (px)
+  "modules-left": ["cpu", "memory", "battery", "pulseaudio", "backlight"],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": ["tray", "network", "clock"],
+  "sway/window": {
+    "max-length": 50
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "states": {
+      "full": 95,
+      "warning": 20,
+      "critical": 15
+    },
+    "tooltip": false
+  },
+  "clock": {
+    "format": " {:%H:%M}",
+    // "tooltip-format": "{:%a %d %b %H:%M}"
+    "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "cpu": {
+    "format": " {usage:2}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {percentage:2}%",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "直{essid}",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": " Disconnected",
+    "max-length": 20,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-muted": "0% {icon}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+  "sway/workspaces": {
+    "disable-scroll": true
+  }
+}

@@ -1,0 +1,89 @@
+@define-color red #e06c75;
+@define-color blue #61afef;
+@define-color green #98c379;
+@define-color purple #c678dd;
+
+@define-color bgcolor #282c34;
+@define-color fgcolor #abb2bf;
+
+@define-color bat-charging @green;
+@define-color bat-critical @red;
+@define-color bat-warning @red;
+@define-color wksp-hover @purple;
+@define-color wksp-active @blue;
+@define-color audio-muted @red;
+@define-color audio-bt @blue;
+
+/* reset all styles */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#waybar {
+  background: @bgcolor;
+  font-family: JetBrainsMono Nerd Font Mono;
+  color: @fgcolor;
+  font-size: large;
+}
+
+#workspaces button {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: @fgcolor;
+}
+#workspaces button.focused {
+  background: @wksp-active;
+  color: @bgcolor;
+}
+#workspaces button:hover {
+  background: @wksp-hover;
+  color: @bgcolor;
+  transition: none;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#cpu,
+#memory,
+#pulseaudio,
+#battery,
+#backlight,
+#clock,
+#network {
+  background: @bgcolor;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#battery.charging {
+  color: @bat-charging;
+}
+
+#battery.warning:not(.charging) {
+  color: @bat-warning;
+}
+
+@keyframes bat-blink-critical {
+  to {
+    background-color: @bat-critical;
+    color: @bgcolor;
+  }
+}
+#battery.critical:not(.charging) {
+  animation-name: bat-blink-critical;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#pulseaudio.muted {
+  color: @audio-muted;
+}
+#pulseaudio.bluetooth {
+  color: @audio-bt;
+}
