@@ -1,7 +1,11 @@
 #!/bin/bash
 
 if [[ $# != 3 ]]; then
-	echo "Usage: nm-eduroam.sh <username> <password> <cert>"
+	# echo -e "Usage: nm-eduroam.sh <username> <password> <cert>\n\nUse the Eduroam CAT tool to generate the certificate."
+	echo "Usage: nm-eduroam.sh <username> <password> <cert>
+
+Use the Eduroam CAT tool to generate the certificate."
+	exit 1
 fi
 
 username=$1
