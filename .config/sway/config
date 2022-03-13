@@ -18,7 +18,7 @@ set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu wofi --show run
 
 ### Output configuration
 #
@@ -51,10 +51,10 @@ output * bg ~/.dotfiles/wallpaper/tuxwithfriends.png fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w \
-    timeout 900 'swaylock' \
+    timeout 900 '~/.config/swaylock/lock.sh' \
     timeout 905 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock'
+    before-sleep '~/.config/swaylock/lock.sh'
 
 ### Input configuration
 #
@@ -86,12 +86,14 @@ input type:touchpad {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    # also mod+x cos it's easier to do one-handed
+    bindsym $mod+x exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -105,6 +107,9 @@ input type:touchpad {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Lock screen (with ctrl as well because l is part of direction keys)
+    bindsym $mod+Ctrl+l exec $HOME/.config/swaylock/lock.sh
 #
 # Moving around:
 #
@@ -166,18 +171,18 @@ input type:touchpad {
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+p floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Shift+p focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent

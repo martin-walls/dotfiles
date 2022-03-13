@@ -1,0 +1,38 @@
+@define-color bgcolor #282c34;
+@define-color fgcolor #abb2bf;
+@define-color bgcolor-lighter #3b414c;
+
+@define-color red #e06c75;
+@define-color blue #61afef;
+@define-color green #98c379;
+@define-color purple #c678dd;
+
+window {
+  font-family: JetBrainsMono Nerd Font Mono;
+  background-color: transparent;
+  color: @fgcolor;
+}
+
+#input {
+  background-color: @bgcolor;
+  color: @fgcolor;
+  border: 2px solid @blue;
+  border-radius: 0;
+  margin-bottom: 4px;
+}
+
+#scroll {
+  background-color: @bgcolor;
+  border: 2px solid @bgcolor-lighter;
+  padding: 4px;
+}
+
+#entry {
+  padding: 8px 20px;
+}
+
+#entry:selected {
+  background-color: @bgcolor-lighter;
+  /* disable selection outline */
+  outline: none;
+}
