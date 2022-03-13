@@ -87,3 +87,11 @@
 #pulseaudio.bluetooth {
   color: @audio-bt;
 }
+
+#custom-spotify.playing {
+  color: @green;
+}
+
+#network.disconnected {
+  color: @red;
+}
