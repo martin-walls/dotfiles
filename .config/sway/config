@@ -51,8 +51,8 @@ output * bg ~/.dotfiles/wallpaper/tuxwithfriends.png fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 exec swayidle -w \
-    timeout 900 '~/.config/swaylock/lock.sh' \
-    timeout 905 'swaymsg "output * dpms off"' \
+    timeout 600 '~/.config/swaylock/lock.sh' \
+    timeout 605 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep '~/.config/swaylock/lock.sh'
 
@@ -110,6 +110,8 @@ input type:touchpad {
 
     # Lock screen (with ctrl as well because l is part of direction keys)
     bindsym $mod+Ctrl+l exec $HOME/.config/swaylock/lock.sh
+    # Suspend
+    bindsym $mod+Ctrl+Shift+l exec systemctl suspend
 #
 # Moving around:
 #
@@ -236,9 +238,9 @@ bindsym $mod+r mode "resize"
 #
 # Media controls
 #
-    bindsym XF86AudioPlay exec playerctl play-pause
-    bindsym XF86AudioNext exec playerctl next
-    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+    bindsym XF86AudioNext exec playerctl --player=spotify next
+    bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 #
 # Status Bar:
