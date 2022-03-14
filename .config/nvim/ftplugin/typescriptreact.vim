@@ -1,4 +1,4 @@
 " ┌──────────────────────────┐
 " │ ftplugin/typescriptreact │
 " └──────────────────────────┘
-source ~/.vim/ftplugin/javascript.vim
+source ~/.config/nvim/ftplugin/javascript.vim
