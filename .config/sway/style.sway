@@ -1,0 +1,10 @@
+# wallpaper
+output * bg ~/.dotfiles/wallpaper/tuxwithfriends.png fill
+
+# 10px border around each window
+gaps inner 10
+
+# no window title bars; 2px border
+default_border pixel 2
+
+# vim:ft=swayconfig

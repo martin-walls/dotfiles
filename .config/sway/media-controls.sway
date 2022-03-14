@@ -1,0 +1,14 @@
+#
+# Volume controls
+#
+bindsym --locked XF86AudioRaiseVolume exec amixer sset Master 5%+
+bindsym --locked XF86AudioLowerVolume exec amixer sset Master 5%-
+bindsym --locked XF86AudioMute exec amixer sset Master toggle
+#
+# Media controls
+#
+bindsym --locked XF86AudioPlay exec playerctl --player=spotify play-pause
+bindsym --locked XF86AudioNext exec playerctl --player=spotify next
+bindsym --locked XF86AudioPrev exec playerctl --player=spotify previous
+
+# vim:ft=swayconfig
