@@ -1,9 +1,24 @@
 {
   "layer": "top",
   "spacing": 4, // gaps between modules (px)
-  "modules-left": ["cpu", "memory", "battery", "pulseaudio", "backlight"],
-  "modules-center": ["sway/workspaces"],
-  "modules-right": ["tray", "custom/spotify", "network", "clock"],
+  "fixed-center": false,
+  // "modules-left": ["idle_inhibitor", "cpu", "memory", "battery", "pulseaudio", "backlight"],
+  // "modules-center": ["sway/workspaces"],
+  // "modules-right": ["tray", "custom/spotify", "network", "clock"],
+  "modules-left": ["sway/workspaces"],
+  // "modules-center": [],
+  "modules-right": [
+    "custom/spotify",
+    "tray",
+    // "cpu",
+    // "memory",
+    "idle_inhibitor",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "network",
+    "clock",
+  ],
   "sway/window": {
     "max-length": 50
   },
@@ -68,5 +83,14 @@
     "exec-if": "pgrep spotify",
     "escape": true,
     "on-click": "swaymsg '[title=\"Spotify\"] focus'"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip": false
   }
 }
+// vim:commentstring=//\ %s:ft=conf

@@ -47,6 +47,7 @@
   text-shadow: inherit;
 }
 
+#idle_inhibitor,
 #cpu,
 #memory,
 #pulseaudio,
