@@ -7,7 +7,7 @@
 [[ $- != *i* ]] && return
 
 # show terminal header
-~/.dotfiles/terminal_header/header.sh
+~/.dotfiles/terminal_header/header_minimal.sh
 
 HISTFILE=~/.cache/zshhistory
 HISTSIZE=10000
