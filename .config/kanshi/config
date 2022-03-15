@@ -3,6 +3,6 @@
 }
 
 {
-  output eDP-1 position 2560,360 scale 2
+  output eDP-1 position 2560,360 scale 1.5
   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
 }
