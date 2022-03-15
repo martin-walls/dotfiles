@@ -1,1 +1,0 @@
-/home/martin/.vim/pack/mrw/start/vim-kitty-navigator/*.py
