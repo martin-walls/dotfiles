@@ -9,7 +9,7 @@ set $ws8   8
 set $ws9   9
 set $ws0   10
 set $wsF1  11:阮
-set $wsF2  12
+set $wsF2  12:K
 set $wsF3  13
 set $wsF4  14
 set $wsF5  15
