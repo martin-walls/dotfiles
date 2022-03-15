@@ -56,7 +56,7 @@
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{volume}% {icon}  {format_source}",
-    "format-muted": "0% {icon}",
+    "format-muted": "婢",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
@@ -82,7 +82,7 @@
     "exec": "~/.config/waybar/modules/spotify.sh",
     "exec-if": "pgrep spotify",
     "escape": true,
-    "on-click": "swaymsg '[title=\"Spotify\"] focus'"
+    "on-click": "swaymsg '[class=\"^Spotify$\"] focus'"
   },
   "idle_inhibitor": {
     "format": "{icon}",
