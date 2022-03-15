@@ -32,6 +32,8 @@ test -r /home/martin/.opam/opam-init/init.sh && . /home/martin/.opam/opam-init/i
 export PATH=$PATH:/usr/local/go/bin
 export GO111MODULE=on
 
+export FZF_DEFAULT_OPTS='--height 40% --reverse'
+
 # filetype icons
 export LF_ICONS="\
 tw=:\

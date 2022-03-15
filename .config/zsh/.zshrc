@@ -118,6 +118,9 @@ zle -N down-line-or-beginning-search
 bindkey $key[Up] up-line-or-beginning-search   # Up
 bindkey $key[Down] down-line-or-beginning-search # Down
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Load plugins (should be at end of .zshrc)
 # source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
