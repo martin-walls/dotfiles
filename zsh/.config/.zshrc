@@ -133,12 +133,6 @@ bindkey "^H" backward-kill-word
 [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
 bindkey -s '^f' 'lfcd\n'
 
-# use ctrl-n to clear screen, cos ctrl-l is used by vim-kitty-navigator
-bindkey "^N" clear-screen
-
-# ssh handler
-source ~/.config/zsh/ssh_agent_handler.zsh
-
 # Better history searching
 # See https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
 autoload -U up-line-or-beginning-search
