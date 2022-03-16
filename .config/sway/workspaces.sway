@@ -1,25 +1,27 @@
-set $ws1   1
-set $ws2   2
-set $ws3   3
-set $ws4   4
-set $ws5   5
-set $ws6   6
-set $ws7   7
-set $ws8   8
-set $ws9   9
-set $ws0   10
-set $wsF1  11:阮
-set $wsF2  12:K
-set $wsF3  13
-set $wsF4  14
-set $wsF5  15
-set $wsF6  16
-set $wsF7  17
-set $wsF8  18
-set $wsF9  19
-set $wsF10 20
-set $wsF11 21
-set $wsF12 22
+# on number keys
+set $ws1  1
+set $ws2  2
+set $ws3  3
+set $ws4  4
+set $ws5  5
+set $ws6  6
+set $ws7  7
+set $ws8  8
+set $ws9  9
+set $ws10 10
+# on F-keys
+set $ws11 11:阮
+set $ws12 12:K
+set $ws13 13
+set $ws14 14
+set $ws15 15
+set $ws16 16
+set $ws17 17
+set $ws18 18
+set $ws19 19
+set $ws20 20
+set $ws21 21
+set $ws22 22
 
 # Switch to workspace
 bindsym $mod+1   workspace $ws1
@@ -31,19 +33,19 @@ bindsym $mod+6   workspace $ws6
 bindsym $mod+7   workspace $ws7
 bindsym $mod+8   workspace $ws8
 bindsym $mod+9   workspace $ws9
-bindsym $mod+0   workspace $ws0
-bindsym $mod+F1  workspace $wsF1
-bindsym $mod+F2  workspace $wsF2
-bindsym $mod+F3  workspace $wsF3
-bindsym $mod+F4  workspace $wsF4
-bindsym $mod+F5  workspace $wsF5
-bindsym $mod+F6  workspace $wsF6
-bindsym $mod+F7  workspace $wsF7
-bindsym $mod+F8  workspace $wsF8
-bindsym $mod+F9  workspace $wsF9
-bindsym $mod+F10 workspace $wsF10
-bindsym $mod+F11 workspace $wsF11
-bindsym $mod+F12 workspace $wsF12
+bindsym $mod+0   workspace $ws10
+bindsym $mod+F1  workspace $ws11
+bindsym $mod+F2  workspace $ws12
+bindsym $mod+F3  workspace $ws13
+bindsym $mod+F4  workspace $ws14
+bindsym $mod+F5  workspace $ws15
+bindsym $mod+F6  workspace $ws16
+bindsym $mod+F7  workspace $ws17
+bindsym $mod+F8  workspace $ws18
+bindsym $mod+F9  workspace $ws19
+bindsym $mod+F10 workspace $ws20
+bindsym $mod+F11 workspace $ws21
+bindsym $mod+F12 workspace $ws22
 # Move focused container to workspace
 bindsym $mod+Shift+1   move container to workspace $ws1
 bindsym $mod+Shift+2   move container to workspace $ws2
@@ -54,23 +56,27 @@ bindsym $mod+Shift+6   move container to workspace $ws6
 bindsym $mod+Shift+7   move container to workspace $ws7
 bindsym $mod+Shift+8   move container to workspace $ws8
 bindsym $mod+Shift+9   move container to workspace $ws9
-bindsym $mod+Shift+0   move container to workspace $ws0
-bindsym $mod+Shift+F1  move container to workspace $wsF1
-bindsym $mod+Shift+F2  move container to workspace $wsF2
-bindsym $mod+Shift+F3  move container to workspace $wsF3
-bindsym $mod+Shift+F4  move container to workspace $wsF4
-bindsym $mod+Shift+F5  move container to workspace $wsF5
-bindsym $mod+Shift+F6  move container to workspace $wsF6
-bindsym $mod+Shift+F7  move container to workspace $wsF7
-bindsym $mod+Shift+F8  move container to workspace $wsF8
-bindsym $mod+Shift+F9  move container to workspace $wsF9
-bindsym $mod+Shift+F10 move container to workspace $wsF10
-bindsym $mod+Shift+F11 move container to workspace $wsF11
-bindsym $mod+Shift+F12 move container to workspace $wsF12
+bindsym $mod+Shift+0   move container to workspace $ws10
+bindsym $mod+Shift+F1  move container to workspace $ws11
+bindsym $mod+Shift+F2  move container to workspace $ws12
+bindsym $mod+Shift+F3  move container to workspace $ws13
+bindsym $mod+Shift+F4  move container to workspace $ws14
+bindsym $mod+Shift+F5  move container to workspace $ws15
+bindsym $mod+Shift+F6  move container to workspace $ws16
+bindsym $mod+Shift+F7  move container to workspace $ws17
+bindsym $mod+Shift+F8  move container to workspace $ws18
+bindsym $mod+Shift+F9  move container to workspace $ws19
+bindsym $mod+Shift+F10 move container to workspace $ws20
+bindsym $mod+Shift+F11 move container to workspace $ws21
+bindsym $mod+Shift+F12 move container to workspace $ws22
 
 # go to previous/next workspace
-bindsym $mod+i workspace prev
-bindsym $mod+o workspace next
+bindsym $mod+i workspace prev_on_output --create
+bindsym $mod+o workspace next_on_output --create
+
+# go to the next currently unused workspace
+set $workspace_new expr $(~/.config/sway/get-unused-workspace.sh) | xargs swaymsg workspace
+bindsym $mod+n exec $workspace_new
 
 # Move workspaces between monitors
 bindsym $mod+Control+Shift+Left move workspace to output left
@@ -81,6 +87,6 @@ bindsym $mod+Control+Shift+$right move workspace to output right
 
 # default workspaces for programs
 # TODO make this work?
-# assign [class="^Spotify$"] $wsF1
+# assign [class="^Spotify$"] $ws11
 
 # vim:ft=swayconfig
