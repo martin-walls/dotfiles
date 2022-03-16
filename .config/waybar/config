@@ -55,7 +55,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth": " {icon} {volume}%",
     "format-muted": "婢",
     "format-source": "{volume}% ",
     "format-source-muted": "",
@@ -65,7 +65,8 @@
       "headset": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click-right": "pavucontrol",
+    "tooltip": false
   },
   "backlight": {
     "format": "{icon} {percent}%",
