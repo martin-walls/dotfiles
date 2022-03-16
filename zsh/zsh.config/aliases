@@ -25,15 +25,6 @@ alias rm='rm -I'
 alias mv='mv -i'
 alias cp='cp -i'
 
-# Git aliases
-alias ga='git add'
-alias gs='git st'
-alias gc='git cm'
-alias gp='git push'
-alias gd='git df'
-alias gpl='git pull'
-alias gg='git lgb'
-
 # nicer cat output
 alias cat='bat --tabs=2'
 # fd (fdfind): alternative to find, for finding files in the filesystem

@@ -6,6 +6,36 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Put environment variables in ~/.localrc. So they stay out of
+# dotfiles repo, cos they're only really useful on the local machine.
+if [[ -a ~/.localrc ]]; then
+	source ~/.localrc
+fi
+
+# all zsh files from dotfiles (one level deep, so we don't get files fron
+# zsh plugin submodules)
+typeset -U config_files
+config_files=($HOME/.dotfiles/*/*.zsh)
+
+# load path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+	echo $file
+	source $file
+done
+
+# load general zsh files (everything other than path files)
+for file in ${config_files:#*/path.zsh}
+do
+	source $file
+	echo $file
+done
+
+unset config_files
+
+
+
+
 # show terminal header
 ~/.dotfiles/terminal_header/header_minimal.sh
 

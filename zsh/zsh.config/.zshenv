@@ -1,5 +1,5 @@
 # set PATH variables
-export PATH=~/.dotfiles/bin:~/bin:~/.local/bin:${PATH}
+# export PATH=~/.dotfiles/bin:~/bin:~/.local/bin:${PATH}
 
 export EDITOR='nvim'
 export VISUAL='nvim'
