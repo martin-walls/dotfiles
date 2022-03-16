@@ -1,0 +1,1 @@
+../.config/kanshi/reload-kanshi.sh
