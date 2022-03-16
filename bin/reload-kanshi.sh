@@ -1,1 +1,1 @@
-../.config/kanshi/reload-kanshi.sh
+../kanshi/reload-kanshi.sh

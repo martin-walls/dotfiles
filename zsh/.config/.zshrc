@@ -20,7 +20,6 @@ config_files=($HOME/.dotfiles/*/*.zsh)
 # load path files
 for file in ${(M)config_files:#*/path.zsh}
 do
-	echo $file
 	source $file
 done
 
@@ -28,11 +27,12 @@ done
 for file in ${config_files:#*/path.zsh}
 do
 	source $file
-	echo $file
 done
 
 unset config_files
 
+fpath=($HOME/.dotfiles/functions $fpath)
+autoload -U $HOME/.dotfiles/functions/*(:t)
 
 
 
@@ -47,7 +47,7 @@ setopt share_history
 # enable colours
 autoload -U colors && colors
 
-eval "$(dircolors ~/.dircolors)"
+eval "$(dircolors ~/.dotfiles/zsh/.dircolors)"
 
 # use emacs keybindings
 bindkey -e

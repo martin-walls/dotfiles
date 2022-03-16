@@ -1,4 +1,4 @@
-# vim:filetype=zsh
+# General system aliases
 
 # enable colors of commands
 alias ls='ls --color'
@@ -13,12 +13,6 @@ alias ll='ls -lAFh'
 # parent directory
 alias ..='cd ..'
 
-# mkdir and cd into it
-mcd () {
-  mkdir -p $1
-  cd $1
-}
-
 # confirmation before deleting
 alias rm='rm -I'
 # confirmation before overwrite
@@ -27,12 +21,3 @@ alias cp='cp -i'
 
 # nicer cat output
 alias cat='bat --tabs=2'
-# fd (fdfind): alternative to find, for finding files in the filesystem
-alias fd='fdfind'
-
-alias v='nvim'
-
-alias rg=". ranger"
-
-# kitty image preview kitten
-alias icat="kitty +kitten icat"

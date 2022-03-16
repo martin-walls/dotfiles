@@ -1,51 +1,51 @@
 [submodule ".config/zsh/zsh-autosuggestions"]
-	path = zsh/zsh.config/zsh-autosuggestions
+	path = zsh/.config/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule ".config/nvim/.pack/mrw/start/coc"]
-	path = nvim.config/pack/mrw/start/coc
+	path = nvim/.config/pack/mrw/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 [submodule ".config/nvim/.pack/mrw/start/FastFold"]
-	path = nvim.config/pack/mrw/start/FastFold
+	path = nvim/.config/pack/mrw/start/FastFold
 	url = https://github.com/Konfekt/FastFold.git
 [submodule ".config/nvim/.pack/mrw/start/gitbranch"]
-	path = nvim.config/pack/mrw/start/gitbranch
+	path = nvim/.config/pack/mrw/start/gitbranch
 	url = https://github.com/itchyny/vim-gitbranch.git
 [submodule ".config/nvim/.pack/mrw/start/gitgutter"]
-	path = nvim.config/pack/mrw/start/gitgutter
+	path = nvim/.config/pack/mrw/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule ".config/nvim/.pack/mrw/start/lightline"]
-	path = nvim.config/pack/mrw/start/lightline
+	path = nvim/.config/pack/mrw/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".config/nvim/pack/mrw/start/pear-tree"]
-	path = nvim.config/pack/mrw/start/pear-tree
+	path = nvim/.config/pack/mrw/start/pear-tree
 	url = https://github.com/tmsvg/pear-tree.git
 [submodule ".config/nvim/pack/mrw/start/ultisnips"]
-	path = nvim.config/pack/mrw/start/ultisnips
+	path = nvim/.config/pack/mrw/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule ".config/nvim/pack/mrw/start/commentary"]
-	path = nvim.config/pack/mrw/start/commentary
+	path = nvim/.config/pack/mrw/start/commentary
 	url = https://github.com/tpope/vim-commentary
 [submodule ".config/nvim/pack/mrw/start/fugitive"]
-	path = nvim.config/pack/mrw/start/fugitive
+	path = nvim/.config/pack/mrw/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
 [submodule ".config/nvim/pack/mrw/start/vim-kitty-navigator"]
-	path = nvim.config/pack/mrw/start/vim-kitty-navigator
+	path = nvim/.config/pack/mrw/start/vim-kitty-navigator
 	url = https://github.com/knubie/vim-kitty-navigator
 [submodule ".config/nvim/pack/mrw/start/polyglot"]
-	path = nvim.config/pack/mrw/start/polyglot
+	path = nvim/.config/pack/mrw/start/polyglot
 	url = https://github.com/sheerun/vim-polyglot
 [submodule ".config/nvim/pack/mrw/start/startify"]
-	path = nvim.config/pack/mrw/start/startify
+	path = nvim/.config/pack/mrw/start/startify
 	url = https://github.com/mhinz/vim-startify
 [submodule ".config/nvim/pack/mrw/start/vimtex"]
-	path = nvim.config/pack/mrw/start/vimtex
+	path = nvim/.config/pack/mrw/start/vimtex
 	url = https://github.com/lervag/vimtex
 [submodule ".config/nvim/pack/mrw/start/arduino"]
-	path = nvim.config/pack/mrw/start/arduino
+	path = nvim/.config/pack/mrw/start/arduino
 	url = https://github.com/stevearc/vim-arduino
 [submodule ".config/nvim/pack/mrw/start/devicons"]
-	path = nvim.config/pack/mrw/start/devicons
+	path = nvim/.config/pack/mrw/start/devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
 [submodule ".config/nvim/pack/mrw/start/lightline-bufferline"]
-	path = nvim.config/pack/mrw/start/lightline-bufferline
+	path = nvim/.config/pack/mrw/start/lightline-bufferline
 	url = https://github.com/mengelbrecht/lightline-bufferline.git
