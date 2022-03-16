@@ -19,3 +19,4 @@ default-timeout=0
 default-timeout=3000
 border-color=#98c379
 background-color=#51634c
+width=500
