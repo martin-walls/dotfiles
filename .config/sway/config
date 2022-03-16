@@ -16,6 +16,7 @@ set $right l
 set $term kitty
 # Application launcher
 set $menu wofi --show run
+set $browser firefox
 
 include ./*.sway
 
@@ -44,6 +45,8 @@ input type:touchpad {
 
     # Start your launcher
     bindsym $mod+space exec $menu
+
+    bindsym $mod+Shift+b exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
