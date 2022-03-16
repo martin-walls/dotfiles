@@ -1,9 +1,9 @@
 #!/bin/bash
 
-HEADER_FILE="$HOME/.dotfiles/terminal_header/asciiheader_small.txt"
+HEADER_FILE="$HOME/.dotfiles/zsh/terminal_header/asciiheader_small.txt"
 HEADER_WIDTH=19
-QUOTE_FILE="$HOME/.dotfiles/terminal_header/quotes.txt"
-# QUOTE_FILE="$HOME/.dotfiles/terminal_header/bibleverses.txt"
+QUOTE_FILE="$HOME/.dotfiles/zsh/terminal_header/quotes.txt"
+# QUOTE_FILE="$HOME/.dotfiles/zsh/terminal_header/bibleverses.txt"
 # QUOTE_COLOR="\e[30m"
 QUOTE_COLOR=$(tput setaf 5)
 NORMAL=$(tput sgr0)

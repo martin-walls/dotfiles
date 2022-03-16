@@ -1,1 +1,1 @@
-../nvim/pack/mrw/start/vim-kitty-navigator/pass_keys.py
+../../nvim/.config/pack/mrw/start/vim-kitty-navigator/pass_keys.py

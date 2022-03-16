@@ -37,7 +37,7 @@ autoload -U $HOME/.dotfiles/functions/*(:t)
 
 
 # show terminal header
-~/.dotfiles/terminal_header/header_minimal.sh
+~/.dotfiles/zsh/terminal_header/header_minimal.sh
 
 HISTFILE=~/.cache/zshhistory
 HISTSIZE=10000

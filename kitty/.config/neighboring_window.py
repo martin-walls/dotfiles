@@ -1,1 +1,1 @@
-../nvim/pack/mrw/start/vim-kitty-navigator/neighboring_window.py
+../../nvim/.config/pack/mrw/start/vim-kitty-navigator/neighboring_window.py
