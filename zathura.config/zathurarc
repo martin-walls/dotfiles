@@ -1,0 +1,18 @@
+#  ┌────────────────┐
+#  │ zathura config │
+#  └────────────────┘
+
+# in side-by-side mode, put first page on the left side
+set first-page-column 1:1
+
+set default-bg rgba(40,44,52,0.85)
+set statusbar-bg '#282c34'
+
+# set default-bg rgba(0,0,0,0.7)
+set recolor "true"
+set recolor-lightcolor rgba(0,0,0,0)
+
+# so page transparency can be switched off
+map <C-r> recolor toggle
+
+# vim:ft=conf
