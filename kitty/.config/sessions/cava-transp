@@ -1,0 +1,6 @@
+#!/bin/bash
+
+kitty -c ~/.config/kitty/kitty.conf \
+  -o background_opacity=0 \
+  --session ~/.config/kitty/sessions/cava.session \
+  --class cava-transp

@@ -7,4 +7,7 @@ gaps inner 10
 # no window title bars; 2px border
 default_border pixel 2
 
+# floating audio visualiser
+for_window [app_id="cava-transp"] border none, floating enable
+
 # vim:ft=swayconfig
