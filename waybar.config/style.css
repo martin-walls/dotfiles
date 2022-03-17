@@ -25,7 +25,8 @@
 
 #waybar {
   background: @bgcolor;
-  font-family: JetBrainsMono Nerd Font Mono;
+  /* font-family: JetBrainsMono Nerd Font Mono; */
+  font-family: DejaVuSansMono Nerd Font Mono;
   color: @fgcolor;
   font-size: large;
 }
