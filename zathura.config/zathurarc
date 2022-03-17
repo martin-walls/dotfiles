@@ -10,7 +10,7 @@ set statusbar-bg '#282c34'
 
 # set default-bg rgba(0,0,0,0.7)
 set recolor "true"
-set recolor-lightcolor rgba(0,0,0,0)
+set recolor-lightcolor rgba(255,255,255,0)
 
 # so page transparency can be switched off
 map <C-r> recolor toggle
