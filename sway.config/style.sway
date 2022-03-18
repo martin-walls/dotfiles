@@ -8,6 +8,6 @@ gaps inner 10
 default_border pixel 2
 
 # floating audio visualiser
-for_window [app_id="cava-transp"] border none, floating enable
+for_window [app_id="cava-transp"] border none, floating enable, opacity 0.7
 
 # vim:ft=swayconfig
