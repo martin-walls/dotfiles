@@ -2,10 +2,7 @@
   "layer": "top",
   "spacing": 4, // gaps between modules (px)
   "fixed-center": false,
-  // "modules-left": ["idle_inhibitor", "cpu", "memory", "battery", "pulseaudio", "backlight"],
-  // "modules-center": ["sway/workspaces"],
-  // "modules-right": ["tray", "custom/spotify", "network", "clock"],
-  "modules-left": ["sway/workspaces"],
+  "modules-left": ["sway/workspaces", "custom/scratchpad-indicator"],
   // "modules-center": [],
   "modules-right": [
     "custom/spotify",
@@ -94,6 +91,13 @@
       "deactivated": ""
     },
     "tooltip": false
+  },
+  "custom/scratchpad-indicator": {
+    "interval": 3,
+    "return-type": "json",
+    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [.. | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
+    "format": " {}",
+    "on-click": "exec swaymsg 'scratchpad show'"
   }
 }
 // vim:commentstring=//\ %s:ft=conf

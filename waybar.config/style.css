@@ -97,3 +97,8 @@
 #network.disconnected {
   color: @red;
 }
+
+#custom-scratchpad-indicator {
+  padding-left: 12px;
+  border-left: 2px solid rgba(171,178,191,0.3);
+}
