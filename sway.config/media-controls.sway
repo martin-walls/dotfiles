@@ -1,9 +1,9 @@
 #
 # Volume controls
 #
-bindsym --locked XF86AudioRaiseVolume exec amixer sset Master 5%+
-bindsym --locked XF86AudioLowerVolume exec amixer sset Master 5%-
-bindsym --locked XF86AudioMute exec amixer sset Master toggle
+bindsym --locked XF86AudioRaiseVolume exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1 $_wobcolors/p' | head -1 > $WOBSOCK
+bindsym --locked XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1 $_wobcolors/p' | head -1 > $WOBSOCK
+bindsym --locked XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1 $_wobcolors/p; /\[off\]/ s/.*/0 $_wobcolors/p' | head -1 > $WOBSOCK
 #
 # Media controls
 #

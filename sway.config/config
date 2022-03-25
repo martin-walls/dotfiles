@@ -18,6 +18,14 @@ set $term kitty
 set $menu wofi --show run
 set $browser firefox
 
+# wob setup
+# (brightness/volume bar)
+# Must be before `include ./*.sway`
+set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+# this next line not needed, it's handled by systemd
+# exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+set $_wobcolors #282c34aa #ffffffdd #ffffffdd
+
 include ./*.sway
 
 
@@ -85,4 +93,6 @@ bar {
 include /etc/sway/config.d/*
 
 # trigger any services that depend on sway-session.target
-exec_always "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec_always "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+
+# vim:ft=swayconfig

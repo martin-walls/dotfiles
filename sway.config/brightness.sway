@@ -1,7 +1,7 @@
 #
 # Brightness controls
 #
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1 $_wobcolors/p' > $WOBSOCK
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+ | sed -En 's/.*\(([0-9]+)%\).*/\1 $_wobcolors/p' > $WOBSOCK
 
 # vim:ft=swayconfig
