@@ -11,4 +11,8 @@ bindsym $mod+Shift+s exec $HOME/.config/swaylock/lock.sh
 # Suspend
 bindsym --locked $mod+Ctrl+Shift+s exec systemctl suspend
 
+# don't lock if an app is fullscreen
+for_window [class="^.*"] inhibit_idle fullscreen
+for_window [app_id="^.*"] inhibit_idle fullscreen
+
 # vim:ft=swayconfig
