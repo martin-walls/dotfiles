@@ -49,3 +49,6 @@
 [submodule ".config/nvim/pack/mrw/start/lightline-bufferline"]
 	path = nvim/.config/pack/mrw/start/lightline-bufferline
 	url = https://github.com/mengelbrecht/lightline-bufferline.git
+[submodule "nvim/.config/pack/mrw/start/copilot"]
+	path = nvim/.config/pack/mrw/start/copilot
+	url = https://github.com/github/copilot.vim.git
