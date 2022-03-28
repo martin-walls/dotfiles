@@ -12,7 +12,7 @@ set $ws10 10
 # on F-keys
 set $ws11 11:阮
 set $ws12 12:K
-set $ws13 13
+set $ws13 13:
 set $ws14 14
 set $ws15 15
 set $ws16 16
