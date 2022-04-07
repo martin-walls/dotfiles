@@ -7,4 +7,18 @@ cd "$name"
 
 wget -O q.pdf "https://www.cl.cam.ac.uk/teaching/exams/pastpapers/$name.pdf"
 
+cat > $name.tex << EOF
+\\documentclass[12pt,a4paper]{article}
+
+\\newcommand{\\papernumber}{${name:6:1} (${name:1:4})}
+\\newcommand{\\questionnumber}{${name:8:1}}
+\\newcommand{\\studentid}{Martin Walls}
+
+\\input{\\string ~/UNI/supo-work-template/template/exampreamble.tex}
+
+\\begin{document}
+
+\\end{document}
+EOF
+
 "${EDITOR:-vi}" $name.tex
