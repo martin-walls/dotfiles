@@ -1,0 +1,5 @@
+[options]
+overlay = true
+overlay_font = Monospace:10
+overlay_position_bottom = true
+overlay_text = $(basename "$imv_current_file") [$imv_current_index/$imv_file_count] ${imv_width}x$imv_height ${imv_scale}%
