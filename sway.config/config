@@ -35,11 +35,13 @@ include ./*.sway
 input type:keyboard {
     xkb_layout "gb"
     xkb_numlock enable
+    xkb_options compose:ralt
 }
 
 input type:touchpad {
     tap enabled
     natural_scroll enabled
+    click_method clickfinger
 }
 
 ### Key bindings
@@ -94,5 +96,7 @@ include /etc/sway/config.d/*
 
 # trigger any services that depend on sway-session.target
 exec_always "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK; systemctl --user start sway-session.target"
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # vim:ft=swayconfig
