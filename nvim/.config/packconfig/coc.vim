@@ -4,7 +4,8 @@ let g:coc_global_extensions = [
   \ 'coc-texlab',
   \ 'coc-snippets',
   \ 'coc-tsserver',
-  \ 'coc-lists'
+  \ 'coc-lists',
+  \ 'coc-jest'
   \ ]
   " \ 'coc-java',
   " \ 'coc-json',
