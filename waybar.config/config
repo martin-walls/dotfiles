@@ -19,6 +19,10 @@
   "sway/window": {
     "max-length": 50
   },
+  "tray": {
+    "spacing": 10,
+    "reverse-direction": true
+  },
   "battery": {
     "format": "{icon} {capacity}%",
     "format-charging": "{icon}+{capacity}%",
