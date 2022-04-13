@@ -5,9 +5,9 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-tsserver',
   \ 'coc-lists',
-  \ 'coc-jest'
+  \ 'coc-jest',
+  \ 'coc-java'
   \ ]
-  " \ 'coc-java',
   " \ 'coc-json',
   " \ 'coc-css',
   " \ 'coc-html',
