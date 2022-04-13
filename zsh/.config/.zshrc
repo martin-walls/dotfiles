@@ -153,3 +153,5 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/autojump/autojump.zsh 2>/dev/null
+
+source /home/martin/.config/broot/launcher/bash/br
