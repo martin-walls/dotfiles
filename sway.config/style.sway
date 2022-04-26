@@ -2,7 +2,7 @@
 output * bg ~/.dotfiles/wallpaper/tuxwithfriends.png fill
 
 # 10px border around each window
-gaps inner 10
+gaps inner 4
 
 # no window title bars; 2px border
 default_border pixel 2
