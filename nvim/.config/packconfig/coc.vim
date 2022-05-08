@@ -37,13 +37,32 @@ set shortmess+=c
 
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
+
+" Smart tab completion
+" if completion menu open, go down
+" if last char is whitespace, insert a tab
+" if word is a snippet shortcut, expand the snippet
+" otherwise do coc completion
 inoremap <silent><expr> <tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#expandableOrJumpable() ?
+      \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
       \ coc#refresh()
+
+
+" Smart Enter
+" if completion menu open and selected item is a snippet, expand
+" it on pressing enter
+" otherwise select item from menu,
+" or just insert <CR> if menu not open
+:inoremap <silent><expr> <CR>
+      \ pumvisible() ?
+      \   (coc#expandableOrJumpable() ?
+      \   "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
+      \   coc#_select_confirm())
+      \ : "\<C-g>u\<CR>"
+
 inoremap <expr><S-tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -51,10 +70,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <c-space> to trigger completion.
 " if has('nvim')
