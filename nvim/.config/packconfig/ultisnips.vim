@@ -2,6 +2,8 @@
 " │ UltiSnips │
 " └───────────┘
 
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/UltiSnips']
+
 function GetLineCommentMarker()
   if len(split(&l:commentstring, '%s')) == 1
     " if 'commentstring' xx%sxx contains no end part
