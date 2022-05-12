@@ -133,6 +133,12 @@ $0
 \end{question}
 endsnippet
 
+snippet bnqst "Question environment, no marks" b
+\begin{question}
+$0
+\end{question}
+endsnippet
+
 snippet bfr "Frame environment" b
 \begin{frame}
 \frametitle{$1}
@@ -167,7 +173,7 @@ Figure~\ref{fig:$1}$0
 endsnippet
 
 snippet blst "Listings" b
-\begin{lstlisting}[style=${1:code}$2]
+\begin{lstlisting}[style=code$1]
 $0
 \end{lstlisting}
 endsnippet
@@ -577,14 +583,8 @@ endsnippet
 
 
 ########## OTHER ##########
-# priority 10
-# snippet ... "ldots" iA
-# \ldots
-# endsnippet
-
-priority 100
-snippet \... "literal ellipsis" iA
-...
+snippet ... "ldots" i
+\ldots
 endsnippet
 
 context "math()"
@@ -641,11 +641,11 @@ snippet bigo "Big-O notation in normal text" wA
 \$O($1)\$$0
 endsnippet
 
-snippet eg. "eg" wA
+snippet eg. "eg" w
 e.g.\\$0
 endsnippet
 
-snippet ie. "ie" wA
+snippet ie. "ie" w
 i.e.\\$0
 endsnippet
 
@@ -655,12 +655,12 @@ snippet fbf "bold text" w
 \textbf{${1:${VISUAL}}}$0
 endsnippet
 priority 10
-snippet \bf "bold text" wA
+snippet \bf "bold text" w
 \textbf{${1:${VISUAL}}}$0
 endsnippet
 context "math()"
 priority 100
-snippet \bf "bold text" wA
+snippet \bf "bold text" w
 \mathbf{${1:${VISUAL}}}$0
 endsnippet
 
@@ -674,11 +674,11 @@ endsnippet
 snippet ftt "monospace text" w
 \texttt{${1:${VISUAL}}}$0
 endsnippet
-snippet \tt "monospace text" wA
+snippet \tt "monospace text" w
 \texttt{${1:${VISUAL}}}$0
 endsnippet
 
-snippet \sf "sans serif text" wA
+snippet \sf "sans serif text" w
 \textsf{${1:${VISUAL}}}$0
 endsnippet
 
