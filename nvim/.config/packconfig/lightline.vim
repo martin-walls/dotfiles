@@ -11,7 +11,7 @@ set noshowmode
 set showtabline=2
 
 let g:lightline = {
-  \ 'colorscheme': 'onedark',
+  \ 'colorscheme': 'one',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'readonly', 'filename', 'modified' ] ],

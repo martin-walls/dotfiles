@@ -50,12 +50,15 @@ set spelllang=en
 " {{{
 set termguicolors
 syntax on
-let g:onedark_hide_endofbuffer=1
-let g:onedark_terminal_italics=1
-colorscheme onedark
+" let g:onedark_hide_endofbuffer=1
+" let g:onedark_terminal_italics=1
+let g:one_allow_italics = 1
+colorscheme one
+
+" set background=light
 
 " remove background, to respect terminal transparency
-hi Normal ctermbg=NONE guibg=NONE
+" hi Normal ctermbg=NONE guibg=NONE
 
 " }}}
 

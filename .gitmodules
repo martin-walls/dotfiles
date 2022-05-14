@@ -52,3 +52,6 @@
 [submodule "nvim/.config/pack/mrw/start/copilot"]
 	path = nvim/.config/pack/mrw/start/copilot
 	url = https://github.com/github/copilot.vim.git
+[submodule "nvim/.config/pack/mrw/start/vim-one"]
+	path = nvim/.config/pack/mrw/start/vim-one
+	url = https://github.com/rakr/vim-one.git

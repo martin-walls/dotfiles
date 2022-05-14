@@ -1,0 +1,62 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# ┌───────────┐
+# │ Set theme │
+# └───────────┘
+
+# check number of arguments
+if [ $# != 1 ]; then
+  echo "Usage: set-theme light|dark"
+  exit 1
+fi
+
+
+
+# convert string to lowercase before matching
+case "${1,,}" in
+  light)
+    echo "Setting light theme"
+    variant="light"
+    ;;
+  dark)
+    echo "Setting dark theme"
+    variant="dark"
+    ;;
+  toggle)
+    echo "Toggling theme"
+    variant="toggle"
+    ;;
+  *)
+    echo "Invalid option '$1'"
+    exit 2
+    ;;
+esac
+
+# get current theme
+if [[ -e ~/.dotfiles/theme/CURRENT_THEME ]]; then
+  current_variant=`cat ~/.dotfiles/theme/CURRENT_THEME`
+else
+  # default value if CURRENT_THEME file doesn't exist
+  current_variant="dark"
+fi
+
+# if toggle theme
+if [[ $variant == "toggle" ]]; then
+  if [[ $current_variant == "light" ]]; then
+    variant="dark"
+  else
+    variant="light"
+  fi
+fi
+
+echo $variant > ~/.dotfiles/theme/CURRENT_THEME
+
+# vim
+echo "Setting vim theme"
+ln -sf ~/.dotfiles/theme/vim/$variant.vim ~/.dotfiles/nvim/.config/plugin/theme.vim
+
+# kitty
+echo "Setting kitty theme"
+ln -sf ~/.dotfiles/kitty/.config/themes/$variant.conf ~/.dotfiles/kitty/.config/current-theme.conf

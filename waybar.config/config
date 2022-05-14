@@ -11,6 +11,7 @@
     // "memory",
     "idle_inhibitor",
     "pulseaudio",
+    "custom/darkmode",
     "backlight",
     "battery",
     "network",
@@ -39,7 +40,8 @@
     // "format": " {%H:%M}",
     "format": "🇬🇧 {:%H:%M}",
     // "tooltip-format": "{:%a %d %b %H:%M}"
-    "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+    "timezone": "Europe/London"
   },
   "clock#canada": {
     "format": "🇨🇦 {:%H:%M}",
@@ -82,6 +84,11 @@
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-"
+  },
+  "custom/darkmode": {
+    "on-click": "~/.dotfiles/theme/set-theme toggle",
+    "exec": "~/.config/waybar/modules/darkmode.sh",
+    "restart-interval": 1
   },
   "sway/workspaces": {
     "disable-scroll": true
