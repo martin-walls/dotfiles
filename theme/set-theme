@@ -60,3 +60,7 @@ ln -sf ~/.dotfiles/theme/vim/$variant.vim ~/.dotfiles/nvim/.config/plugin/theme.
 # kitty
 echo "Setting kitty theme"
 ln -sf ~/.dotfiles/kitty/.config/themes/$variant.conf ~/.dotfiles/kitty/.config/current-theme.conf
+
+# bat
+echo "Setting bat theme"
+ln -sf ~/.dotfiles/theme/bat/$variant ~/.config/bat/config
