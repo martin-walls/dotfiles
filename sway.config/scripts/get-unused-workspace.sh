@@ -5,7 +5,7 @@
 
 i=1
 
-for w in $(swaymsg -t get_tree | jq '.nodes[].nodes[] | select(.type == "workspace") | select(has("num")) | .num'); do
+for w in $(swaymsg -t get_tree | jq '[.nodes[].nodes[] | select(.type == "workspace") | select(has("num")) | .num] | sort | .[]'); do
   if [ $i != $w ]; then
     # found a gap in consecutive workspaces
     # so use the number we got to as the new workspace

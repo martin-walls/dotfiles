@@ -75,7 +75,7 @@ bindsym $mod+i workspace prev_on_output
 bindsym $mod+o workspace next_on_output
 
 # go to the next currently unused workspace
-set $workspace_new expr $(~/.config/sway/scripts/get-unused-workspace.sh) | xargs swaymsg workspace
+set $workspace_new expr $(~/.config/sway/scripts/get-unused-workspace.sh) | xargs swaymsg workspace number
 bindsym $mod+n exec $workspace_new
 
 # Move workspaces between monitors
