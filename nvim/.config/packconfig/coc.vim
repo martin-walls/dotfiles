@@ -6,7 +6,8 @@ let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-lists',
   \ 'coc-jest',
-  \ 'coc-java'
+  \ 'coc-java',
+  \ 'coc-rls'
   \ ]
   " \ 'coc-json',
   " \ 'coc-css',
@@ -50,13 +51,23 @@ inoremap <silent><expr> <tab>
       \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
       \ coc#refresh()
 
+" also for select mode so snippets work properly
+" TODO make this work
+" snoremap <silent><expr> <tab>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#expandableOrJumpable() ?
+"       \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
+"       \ coc#refresh()
+snoremap <silent><expr> <tab> UltiSnips#ExpandSnippetOrJump()
+
 
 " Smart Enter
 " if completion menu open and selected item is a snippet, expand
 " it on pressing enter
 " otherwise select item from menu,
 " or just insert <CR> if menu not open
-:inoremap <silent><expr> <CR>
+inoremap <silent><expr> <CR>
       \ pumvisible() ?
       \   (coc#expandableOrJumpable() ?
       \   "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump', ''])\<CR>" :
