@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "spacing": 4, // gaps between modules (px)
   "fixed-center": false,
   "modules-left": ["sway/workspaces", "custom/scratchpad-indicator"],

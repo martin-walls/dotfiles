@@ -2,6 +2,7 @@
 @define-color blue #61afef;
 @define-color green #98c379;
 @define-color purple #c678dd;
+@define-color grey #5c6370;
 
 @define-color bgcolor #282c34;
 @define-color fgcolor #abb2bf;
@@ -13,6 +14,7 @@
 @define-color wksp-active @blue;
 @define-color audio-muted @red;
 @define-color audio-bt @blue;
+@define-color window-title-text @grey;
 
 /* reset all styles */
 * {
@@ -32,8 +34,8 @@
 }
 
 #workspaces button {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 8px;
+  padding-right: 0px;
   color: @fgcolor;
 }
 #workspaces button.focused {
@@ -61,6 +63,13 @@
   background: @bgcolor;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+#window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @window-title-text;
+  font-family: DroidSans Nerd Font;
 }
 
 #battery.charging {
@@ -92,6 +101,9 @@
   color: @audio-bt;
 }
 
+#custom-spotify {
+  font-family: DroidSans Nerd Font;
+}
 #custom-spotify.playing {
   color: @green;
 }
@@ -106,5 +118,5 @@
 }
 
 #tray menu {
-  font-family: sans;
+  font-family: DroidSans Nerd Font;
 }
