@@ -23,6 +23,12 @@ function! TexEnableAutoSaveOnWrite()
   augroup END
 endfunction
 
+function! TexDisableAutoSaveOnWrite()
+  augroup autosave_on_write
+    au!
+  augroup END
+endfunction
+
 call TexEnableAutoSaveOnWrite()
 
 " vimtex folding
