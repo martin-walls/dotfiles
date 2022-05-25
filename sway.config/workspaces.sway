@@ -10,10 +10,10 @@ set $ws8  8
 set $ws9  9
 set $ws10 10
 # on F-keys
-set $ws11 11:阮
-set $ws12 12:K
-set $ws13 13:
-set $ws14 14:
+set $ws11 11
+set $ws12 12
+set $ws13 13
+set $ws14 14
 set $ws15 15
 set $ws16 16
 set $ws17 17
@@ -24,55 +24,55 @@ set $ws21 21
 set $ws22 22
 
 # Switch to workspace
-bindsym $mod+1   workspace $ws1
-bindsym $mod+2   workspace $ws2
-bindsym $mod+3   workspace $ws3
-bindsym $mod+4   workspace $ws4
-bindsym $mod+5   workspace $ws5
-bindsym $mod+6   workspace $ws6
-bindsym $mod+7   workspace $ws7
-bindsym $mod+8   workspace $ws8
-bindsym $mod+9   workspace $ws9
-bindsym $mod+0   workspace $ws10
-bindsym $mod+F1  workspace $ws11
-bindsym $mod+F2  workspace $ws12
-bindsym $mod+F3  workspace $ws13
-bindsym $mod+F4  workspace $ws14
-bindsym $mod+F5  workspace $ws15
-bindsym $mod+F6  workspace $ws16
-bindsym $mod+F7  workspace $ws17
-bindsym $mod+F8  workspace $ws18
-bindsym $mod+F9  workspace $ws19
-bindsym $mod+F10 workspace $ws20
-bindsym $mod+F11 workspace $ws21
-bindsym $mod+F12 workspace $ws22
+bindsym $mod+1   workspace number $ws1
+bindsym $mod+2   workspace number $ws2
+bindsym $mod+3   workspace number $ws3
+bindsym $mod+4   workspace number $ws4
+bindsym $mod+5   workspace number $ws5
+bindsym $mod+6   workspace number $ws6
+bindsym $mod+7   workspace number $ws7
+bindsym $mod+8   workspace number $ws8
+bindsym $mod+9   workspace number $ws9
+bindsym $mod+0   workspace number $ws10
+bindsym $mod+F1  workspace number $ws11
+bindsym $mod+F2  workspace number $ws12
+bindsym $mod+F3  workspace number $ws13
+bindsym $mod+F4  workspace number $ws14
+bindsym $mod+F5  workspace number $ws15
+bindsym $mod+F6  workspace number $ws16
+bindsym $mod+F7  workspace number $ws17
+bindsym $mod+F8  workspace number $ws18
+bindsym $mod+F9  workspace number $ws19
+bindsym $mod+F10 workspace number $ws20
+bindsym $mod+F11 workspace number $ws21
+bindsym $mod+F12 workspace number $ws22
 # Move focused container to workspace
-bindsym $mod+Shift+1   move container to workspace $ws1
-bindsym $mod+Shift+2   move container to workspace $ws2
-bindsym $mod+Shift+3   move container to workspace $ws3
-bindsym $mod+Shift+4   move container to workspace $ws4
-bindsym $mod+Shift+5   move container to workspace $ws5
-bindsym $mod+Shift+6   move container to workspace $ws6
-bindsym $mod+Shift+7   move container to workspace $ws7
-bindsym $mod+Shift+8   move container to workspace $ws8
-bindsym $mod+Shift+9   move container to workspace $ws9
-bindsym $mod+Shift+0   move container to workspace $ws10
-bindsym $mod+Shift+F1  move container to workspace $ws11
-bindsym $mod+Shift+F2  move container to workspace $ws12
-bindsym $mod+Shift+F3  move container to workspace $ws13
-bindsym $mod+Shift+F4  move container to workspace $ws14
-bindsym $mod+Shift+F5  move container to workspace $ws15
-bindsym $mod+Shift+F6  move container to workspace $ws16
-bindsym $mod+Shift+F7  move container to workspace $ws17
-bindsym $mod+Shift+F8  move container to workspace $ws18
-bindsym $mod+Shift+F9  move container to workspace $ws19
-bindsym $mod+Shift+F10 move container to workspace $ws20
-bindsym $mod+Shift+F11 move container to workspace $ws21
-bindsym $mod+Shift+F12 move container to workspace $ws22
+bindsym $mod+Shift+1   move container to workspace number $ws1
+bindsym $mod+Shift+2   move container to workspace number $ws2
+bindsym $mod+Shift+3   move container to workspace number $ws3
+bindsym $mod+Shift+4   move container to workspace number $ws4
+bindsym $mod+Shift+5   move container to workspace number $ws5
+bindsym $mod+Shift+6   move container to workspace number $ws6
+bindsym $mod+Shift+7   move container to workspace number $ws7
+bindsym $mod+Shift+8   move container to workspace number $ws8
+bindsym $mod+Shift+9   move container to workspace number $ws9
+bindsym $mod+Shift+0   move container to workspace number $ws10
+bindsym $mod+Shift+F1  move container to workspace number $ws11
+bindsym $mod+Shift+F2  move container to workspace number $ws12
+bindsym $mod+Shift+F3  move container to workspace number $ws13
+bindsym $mod+Shift+F4  move container to workspace number $ws14
+bindsym $mod+Shift+F5  move container to workspace number $ws15
+bindsym $mod+Shift+F6  move container to workspace number $ws16
+bindsym $mod+Shift+F7  move container to workspace number $ws17
+bindsym $mod+Shift+F8  move container to workspace number $ws18
+bindsym $mod+Shift+F9  move container to workspace number $ws19
+bindsym $mod+Shift+F10 move container to workspace number $ws20
+bindsym $mod+Shift+F11 move container to workspace number $ws21
+bindsym $mod+Shift+F12 move container to workspace number $ws22
 
 # go to previous/next workspace
-bindsym $mod+i workspace prev_on_output --create
-bindsym $mod+o workspace next_on_output --create
+bindsym $mod+i workspace prev_on_output
+bindsym $mod+o workspace next_on_output
 
 # go to the next currently unused workspace
 set $workspace_new expr $(~/.config/sway/scripts/get-unused-workspace.sh) | xargs swaymsg workspace
@@ -84,9 +84,5 @@ bindsym $mod+Control+Shift+Right move workspace to output right
 # ditto, with [left|right]
 bindsym $mod+Control+Shift+$left move workspace to output left
 bindsym $mod+Control+Shift+$right move workspace to output right
-
-# default workspaces for programs
-# TODO make this work?
-# assign [class="^Spotify$"] $ws11
 
 # vim:ft=swayconfig

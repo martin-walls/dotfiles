@@ -3,7 +3,7 @@
   "spacing": 4, // gaps between modules (px)
   "fixed-center": false,
   "modules-left": ["sway/workspaces", "custom/scratchpad-indicator"],
-  // "modules-center": [],
+  "modules-center": ["sway/window"],
   "modules-right": [
     "custom/spotify",
     "tray",
@@ -19,7 +19,11 @@
     "clock",
   ],
   "sway/window": {
-    "max-length": 50
+    "format": {},
+    "max-length": 30,
+    "rewrite": {
+       "(.*) — Mozilla Firefox": " $1",
+    }
   },
   "tray": {
     "spacing": 10,

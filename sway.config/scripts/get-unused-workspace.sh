@@ -16,6 +16,10 @@ wksps_use=(
   '8'
   '9'
   '10'
+  '11'
+  '12'
+  '13'
+  '14'
   '15'
   '16'
   '17'
@@ -28,10 +32,6 @@ wksps_use=(
 # workspace names to never use as new workspace, even if
 # they're empty
 wksps_ignore=(
-  '11:阮'
-  '12:K'
-  '13:'
-  '14:'
 )
 
 i=0

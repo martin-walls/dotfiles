@@ -1,0 +1,10 @@
+fallback = ''
+
+[matching]
+'/.*/' = ''
+'kitty' = ''
+'discord' = ''
+'obsidian' = ''
+'/.*Oracle VM VirtualBox.*/' = ''
+'Spotify' = ''
+'firefox' = ''
