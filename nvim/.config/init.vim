@@ -15,7 +15,7 @@ set number
 set splitright
 set splitbelow
 set title
-set titlestring=%t%m
+set titlestring=\ %t%m
 set scrolloff=6
 set sidescrolloff=8
 set autowrite
