@@ -20,7 +20,7 @@
   ],
   "sway/window": {
     "format": {},
-    "max-length": 30,
+    "max-length": 40,
     "rewrite": {
        "(.*) — Mozilla Firefox": " $1",
     }
