@@ -55,3 +55,6 @@
 [submodule "nvim/.config/pack/mrw/start/vim-one"]
 	path = nvim/.config/pack/mrw/start/vim-one
 	url = https://github.com/rakr/vim-one.git
+[submodule "zsh/.config/forgit"]
+	path = git/forgit
+	url = https://github.com/wfxr/forgit.git
