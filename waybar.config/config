@@ -41,8 +41,8 @@
     "tooltip": false
   },
   "clock": {
-    // "format": " {%H:%M}",
-    "format": "🇬🇧 {:%H:%M}",
+    // "format": " {:%H:%M %Y.%m.%d}",
+    "format": "🇬🇧 {:%H:%M %Y.%m.%d}",
     // "tooltip-format": "{:%a %d %b %H:%M}"
     "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "timezone": "Europe/London"
