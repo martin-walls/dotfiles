@@ -49,7 +49,7 @@
   },
   "clock#canada": {
     "format": "🇨🇦 {:%H:%M}",
-    "timezone": "America/Vancouver"
+    "timezone": "America/Edmonton"
   },
   "cpu": {
     "format": " {usage:2}%",
