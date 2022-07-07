@@ -61,3 +61,6 @@
 [submodule "nvim/.config/pack/mrw/start/vinegar"]
 	path = nvim/.config/pack/mrw/start/vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "nvim/.config/pack/mrw/start/emmet"]
+	path = nvim/.config/pack/mrw/start/emmet
+	url = https://github.com/mattn/emmet-vim.git
