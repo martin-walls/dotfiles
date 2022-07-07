@@ -15,7 +15,7 @@ set number
 set splitright
 set splitbelow
 set title
-set titlestring=\ %t%m
+" set titlestring=\ %t%m
 set scrolloff=6
 set sidescrolloff=8
 set autowrite
@@ -41,6 +41,14 @@ set fillchars+=fold:\ ,foldopen:┍,foldsep:│
 set foldtext=gitgutter#fold#foldtext()
 
 set spelllang=en
+
+" function so it can be called in ftplugins
+function! SetFiletypeTitlestring(icon)
+  let &titlestring = a:icon . "\ %t%m"
+  set title titlestring
+endfunction
+
+call SetFiletypeTitlestring('')
 
 " }}}
 
