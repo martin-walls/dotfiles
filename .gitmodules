@@ -58,3 +58,6 @@
 [submodule "zsh/.config/forgit"]
 	path = git/forgit
 	url = https://github.com/wfxr/forgit.git
+[submodule "nvim/.config/pack/mrw/start/vinegar"]
+	path = nvim/.config/pack/mrw/start/vinegar
+	url = https://github.com/tpope/vim-vinegar.git
