@@ -15,7 +15,7 @@
     "backlight",
     "battery",
     "network",
-    "clock#canada",
+    // "clock#canada",
     "clock",
   ],
   "sway/window": {
@@ -47,10 +47,10 @@
     "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "timezone": "Europe/London"
   },
-  "clock#canada": {
-    "format": "🇨🇦 {:%H:%M}",
-    "timezone": "America/Edmonton"
-  },
+  // "clock#canada": {
+  //   "format": "🇨🇦 {:%H:%M}",
+  //   "timezone": "America/Edmonton"
+  // },
   "cpu": {
     "format": " {usage:2}%",
     "tooltip": false
