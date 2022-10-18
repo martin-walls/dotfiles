@@ -150,6 +150,10 @@ augroup FileTemplates
   au BufNewFile preamble.tex 0r ~/.config/nvim/templates/supopreamble.tex
 augroup END
 
+function! SupoWorkTemplate()
+  0r ~/.config/nvim/templates/supotemplate.tex
+endfunction
+
 
 " ┌───────────────────────────┐
 " │ Inbuilt Terminal Settings │
