@@ -147,7 +147,6 @@ vnoremap <A-Up> :m'<-2<CR>gv=gv
 augroup FileTemplates
   au!
   au BufNewFile mrw64*.tex 0r ~/.config/nvim/templates/supotemplate.tex
-  au BufNewFile preamble.tex 0r ~/.config/nvim/templates/supopreamble.tex
 augroup END
 
 function! SupoWorkTemplate()
