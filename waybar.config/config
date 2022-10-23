@@ -11,6 +11,7 @@
     // "memory",
     "idle_inhibitor",
     "pulseaudio",
+    "custom/micvolume",
     "custom/darkmode",
     "backlight",
     "battery",
@@ -42,7 +43,7 @@
   },
   "clock": {
     // "format": " {:%H:%M %Y.%m.%d}",
-    "format": "🇬🇧 {:%H:%M %Y.%m.%d}",
+    "format": "{:%H:%M %Y.%m.%d}",
     // "tooltip-format": "{:%a %d %b %H:%M}"
     "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "timezone": "Europe/London"
@@ -82,6 +83,13 @@
     "on-click": "amixer sset Master toggle",
     "on-click-right": "pavucontrol",
     "tooltip": false
+  },
+  "custom/micvolume": {
+    "format": " {}%",
+    "interval": 1,
+    "exec": "~/.config/waybar/modules/micvolume.sh",
+    "on-scroll-up": "amixer sset Capture 5%+",
+    "on-scroll-down": "amixer sset Capture 5%-",
   },
   "backlight": {
     "format": "{icon} {percent}%",
