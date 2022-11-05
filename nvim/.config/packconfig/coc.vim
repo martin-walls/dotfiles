@@ -7,11 +7,13 @@ let g:coc_global_extensions = [
   \ 'coc-lists',
   \ 'coc-jest',
   \ 'coc-java',
-  \ 'coc-rls'
+  \ 'coc-rls',
+  \ 'coc-svelte',
+  \ 'coc-flutter',
+  \ 'coc-css',
+  \ 'coc-html',
   \ ]
   " \ 'coc-json',
-  " \ 'coc-css',
-  " \ 'coc-html',
 " \ 'coc-git',
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
