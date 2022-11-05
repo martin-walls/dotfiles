@@ -162,11 +162,11 @@ snippet bfrit "Itemized frame environment" b
 endsnippet
 
 snippet bfi "Figure" b
-\begin{figure}[${1:htbp}]
+\begin{figure}[h]
 	\centering
-	${2:\includegraphics[width=${4:0.8}\textwidth]{$3}}
-	\caption{$5}
-	\label{fig:$6}
+	\includegraphics[width=0.6\textwidth]{$1}
+	\caption{$2}
+	\label{fig:$3}
 \end{figure}
 endsnippet
 
@@ -287,12 +287,12 @@ endsnippet
 
 ##### DERIVATIVES #####
 context "math()"
-snippet dd "d/dx" wA
+snippet ddx "d/dx" wA
 \frac{\mathrm{d} $1}{\mathrm{d} $2}$0
 endsnippet
 
 context "math()"
-snippet partdd "partial d/dx" wA
+snippet partddx "partial d/dx" wA
 \frac{\partial $1}{\partial $2}$0
 endsnippet
 
