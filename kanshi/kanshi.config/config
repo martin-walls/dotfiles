@@ -6,3 +6,8 @@
   output eDP-1 position 0,360 scale 1.5
   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0
 }
+
+profile headlessvnc {
+  output eDP-1 enable position 2360,0 scale 1.5
+  output HEADLESS-1 enable
+}

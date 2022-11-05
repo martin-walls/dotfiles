@@ -28,6 +28,10 @@ set $_wobcolors #282c34aa #ffffffdd #ffffffdd
 
 include ./*.sway
 
+output HEADLESS-1 {
+    pos 0,0
+    mode 2360x1640
+}
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
