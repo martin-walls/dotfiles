@@ -58,6 +58,10 @@ __latexindent_temp.tex
 *.dvi
 *.xdv
 
+# Beamer generated files
+*.snm
+*.nav
+
 # bibtex auxiliary files
 *.bbl
 *.bcf
