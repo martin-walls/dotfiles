@@ -184,6 +184,12 @@ $0
 \end{lstlisting}
 endsnippet
 
+snippet bmnt "Minted" b
+\begin{minted}{$1}
+$0
+\end{minted}
+endsnippet
+
 snippet btbl "Tabular" b
 \begin{tabular}{$1}
 $0
@@ -197,6 +203,12 @@ row = ' & ' * (int(match.group(1)) - 1) + ' \\\\'
 snip.rv = (row + '\n') * (int(match.group(2)) - 1) + row
 `
 \end{tabular}
+endsnippet
+
+snippet bcmt "Dissertation comment environment" b
+\begin{Comment}
+$0
+\end{Comment}
 endsnippet
 
 
