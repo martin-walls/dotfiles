@@ -3,8 +3,7 @@
 #  └─────────────┘
 # alias ga='git add'
 alias gs='git st'
-# alias gc='git cm'
-alias gc='gitmoji -c'
+alias gc='git cm'
 alias gp='git push'
 # alias gd='git df'
 alias gpl='git pull'
