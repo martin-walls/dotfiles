@@ -233,3 +233,5 @@ prefetcher
 parallelisable
 lexing
 lex
+preprocess
+LALRPOP
