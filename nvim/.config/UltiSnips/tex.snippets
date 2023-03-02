@@ -206,11 +206,9 @@ snip.rv = (row + '\n') * (int(match.group(2)) - 1) + row
 endsnippet
 
 snippet bcmt "Dissertation comment environment" b
-\begin{Comment}
-%TC:ignore
+\begin{mrwComment}
 $0
-%TC:endignore
-\end{Comment}
+\end{mrwComment}
 endsnippet
 
 
@@ -689,6 +687,10 @@ snippet fit "italic text" w
 endsnippet
 snippet \it "italic text" w
 \textit{${1:${VISUAL}}}$0
+endsnippet
+
+snippet \em "emphasis text" w
+\emph{$1}$0
 endsnippet
 
 snippet ftt "monospace text" w

@@ -41,6 +41,7 @@ let g:coc_disable_hover_documentation = 1
 
 " MAPPINGS
 vnoremap <leader>it xi\textit{}<Esc>P
+vnoremap <leader>em xi\emph{}<Esc>P
 vnoremap <leader>bf xi\textbf{}<Esc>P
 vnoremap <leader>tt xi\texttt{}<Esc>P
 vnoremap <leader>sc xi\textsc{}<Esc>P
