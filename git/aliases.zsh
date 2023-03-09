@@ -4,6 +4,7 @@
 # alias ga='git add'
 alias gs='git st'
 alias gc='git cm'
+alias gsw='git sw'
 alias gp='git push'
 alias gd='git df'
 alias gpl='git pull'
