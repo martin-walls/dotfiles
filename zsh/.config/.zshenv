@@ -18,4 +18,6 @@
 # export PATH=$PATH:/usr/local/go/bin
 # export GO111MODULE=on
 
+export PATH=$PATH:~/.local/bin/nvim-0.8.3/bin
+
 
