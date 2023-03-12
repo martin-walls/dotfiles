@@ -27,6 +27,8 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
+vim.opt.mousemoveevent = true
+
 -- Autosave on close
 vim.opt.autowrite = true
 vim.opt.autowriteall = true

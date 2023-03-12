@@ -7,3 +7,11 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function ()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+-- Currently open buffers
+vim.keymap.set("n", "<leader>b", builtin.buffers, {})
+
+require("telescope").setup({
+    defaults = {
+        layout_strategy = "vertical",
+    },
+})
