@@ -53,4 +53,14 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    use({
+        "L3MON4D3/LuaSnip",
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+
+    use("windwp/nvim-autopairs")
+
+    use('lervag/vimtex')
 end)
