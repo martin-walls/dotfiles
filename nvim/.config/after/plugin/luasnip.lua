@@ -43,3 +43,5 @@ cmp.setup({
 
 -- Lazy-load snippets, i.e. only load when required, e.g. for a given filetype
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/luasnip/"})
+
+vim.keymap.set("n", "<leader>L", "<Cmd>lua require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/luasnip/'})<CR>")

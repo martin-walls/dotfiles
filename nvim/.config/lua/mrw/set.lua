@@ -33,6 +33,9 @@ vim.opt.mousemoveevent = true
 vim.opt.autowrite = true
 vim.opt.autowriteall = true
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 vim.opt.title = true
 vim.opt.titlestring = " %t%m"
 
