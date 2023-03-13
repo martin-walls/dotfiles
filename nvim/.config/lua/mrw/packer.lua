@@ -66,6 +66,5 @@ return require('packer').startup(function(use)
 
     use('numToStr/Comment.nvim')
 
-    --use("https://git.sr.ht/~nedia/auto-save.nvim")
-    use("Pocco81/auto-save.nvim")
+    use("https://git.sr.ht/~nedia/auto-save.nvim")
 end)
