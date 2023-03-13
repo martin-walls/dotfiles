@@ -33,7 +33,12 @@ local roman_numerals = {
 return {
     -- Enumerate snippets
     s(
-        { trig = "ben", condition = line_begin_and_in_text, priority = 100 },
+        {
+            trig = "ben",
+            condition = line_begin_and_in_text,
+            priority = 100,
+            dscr = "Enumerate environment"
+        },
         fmta(
             [[
                 \begin{enumerate}
@@ -46,7 +51,12 @@ return {
         )
     ),
     s(
-        { trig = "([%d]+)ben", regTrig = true, snippetType = "autosnippet", condition = line_begin_and_in_text },
+        {
+            trig = "([%d]+)ben",
+            regTrig = true,
+            snippetType = "autosnippet",
+            condition = line_begin_and_in_text
+        },
         fmta(
             [[
                 \begin{enumerate}
@@ -68,7 +78,12 @@ return {
         )
     ),
     s(
-        { trig = "([%a])ben", regTrig = true, snippetType = "autosnippet", condition = line_begin_and_in_text },
+        {
+            trig = "([%a])ben",
+            regTrig = true,
+            snippetType = "autosnippet",
+            condition = line_begin_and_in_text
+        },
         fmta(
             [[
                 \begin{enumerate}
@@ -92,7 +107,13 @@ return {
         )
     ),
     s(
-        { trig = "([%d]+)iben", regTrig = true, snippetType = "autosnippet", condition = line_begin_and_in_text, priority = 2000 },
+        {
+            trig = "([%d]+)iben",
+            regTrig = true,
+            snippetType = "autosnippet",
+            condition = line_begin_and_in_text,
+            priority = 2000
+        },
         fmta(
             [[
                 \begin{enumerate}
@@ -118,7 +139,12 @@ return {
 
     -- Itemize snippets
     s(
-        { trig = "bit", condition = line_begin_and_in_text, priority = 100 },
+        {
+            trig = "bit",
+            condition = line_begin_and_in_text,
+            priority = 100,
+            dscr = "Itemize environment"
+        },
         fmta(
             [[
                 \begin{itemize}
@@ -131,13 +157,18 @@ return {
         )
     ),
     s(
-        { trig = "([%d]+)bit", regTrig = true, snippetType = "autosnippet", condition = line_begin_and_in_text },
+        {
+            trig = "([%d]+)bit",
+            regTrig = true,
+            snippetType = "autosnippet",
+            condition = line_begin_and_in_text
+        },
         fmta(
             [[
-                \begin{enumerate}
+                \begin{itemize}
                 <><>
                 <>
-                \end{enumerate}
+                \end{itemize}
             ]],
             {
                 t("\\item"),
