@@ -63,4 +63,6 @@ return require('packer').startup(function(use)
     use("windwp/nvim-autopairs")
 
     use('lervag/vimtex')
+
+    use('numToStr/Comment.nvim')
 end)
