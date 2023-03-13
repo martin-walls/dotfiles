@@ -6,19 +6,16 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use('wbthomason/packer.nvim')
-
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
     use("navarasu/onedark.nvim")
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use("nvim-treesitter/playground")
     use("mbbill/undotree")
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -41,30 +38,24 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
-
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
     }
-
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
     use({
         "L3MON4D3/LuaSnip",
         -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
-
     use("windwp/nvim-autopairs")
-
     use('lervag/vimtex')
-
     use('numToStr/Comment.nvim')
-
     use("https://git.sr.ht/~nedia/auto-save.nvim")
+    use("LudoPinelli/comment-box.nvim")
 end)

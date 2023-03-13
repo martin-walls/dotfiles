@@ -4,9 +4,11 @@ require("Comment").setup({
     },
     toggler = {
         line = "<leader>c",
-        block = "<leader>bc",
+        block = "gbc",
     },
+    opleader = {
+        line = "gc",
+        block = "gbc",
+    }
 })
-
-vim.keymap.set("n", "<C-/>", "<leader>c", {remap = true})
 

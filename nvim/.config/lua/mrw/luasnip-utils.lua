@@ -1,3 +1,5 @@
+local line_begin = require("luasnip.extras.expand_conditions").line_begin
+
 local M = {}
 
 -- explicitly define LuaSnip node abbreviations
@@ -34,6 +36,11 @@ end
 function latex.in_env(name)
     local is_inside = vim.fn["vimtex#env#is_inside"](name)
     return (is_inside[1] > 0 and is_inside[2] > 0)
+end
+
+function latex.line_begin_and_in_text(line_to_cursor, matched_trigger, captures)
+    return line_begin(line_to_cursor, matched_trigger, captures)
+        and latex.in_text()
 end
 
 M.latex = latex;

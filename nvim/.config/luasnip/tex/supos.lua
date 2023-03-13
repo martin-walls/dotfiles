@@ -1,10 +1,4 @@
-local in_text = require("mrw.luasnip-utils").latex.in_text
-local line_begin = require("luasnip.extras.expand_conditions").line_begin
-
-local function line_begin_and_in_text(line_to_cursor, matched_trigger, captures)
-    return line_begin(line_to_cursor, matched_trigger, captures)
-        and in_text()
-end
+local line_begin_and_in_text = require("mrw.luasnip-utils").latex.line_begin_and_in_text
 
 -- Supo-specific snippets
 return {
