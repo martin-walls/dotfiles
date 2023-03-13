@@ -18,3 +18,12 @@ vim.g.vimtex_syntax_conceal = {
       ligatures = 1,
 }
 
+-- Disable insert mode mappings
+vim.g.vimtex_imaps_enabled = false
+
+-- Disable indentation
+vim.g.vimtex_indent_enabled = false
+
+-- Enable folding
+vim.g.vimtex_fold_enabled = true
+

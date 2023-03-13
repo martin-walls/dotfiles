@@ -1,5 +1,3 @@
-vim.opt.foldmethod = "expr"
-
 vim.opt.wrap = true
 
 vim.opt.titlestring = "‭ﭨ %t%m"
@@ -8,12 +6,8 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 
--- Mappings -- using snippets instead
--- vim.keymap.set("v", "it", "xi\\textit{}<Esc>P")
--- vim.keymap.set("v", "em", "xi\\emph{}<Esc>P")
--- vim.keymap.set("v", "bf", "xi\\textbf{}<Esc>P")
--- vim.keymap.set("v", "tt", "xi\\texttt{}<Esc>P")
--- vim.keymap.set("v", "sc", "xi\\textsc{}<Esc>P")
+-- Increase width of fold markers in the margin
+vim.opt.foldcolumn = "4"
 
 -- AutoSave tex files 
 local autoSaveGroup = vim.api.nvim_create_augroup("TexAutoSaveOnWrite", { clear = true })
