@@ -18,3 +18,11 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<A-n>", vim.cmd.bnext)
 -- Previous buffer
 vim.keymap.set("n", "<A-b>", vim.cmd.bprevious)
+
+-- Half-page jumps
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Next and previous search result
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
