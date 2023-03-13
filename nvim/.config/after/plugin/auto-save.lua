@@ -1,0 +1,16 @@
+--require("auto-save").setup({
+--    trigger_events = {"TextChanged", "TextChangedI"},
+--    -- function that determines whether to save the current buffer or not
+--    condition = function(buf)
+--        local fn = vim.fn
+--        local utils = require("auto-save.utils.data")
+--        if
+--            fn.getbufvar(buf, "&modifiable") == 1 and
+--            utils.not_in(fn.getbufvar(buf, "&filetype"), {}) and
+--            fn.getbufvar(buf, "&filetype") == "tex"
+--            then
+--            return true
+--        end
+--        return false
+--    end,
+--})

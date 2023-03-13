@@ -11,6 +11,9 @@ vim.opt.expandtab = true
 
 vim.smartindent = true
 
+-- Don't wrap lines by default
+vim.opt.wrap = false
+
 vim.opt.swapfile = false
 vim.opt.backup = false
 -- Be able to undo things from before this current session
@@ -23,6 +26,7 @@ vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 6
+vim.opt.sidescrolloff=8
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50

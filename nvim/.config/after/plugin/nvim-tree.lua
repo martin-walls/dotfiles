@@ -12,6 +12,5 @@ require("nvim-tree").setup {
         ignore = false,
     },
 }
--- TODO show files ignored by git
 
 vim.keymap.set("n", "<leader>-", vim.cmd.NvimTreeToggle)

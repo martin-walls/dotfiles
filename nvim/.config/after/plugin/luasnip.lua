@@ -11,6 +11,7 @@ luasnip.setup({
     enable_autosnippets = true,
     update_events = "TextChanged,TextChangedI",
     store_selection_keys = "<Tab>",
+    region_check_events = "CursorMoved",
 })
 
 cmp.setup({

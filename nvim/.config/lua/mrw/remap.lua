@@ -27,3 +27,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- (center line vertically and open any folds)
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- Reselect visual selection after indenting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+-- Add brackets around visual selection
+vim.keymap.set("v", "{", "xi{}<Esc>P")
+vim.keymap.set("v", "(", "xi()<Esc>P")
+vim.keymap.set("v", "[", "xi[]<Esc>P")
