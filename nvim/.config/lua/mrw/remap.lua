@@ -36,3 +36,30 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "{", "xi{}<Esc>P")
 vim.keymap.set("v", "(", "xi()<Esc>P")
 vim.keymap.set("v", "[", "xi[]<Esc>P")
+
+-- Move up/down one line as it appears on screen (i.e. handle wrapping)
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
+vim.keymap.set("n", "<Down>", "gj")
+vim.keymap.set("n", "<Up>", "gk")
+vim.keymap.set("i", "<Down>", "<C-o>gj")
+vim.keymap.set("i", "<Up>", "<C-o>gk")
+
+-- Home/End for line as it appears on screen
+vim.keymap.set("n", "<Home>", "g^")
+vim.keymap.set("n", "<End>", "g$")
+vim.keymap.set("i", "<Home>", "<C-o>g^")
+vim.keymap.set("i", "<End>", "<C-o>g$")
+
+-- Move lines up/down, and reindent to match new position
+vim.keymap.set("n", "<A-j>", ":m.+1<CR>==")
+vim.keymap.set("n", "<A-k>", ":m.-2<CR>==")
+vim.keymap.set("i", "<A-j>", "<Esc>:m.+1<CR>==gi")
+vim.keymap.set("i", "<A-k>", "<Esc>:m.-2<CR>==gi")
+vim.keymap.set("v", "<A-j>", ":m'>+1<CR>gv=gv")
+vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
+
+-- Horizontal scrolling
+vim.keymap.set("n", "H", "zh")
+vim.keymap.set("n", "L", "zl")
+
