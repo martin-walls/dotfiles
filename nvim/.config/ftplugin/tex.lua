@@ -9,6 +9,8 @@ vim.opt.shiftwidth = 2
 -- Increase width of fold markers in the margin
 vim.opt.foldcolumn = "4"
 
+vim.opt_local.spell = true
+
 -- AutoSave tex files
 local autoSaveGroup = vim.api.nvim_create_augroup("TexAutoSaveOnWrite", { clear = true })
 vim.api.nvim_create_autocmd({ "TextChangedI" }, {
