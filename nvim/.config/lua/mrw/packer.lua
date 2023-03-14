@@ -58,4 +58,10 @@ return require('packer').startup(function(use)
     use('numToStr/Comment.nvim')
     use("https://git.sr.ht/~nedia/auto-save.nvim")
     use("LudoPinelli/comment-box.nvim")
+    use {
+        'tanvirtin/vgit.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
 end)
