@@ -177,6 +177,7 @@ return {
     s(
         {
             trig = "__",
+            wordTrig = false,
             snippetType = "autosnippet",
             condition = in_math,
         },
@@ -185,6 +186,7 @@ return {
     s(
         {
             trig = "^^",
+            wordTrig = false,
             snippetType = "autosnippet",
             condition = in_math,
         },
