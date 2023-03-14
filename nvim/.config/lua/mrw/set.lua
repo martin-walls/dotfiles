@@ -41,11 +41,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.title = true
-vim.opt.titlestring = " %t%m"
-
---function setFiletypeTitlestring(icon)
---    vim.opt.titlestring = icon .. "\\ %t%m"
---end
 
 vim.opt.linebreak = true
 vim.opt.spelllang = "en"

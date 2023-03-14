@@ -9,7 +9,7 @@ vim.opt.shiftwidth = 2
 -- Increase width of fold markers in the margin
 vim.opt.foldcolumn = "4"
 
--- AutoSave tex files 
+-- AutoSave tex files
 local autoSaveGroup = vim.api.nvim_create_augroup("TexAutoSaveOnWrite", { clear = true })
 vim.api.nvim_create_autocmd({ "TextChangedI" }, {
     pattern = {"*.tex", "*.bib"},
@@ -23,3 +23,8 @@ vim.api.nvim_create_autocmd({ "TextChangedI" }, {
         end
     end
 })
+
+-- Global function to insert supo work template into file
+function SupoWorkTemplate()
+    vim.cmd("0r " .. vim.fn.stdpath('config') .. "/templates/supotemplate.tex")
+end
