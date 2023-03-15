@@ -50,3 +50,5 @@ vim.opt.spelllang = "en"
 vim.opt.fillchars = { fold = " ", foldopen = "┍", foldsep = "│" }
 vim.opt.foldcolumn = "2"
 
+-- Use the system clipboard
+vim.opt.clipboard = "unnamedplus"
