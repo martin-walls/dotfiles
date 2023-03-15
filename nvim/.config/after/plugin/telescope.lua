@@ -6,7 +6,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files)
 -- Grep for a search string across project
 vim.keymap.set("n", "<leader>ps", builtin.live_grep)
 -- Currently open buffers
-vim.keymap.set("n", "bb", builtin.buffers)
+vim.keymap.set("n", "<leader>pb", builtin.buffers)
 
 --  ┌─────┐
 --  │ LSP │
@@ -25,6 +25,8 @@ vim.keymap.set("n", "gi", builtin.lsp_implementations)
 vim.keymap.set("n", "gd", builtin.lsp_definitions)
 -- Definition(s) of type of symbol under cursor
 vim.keymap.set("n", "go", builtin.lsp_type_definitions)
+-- Symbols in the current buffer
+vim.keymap.set("n", "gs", builtin.lsp_document_symbols)
 
 
 require("telescope").setup({

@@ -16,17 +16,14 @@ bl.setup {
                 separator = true,
             },
         },
-        numbers = function (opts)
-            return opts.raise(opts.id)
-        end
     },
 }
 
 -- Next/previous buffer
-vim.keymap.set("n", "bn", function() bl.cycle(1) end)
-vim.keymap.set("n", "bv", function() bl.cycle(-1) end)
+vim.keymap.set("n", "<leader>bn", function() bl.cycle(1) end)
+vim.keymap.set("n", "<leader>bv", function() bl.cycle(-1) end)
 -- Pick a buffer to go to
-vim.keymap.set("n", "bg", bl.pick_buffer)
+vim.keymap.set("n", "<leader>bg", bl.pick_buffer)
 -- Pick a buffer to close
-vim.keymap.set("n", "bc", bl.close_with_pick)
+vim.keymap.set("n", "<leader>bc", bl.close_with_pick)
 
