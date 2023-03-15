@@ -6,7 +6,7 @@ vim.keymap.set('n', '<C-p>', builtin.git_files)
 -- Grep for a search string across project
 vim.keymap.set("n", "<leader>ps", builtin.live_grep)
 -- Currently open buffers
-vim.keymap.set("n", "<leader>b", builtin.buffers)
+vim.keymap.set("n", "bb", builtin.buffers)
 
 --  ┌─────┐
 --  │ LSP │

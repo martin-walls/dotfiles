@@ -14,11 +14,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 
--- Next buffer
-vim.keymap.set("n", "<A-n>", vim.cmd.bnext)
--- Previous buffer
-vim.keymap.set("n", "<A-b>", vim.cmd.bprevious)
-
 -- Half-page jumps
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
