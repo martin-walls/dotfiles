@@ -26,4 +26,12 @@ vim.g.vimtex_indent_enabled = false
 
 -- Enable folding
 vim.g.vimtex_fold_enabled = true
+vim.g.vimtex_fold_types = {
+    envs = {
+        whitelist = {
+            "examquestion",
+            "mrwComment",
+        }
+    }
+}
 
