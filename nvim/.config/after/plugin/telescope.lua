@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>pb", builtin.buffers)
 -- All diagnostics
 vim.keymap.set("n", "<leader>pd", builtin.diagnostics)
 -- Current file diagnostics
-vim.keymap.set("n", "<leader>pf", function()
+vim.keymap.set("n", "<leader>pD", function()
     builtin.diagnostics({ bufnr = 0 })
 end)
 -- References of symbol under cursor
@@ -32,5 +32,13 @@ vim.keymap.set("n", "<leader>ps", builtin.lsp_document_symbols)
 require("telescope").setup({
     defaults = {
         layout_strategy = "vertical",
+    },
+    pickers = {
+        find_files = {
+            -- Don't ignore any files, even gitignored files
+            hidden = true,
+            no_ignore = true,
+            no_ignore_parent = true,
+        },
     },
 })
