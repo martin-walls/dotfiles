@@ -4,7 +4,7 @@ vim.keymap.set('n', '<leader>pf', builtin.find_files)
 -- Search all files in the git repo
 vim.keymap.set('n', '<C-p>', builtin.git_files)
 -- Grep for a search string across project
-vim.keymap.set("n", "<leader>ps", builtin.live_grep)
+vim.keymap.set("n", "<leader>pg", builtin.live_grep)
 -- Currently open buffers
 vim.keymap.set("n", "<leader>pb", builtin.buffers)
 
@@ -14,7 +14,7 @@ vim.keymap.set("n", "<leader>pb", builtin.buffers)
 -- All diagnostics
 vim.keymap.set("n", "<leader>pd", builtin.diagnostics)
 -- Current file diagnostics
-vim.keymap.set("n", "<leader>fd", function()
+vim.keymap.set("n", "<leader>pf", function()
     builtin.diagnostics({ bufnr = 0 })
 end)
 -- References of symbol under cursor
@@ -26,7 +26,7 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions)
 -- Definition(s) of type of symbol under cursor
 vim.keymap.set("n", "go", builtin.lsp_type_definitions)
 -- Symbols in the current buffer
-vim.keymap.set("n", "gs", builtin.lsp_document_symbols)
+vim.keymap.set("n", "<leader>ps", builtin.lsp_document_symbols)
 
 
 require("telescope").setup({
