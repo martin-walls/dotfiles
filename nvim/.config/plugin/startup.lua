@@ -1,7 +1,6 @@
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
 local nvim_tree = require("nvim-tree.api")
-local telescope_builtin = require("telescope.builtin")
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
     callback = function(data)
@@ -11,12 +10,14 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
             return
         end
         -- Check if harpoon has marks,
-        -- else open telescope file picker
+        -- else show file browser
         local mark_count = harpoon_mark.get_length()
         if mark_count > 0 then
             harpoon_ui.toggle_quick_menu()
         else
-            telescope_builtin.find_files()
+            -- cd to the dir, in case nvim was opened with path to other dir
+            vim.cmd.cd(data.file)
+            nvim_tree.tree.open()
         end
     end
 })
