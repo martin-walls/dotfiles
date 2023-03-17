@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     use("navarasu/onedark.nvim")
     use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
     use("nvim-treesitter/playground")
+    use("nvim-treesitter/nvim-treesitter-context")
     use("mbbill/undotree")
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use {

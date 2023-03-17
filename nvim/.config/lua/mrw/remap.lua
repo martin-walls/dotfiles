@@ -1,5 +1,3 @@
---vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- Paste over the top of selection without losing what was copied from the register
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
