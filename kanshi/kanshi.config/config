@@ -2,9 +2,14 @@
   output eDP-1 enable scale 1.5
 }
 
-{
-  output eDP-1 position 0,360 scale 1.5
-  output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0
+#profile external_right {
+#  output eDP-1 position 0,360 scale 1.5
+#  output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0
+#}
+
+profile external_above {
+  output eDP-1 position 427,1440 scale 1.5
+  output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
 }
 
 profile headlessvnc {
