@@ -70,4 +70,5 @@ return require('packer').startup(function(use)
             'nvim-lua/plenary.nvim'
         }
     }
+    use("tpope/vim-eunuch")
 end)
