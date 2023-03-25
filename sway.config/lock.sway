@@ -1,15 +1,17 @@
 # auto lock after 10 mins and turn off screen
 # 5 secs later
-exec swayidle -w \
-    resume 'swaymsg "output * dpms on"' \
-    before-sleep '~/.config/swaylock/lock.sh'
-#     timeout 600 '~/.config/swaylock/lock.sh' \
+# exec swayidle -w \
+#     timeout 600 'swaylock -f' \
 #     timeout 605 'swaymsg "output * dpms off"' \
+#     resume 'swaymsg "output * dpms on"' \
+#     before-sleep 'swaylock -f'
+
+set $lock $HOME/.config/swaylock/lock.sh
 
 # Lock screen
-bindsym $mod+Shift+s exec $HOME/.config/swaylock/lock.sh
+bindsym $mod+Shift+s exec $lock
 # Suspend
-bindsym --locked $mod+Ctrl+Shift+s exec systemctl suspend
+bindsym --locked $mod+Ctrl+Shift+s exec $lock && systemctl suspend
 
 # don't lock if an app is fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
