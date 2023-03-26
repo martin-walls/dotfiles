@@ -29,6 +29,8 @@ vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "{", "xi{}<Esc>P")
 vim.keymap.set("v", "(", "xi()<Esc>P")
 vim.keymap.set("v", "[", "xi[]<Esc>P")
+-- Add quotes around visual selection
+vim.keymap.set("v", '"', 'xi""<Esc>P')
 
 -- Move up/down one line as it appears on screen (i.e. handle wrapping)
 vim.keymap.set("n", "j", "gj")
@@ -55,4 +57,3 @@ vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
 -- Horizontal scrolling
 vim.keymap.set("n", "H", "zh")
 vim.keymap.set("n", "L", "zl")
-
