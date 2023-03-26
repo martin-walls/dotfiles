@@ -13,7 +13,7 @@ vim.opt_local.spell = true
 
 -- AutoSave tex files
 local autoSaveGroup = vim.api.nvim_create_augroup("TexAutoSaveOnWrite", { clear = true })
-vim.api.nvim_create_autocmd({ "TextChangedI" }, {
+vim.api.nvim_create_autocmd({ "TextChangedI", "TextChanged", "InsertLeave", "BufLeave" }, {
     pattern = {"*.tex", "*.bib"},
     group = autoSaveGroup,
     callback = function (args)
