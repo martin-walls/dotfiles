@@ -75,4 +75,10 @@ return require('packer').startup(function(use)
         }
     }
     use("tpope/vim-eunuch")
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        }
+    }
 end)

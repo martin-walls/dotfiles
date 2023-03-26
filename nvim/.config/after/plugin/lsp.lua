@@ -8,11 +8,21 @@ local lsp = require('lsp-zero').preset({
 lsp.ensure_installed({
 	"tsserver",
 	"rust_analyzer",
-	"eslint",
 })
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
+
+lsp.on_attach(function(_, bufnr)
+    -- Format on save
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+        group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.format()
+        end
+    })
+end)
 
 lsp.setup()
 
@@ -20,4 +30,3 @@ vim.diagnostic.config({
     virtual_text = true,
     update_in_insert = true,
 })
-
