@@ -30,3 +30,7 @@ vim.diagnostic.config({
     virtual_text = true,
     update_in_insert = true,
 })
+
+-- Mappings to move between diagnostics
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
