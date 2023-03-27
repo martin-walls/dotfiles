@@ -5,7 +5,7 @@ null_ls.setup({
         null_ls.builtins.diagnostics.eslint_d,
         null_ls.builtins.formatting.prettierd,
         null_ls.builtins.diagnostics.chktex.with({
-            diagnostics_format = "[#{c}] #{m} (#{s})",
+            diagnostics_format = "[#{c}] #{m}",
         }),
     },
 })
