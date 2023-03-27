@@ -1,13 +1,13 @@
 local lsp = require('lsp-zero').preset({
-  name = 'minimal',
-  set_lsp_keymaps = {omit = {"gr", "gi", "gd", "go"}},
-  manage_nvim_cmp = true,
-  suggest_lsp_servers = true,
+    name = 'minimal',
+    set_lsp_keymaps = { omit = { "gr", "gi", "gd", "go" } },
+    manage_nvim_cmp = true,
+    suggest_lsp_servers = true,
 })
 
 lsp.ensure_installed({
-	"tsserver",
-	"rust_analyzer",
+    "tsserver",
+    "rust_analyzer",
 })
 
 -- (Optional) Configure lua language server for neovim
