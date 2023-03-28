@@ -21,6 +21,7 @@ return {
             trig = "sr",
             snippetType = "autosnippet",
             condition = in_math,
+            wordTrig = false,
         },
         t("^2")
     ),
@@ -157,8 +158,8 @@ return {
             condition = in_math,
         },
         fmta("<>_<>", {
-            f(function (_, snip) return snip.captures[1] end),
-            f(function (_, snip) return snip.captures[2] end),
+            f(function(_, snip) return snip.captures[1] end),
+            f(function(_, snip) return snip.captures[2] end),
         })
     ),
     s(
@@ -170,8 +171,8 @@ return {
             condition = in_math,
         },
         fmta("<>_{<>}", {
-            f(function (_, snip) return snip.captures[1] end),
-            f(function (_, snip) return snip.captures[2] end),
+            f(function(_, snip) return snip.captures[1] end),
+            f(function(_, snip) return snip.captures[2] end),
         })
     ),
     s(
@@ -195,14 +196,13 @@ return {
     --  ┌──────────┐
     --  │ Brackets │
     --  └──────────┘
-    --  Omit the closing bracket after \right, cos it's added by autopairs
     s(
         {
             trig = ";(",
             snippetType = "autosnippet",
             condition = in_math,
         },
-        fmta("\\left( <> \\right", { i(1) })
+        fmta("\\left( <> \\right)", { d(1, get_visual) })
     ),
     s(
         {
@@ -210,7 +210,7 @@ return {
             snippetType = "autosnippet",
             condition = in_math,
         },
-        fmta("\\left[ <> \\right", { i(1) })
+        fmta("\\left[ <> \\right]", { d(1, get_visual) })
     ),
     s(
         {
@@ -218,7 +218,7 @@ return {
             snippetType = "autosnippet",
             condition = in_math,
         },
-        fmta("\\left\\{ <> \\right\\", { i(1) })
+        fmta("\\left\\{ <> \\right\\}", { d(1, get_visual) })
     ),
     --  ┌──────┐
     --  │ Text │
@@ -232,4 +232,3 @@ return {
         fmta("\\mathrm{<>}", { i(1) })
     ),
 }
-

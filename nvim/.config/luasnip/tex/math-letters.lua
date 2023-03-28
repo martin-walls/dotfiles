@@ -128,6 +128,13 @@ return {
         { condition = in_math }
     ),
     s(
+        { trig = ";;w", snippetType = "autosnippet", wordTrig = false },
+        {
+            t("\\psi"),
+        },
+        { condition = in_math }
+    ),
+    s(
         { trig = ";;D", snippetType = "autosnippet", wordTrig = false },
         {
             t("\\Delta"),
@@ -295,6 +302,13 @@ return {
         { trig = ";;o", snippetType = "autosnippet", wordTrig = false },
         {
             t("$\\omega$"),
+        },
+        { condition = in_text }
+    ),
+    s(
+        { trig = ";;w", snippetType = "autosnippet", wordTrig = false },
+        {
+            t("$\\psi$"),
         },
         { condition = in_text }
     ),
