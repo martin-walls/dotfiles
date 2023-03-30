@@ -24,7 +24,7 @@ lsp.on_attach(function(_, bufnr)
     })
 
     -- Run formatter
-    vim.keymap.set({ "n", "x" }, "<A-f>", function()
+    vim.keymap.set({ "n", "x" }, "<leader>f", function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end, { buffer = bufnr })
 end)

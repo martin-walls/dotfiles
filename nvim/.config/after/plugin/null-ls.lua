@@ -12,5 +12,7 @@ null_ls.setup({
             -- Show error code as well as message, so it can be silenced via a line comment
             diagnostics_format = "[#{c}] #{m}",
         }),
+        -- Python formatter
+        null_ls.builtins.formatting.black,
     },
 })
