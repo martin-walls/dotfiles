@@ -30,7 +30,7 @@ vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 6
-vim.opt.sidescrolloff=8
+vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
