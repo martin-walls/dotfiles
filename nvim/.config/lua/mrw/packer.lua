@@ -80,4 +80,5 @@ return require('packer').startup(function(use)
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     })
     use("windwp/nvim-ts-autotag")
+    use("JoosepAlviste/nvim-ts-context-commentstring")
 end)
