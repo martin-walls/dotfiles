@@ -20,4 +20,6 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 # nicer cat output
-alias cat='bat --tabs=2'
+if [ -f "/usr/bin/bat" ]; then
+    alias cat='bat --tabs=2'
+fi
