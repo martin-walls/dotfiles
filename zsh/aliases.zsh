@@ -1,7 +1,11 @@
 # General aliases
 
-alias rm='rmtrash'
-alias rmdir='rmdirtrash'
+if [ -f "/usr/local/bin/rmtrash" ]; then
+    alias rm='rmtrash'
+fi
+if [ -f "/usr/local/bin/rmdirtrash" ]; then
+    alias rmdir='rmdirtrash'
+fi
 
 # allow using sudo with aliases
 alias sudo='sudo '
