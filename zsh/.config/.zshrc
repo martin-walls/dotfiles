@@ -142,9 +142,17 @@ zle -N down-line-or-beginning-search
 bindkey $key[Up] up-line-or-beginning-search   # Up
 bindkey $key[Down] down-line-or-beginning-search # Down
 
-# TODO make fzf ** work
-source /usr/share/fzf/shell/key-bindings.zsh
-source /usr/share/fzf/shell/completion.zsh
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == */home/albrecht-v/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/albrecht-v/.fzf/bin"
+fi
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "/home/albrecht-v/.fzf/shell/completion.zsh" 2> /dev/null
+# Key bindings
+# ------------
+source "/home/albrecht-v/.fzf/shell/key-bindings.zsh"
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
