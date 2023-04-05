@@ -1,11 +1,15 @@
 # wallpaper
 output * bg ~/.dotfiles/wallpaper/tuxwithfriends.png fill
 
-# 10px border around each window
+# 10px space around each window
 gaps inner 4
+# remove the space around outer edge of workspace
+gaps outer -4
 
 # no window title bars; 2px border
 default_border pixel 2
+
+hide_edge_borders both
 
 # floating audio visualiser
 for_window [app_id="cava-transp"] border none, floating enable, opacity 0.7

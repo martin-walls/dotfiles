@@ -3,7 +3,7 @@
 blueblack="282c34"
 white="abb2bf"
 
-swaylock \
+swaylock -f \
   --screenshots \
   --effect-scale 0.25 \
   --effect-blur 15x2 \

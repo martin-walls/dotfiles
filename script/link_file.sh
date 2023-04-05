@@ -26,7 +26,7 @@ link_file () {
 	local action=
 
   # if destination file exists, or exists and is a directory, or exists and is a symlink
-	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ] 
+	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
 
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
@@ -87,7 +87,7 @@ link_file () {
 
   # if not skipping this file
   if [ "$skip" != "true" ] # "false" or empty
-  then 
+  then
     ln -s "$src" "$dst"
     success "linked $src to $dst"
   fi

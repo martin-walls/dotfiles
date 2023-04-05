@@ -1,0 +1,9 @@
+[[language]]
+name = "latex"
+
+[language.auto-pairs]
+"`" = "'"
+'[' = ']'
+'{' = '}'
+'(' = ')'
+'$' = '$'

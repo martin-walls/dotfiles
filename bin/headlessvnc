@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# create headless output if it doesn't exist
+if ! swaymsg -t get_outputs | grep HEADLESS-1 >/dev/null; then
+  swaymsg create_output HEADLESS-1
+fi
+
+ip=$(hostname -I | awk '{print $1}')
+
+wayvnc --output=HEADLESS-1 --max-fps=20 $ip &

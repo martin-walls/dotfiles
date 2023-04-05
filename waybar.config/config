@@ -9,8 +9,11 @@
     "tray",
     // "cpu",
     // "memory",
+    "custom/colorpicker",
+    "custom/btop",
     "idle_inhibitor",
     "pulseaudio",
+    "custom/micvolume",
     "custom/darkmode",
     "backlight",
     "battery",
@@ -42,7 +45,7 @@
   },
   "clock": {
     // "format": " {:%H:%M %Y.%m.%d}",
-    "format": "🇬🇧 {:%H:%M %Y.%m.%d}",
+    "format": "{:%H:%M %Y.%m.%d}",
     // "tooltip-format": "{:%a %d %b %H:%M}"
     "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "timezone": "Europe/London"
@@ -83,6 +86,13 @@
     "on-click-right": "pavucontrol",
     "tooltip": false
   },
+  "custom/micvolume": {
+    "format": " {}%",
+    "interval": 1,
+    "exec": "~/.config/waybar/modules/micvolume.sh",
+    "on-scroll-up": "amixer sset Capture 5%+",
+    "on-scroll-down": "amixer sset Capture 5%-",
+  },
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
@@ -119,6 +129,14 @@
     "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '(recurse(.nodes[]) | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [.. | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | if ($scratch_nodes|length) > 0 then { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") } else empty end'",
     "format": " {}",
     "on-click": "exec swaymsg 'scratchpad show'"
+  },
+  "custom/colorpicker": {
+    "on-click": "wl-color-picker",
+    "format": ""
+  },
+  "custom/btop": {
+    "format": "",
+    "on-click": "kitty --class btop btop"
   }
 }
 // vim:commentstring=//\ %s:ft=conf

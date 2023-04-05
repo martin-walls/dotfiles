@@ -1,0 +1,20 @@
+theme = "onedark"
+
+[editor]
+line-number = "absolute"
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+soft-wrap.enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+right = ["diagnostics", "selections", "file-encoding", "file-type", "position"]
+
