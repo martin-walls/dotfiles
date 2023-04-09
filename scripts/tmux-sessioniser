@@ -29,6 +29,11 @@ if ! tmux has-session -t="$selected_name" 2> /dev/null; then
     tmux new-session -ds "$selected_name" -c "$selected"
 fi
 
-tmux switch-client -t "$selected_name"
+client_running=$(tmux list-clients)
 
-while [ ; ]; do sleep 1; done
+if [[ "$client_running" = "" ]]; then
+    tmux attach -t "$selected_name"
+    exit 0
+fi
+
+tmux switch-client -t "$selected_name"
