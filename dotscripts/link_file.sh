@@ -39,7 +39,7 @@ link_file () {
       then
         skip=true
       else
-        user "File already exists: $dst ($basename ""$src)), what do you want to do\n\
+        user "File already exists: $dst ($(basename "$src")), what do you want to do\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
@@ -57,6 +57,9 @@ link_file () {
           S )
             skip_all=true;;
           * )
+            # if invalid input, skip so the script doesn't fail
+            info "Invalid action: skipping"
+            skip=true
             ;;
         esac
       fi
