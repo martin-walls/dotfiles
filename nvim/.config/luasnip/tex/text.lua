@@ -6,13 +6,13 @@ return {
             trig = "eg.",
             condition = in_text,
         },
-        t("e.g.\\")
+        t("e.g.~")
     ),
     s(
         {
             trig = "ie.",
             condition = in_text,
         },
-        t("i.e.\\")
+        t("i.e.~")
     ),
 }

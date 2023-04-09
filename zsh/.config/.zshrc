@@ -130,8 +130,11 @@ bindkey "^[[1;5D" backward-word
 bindkey "^H" backward-kill-word
 
 # use lf to also switch directories, bind it to ctrl-o
-[ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
-bindkey -s '^f' 'lfcd\n'
+# [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
+# bindkey -s '^f' 'lfcd\n'
+
+# Tmux session switcher
+bindkey -s "^f" "tmux-sessioniser\n"
 
 # Better history searching
 # See https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
@@ -144,15 +147,15 @@ bindkey $key[Down] down-line-or-beginning-search # Down
 
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/albrecht-v/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/albrecht-v/.fzf/bin"
+if [[ ! "$PATH" == */home/martin/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/martin/.fzf/bin"
 fi
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/albrecht-v/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/home/martin/.fzf/shell/completion.zsh" 2> /dev/null
 # Key bindings
 # ------------
-source "/home/albrecht-v/.fzf/shell/key-bindings.zsh"
+source "/home/martin/.fzf/shell/key-bindings.zsh"
 
 # Load plugins (should be at end of .zshrc)
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

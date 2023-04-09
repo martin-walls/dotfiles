@@ -32,14 +32,14 @@ link_file () {
     if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
     then
 
-      local currentSrc="$(readlink $dst)"
+      local currentSrc="$(readlink "$dst")"
 
       # if pointing to the same location we want it to
       if [ "$currentSrc" == "$src" ]
       then
         skip=true
       else
-        user "File already exists: $dst ($basename "$src")), what do you want to do\n\
+        user "File already exists: $dst ($basename ""$src)), what do you want to do\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
