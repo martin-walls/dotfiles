@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Move to dotfiles root dir
+cd "$(dirname "$0")/.."
+DOTFILES_ROOT=$(pwd -P)
+DOTSCRIPTS="$DOTFILES_ROOT/dotscripts"
+
+# stop execution of the script immediately if a command has an error
+set -e
+
+echo ''
+
+# shellcheck source=./link_file.sh
+source "$DOTSCRIPTS/link_file.sh"
+
+install_dotfiles () {
+    info 'installing dotfiles'
+
+    local overwrite_all=false backup_all=false skip_all=false
+
+    find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '.git/*' -not -path '*.ignore/*' -print0 |
+        while IFS= read -r -d "" src; do
+            dst="$HOME/$(basename "${src%.*}")"
+            link_file "$src" "$dst"
+        done
+}
+
+install_configs () {
+    info 'installing .configs'
+
+    local overwrite_all=false backup_all=false skip_all=false
+
+    if [ ! -d "$HOME/.config" ]; then
+        mkdir "$HOME/.config"
+        success "created directory $HOME/.config"
+    fi
+
+    find -H "$DOTFILES_ROOT" -maxdepth 2 -path "*.config" -type d -not -path '.git/*' \
+        -not -path '*.ignore/*' -print0 |
+        while IFS= read -r -d "" src; do
+            dst="$HOME/.config/$(basename "${src%.*}")"
+            link_file "$src" "$dst"
+        done
+}
+
+install_submodules () {
+    info 'installing submodules'
+    git submodule update --init --recursive
+}
+
+install_dotfiles
+install_configs
+install_submodules
+
+echo ''
+echo '  All installed!'
