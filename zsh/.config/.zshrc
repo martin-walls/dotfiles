@@ -130,8 +130,11 @@ bindkey "^[[1;5D" backward-word
 bindkey "^H" backward-kill-word
 
 # use lf to also switch directories, bind it to ctrl-o
-[ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
-bindkey -s '^f' 'lfcd\n'
+# [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
+# bindkey -s '^f' 'lfcd\n'
+
+# Tmux session switcher
+bindkey -s "^f" "tmux-sessioniser\n"
 
 # Better history searching
 # See https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
@@ -142,7 +145,6 @@ zle -N down-line-or-beginning-search
 bindkey $key[Up] up-line-or-beginning-search   # Up
 bindkey $key[Down] down-line-or-beginning-search # Down
 
-# TODO make fzf ** work
 source /usr/share/fzf/shell/key-bindings.zsh
 source /usr/share/fzf/shell/completion.zsh
 
