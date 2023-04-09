@@ -106,7 +106,13 @@ precmd () { echo -ne "\033]0;$(print -P '%(3~|.../%2~|%~)')\007" }
 
 # Prompt config
 setopt prompt_subst
-PROMPT='%B%F{blue}%(3~|.../%2~|%~)%f%b %(!.#.:) '
+if [[ "$SSH_CLIENT" = "" ]]; then
+    # standard prompt, for local machine
+    PROMPT='%B%F{blue}%(3~|.../%2~|%~)%f%b %(!.#.:) '
+else
+    # show hostname when connected to an SSH session
+    PROMPT='%F{magenta}%M%f:%B%F{blue}%(3~|.../%2~|%~)%f%b %(!.#.:) '
+fi
 # __git_ps1 optionally takes two args, pre and post, to show before
 # and after the git prompt
 RPROMPT='$(__git_ps1 "(%%F{green}%%f %s)")'
