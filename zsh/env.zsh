@@ -10,4 +10,4 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git \) -prune -o -print'
 export FZF_DEFAULT_OPTS='--height 40% --reverse'
 
-export TERM=vt100
+export TERM=xterm-256color
