@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
     use("nvim-treesitter/playground")
     use("nvim-treesitter/nvim-treesitter-context")
-    use("mbbill/undotree")
+    -- use("mbbill/undotree")
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use {
         'VonHeikemen/lsp-zero.nvim',
