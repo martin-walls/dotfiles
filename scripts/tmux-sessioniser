@@ -5,7 +5,7 @@ if [ $# -eq 1 ]; then
     selected=$1
 else
     selected=$((find ~/PROJECTS ~/UNI -mindepth 1 -maxdepth 2 -type d; \
-                find ~/ ~/.dotfiles ~/UNI/II/00-project -mindepth 1 -maxdepth 1 -type d) \
+                find ~/ ~/.dotfiles ~/UNI/II/00-project ~/Documents -mindepth 1 -maxdepth 1 -type d) \
                 | fzf)
 fi
 
@@ -29,6 +29,11 @@ if ! tmux has-session -t="$selected_name" 2> /dev/null; then
     tmux new-session -ds "$selected_name" -c "$selected"
 fi
 
-tmux switch-client -t "$selected_name"
+client_running=$(tmux list-clients)
 
-while [ ; ]; do sleep 1; done
+if [[ "$client_running" = "" ]]; then
+    tmux attach -t "$selected_name"
+    exit 0
+fi
+
+tmux switch-client -t "$selected_name"
