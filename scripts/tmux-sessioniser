@@ -4,8 +4,8 @@
 if [ $# -eq 1 ]; then
     selected=$1
 else
-    selected=$((find ~/PROJECTS ~/UNI -mindepth 1 -maxdepth 2 -type d; \
-                find ~/ ~/.dotfiles ~/UNI/II/00-project ~/Documents -mindepth 1 -maxdepth 1 -type d) \
+    selected=$((find ~/PROJECTS -mindepth 1 -maxdepth 2 -type d; \
+                find ~/ ~/.dotfiles ~/Documents -mindepth 1 -maxdepth 1 -type d) \
                 | fzf)
 fi
 
