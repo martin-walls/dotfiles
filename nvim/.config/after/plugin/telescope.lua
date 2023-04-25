@@ -29,6 +29,10 @@ vim.keymap.set("n", "go", builtin.lsp_type_definitions)
 vim.keymap.set("n", "<leader>ps", builtin.lsp_document_symbols)
 
 
+-- Resume last picker
+vim.keymap.set("n", "<leader>pr", builtin.resume)
+
+
 require("telescope").setup({
     defaults = {
         layout_strategy = "vertical",
