@@ -30,3 +30,12 @@ vim.api.nvim_create_autocmd({ "TextChangedI", "TextChanged", "InsertLeave", "Buf
 function SupoWorkTemplate()
     vim.cmd("0r " .. vim.fn.stdpath('config') .. "/templates/supotemplate.tex")
 end
+
+-- Clear indentexpr when open TeX file -- this disables auto indenting
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = { "*.tex", "*.bib" },
+    group = vim.api.nvim_create_augroup("TexClearIndentExpr", { clear = true }),
+    callback = function()
+        vim.opt.indentexpr = ""
+    end,
+})
