@@ -41,7 +41,9 @@ link_file () {
       else
         user "File already exists: $dst ($(basename "$src")), what do you want to do\n\
         [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
-        read -n 1 action
+
+        # reading from /dev/tty seems to make this work
+        read -n 1 action </dev/tty
 
         case "$action" in
           o )
