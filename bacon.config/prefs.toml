@@ -3,8 +3,8 @@
 
 # Uncomment and change the value (true/false) to
 # specify whether bacon should start in summary mode
-#
-# summary = true
+
+summary = true
 
 # Uncomment and change the value (true/false) to
 # specify whether bacon should start with lines wrapped
@@ -21,8 +21,9 @@
 # but can still be cancelled on specific launches with -E
 #
 # See https://dystroy.org/bacon/config/#export-locations
-#
-# export_locations = true
+
+# necessary for nvim-bacon plugin
+export_locations = true
 
 # Uncomment and change the key-bindings you want to define
 # (some of those ones are the defaults and are just here
