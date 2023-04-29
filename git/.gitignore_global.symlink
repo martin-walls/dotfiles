@@ -81,3 +81,6 @@ _minted*/
 
 # vim sessions
 Session.vim
+
+# Bacon locations (Rust checker)
+.bacon-locations
