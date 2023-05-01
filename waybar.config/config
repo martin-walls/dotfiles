@@ -11,7 +11,7 @@
     // "memory",
     "custom/colorpicker",
     "custom/btop",
-    "idle_inhibitor",
+    // "idle_inhibitor",
     "pulseaudio",
     "custom/micvolume",
     "custom/darkmode",

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# != 1 ]; then
+    echo "Usage: set-theme light|dark"
+    exit 1
+fi
+
+# convert string to lowercase before matching
+case "${1,,}" in
+  light)
+    echo "Setting light theme for bat"
+    ln -sf ~/.dotfiles/bat.config/config_light ~/.dotfiles/bat.config/config
+    ;;
+  dark)
+    echo "Setting dark theme for bat"
+    ln -sf ~/.dotfiles/bat.config/config_dark ~/.dotfiles/bat.config/config
+    ;;
+  *)
+    echo "Invalid option '$1'"
+    exit 2
+    ;;
+esac

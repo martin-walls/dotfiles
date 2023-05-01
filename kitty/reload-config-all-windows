@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# get pids of all running kitty windows
+pgrep kitty |
+    while IFS= read -r pid; do
+        # send "reload config" signal to each of them (SIGUSR1)
+        # (https://sw.kovidgoyal.net/kitty/conf/)
+        kill -s SIGUSR1 "$pid"
+    done

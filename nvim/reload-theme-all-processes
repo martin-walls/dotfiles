@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# To work from waybar, this needs to be run as sudo (I think so it can read /run/user...)
+# I solved this by making an exception in /etc/sudoers that lets this script be run as
+# root without requiring password prompt.
+# (https://unix.stackexchange.com/questions/18830/how-to-run-a-specific-program-as-root-without-a-password-prompt)
+
+if [ -d "/run/user/1000" ]; then
+    for server in $(ls /run/user/1000/nvim.*); do
+            echo "Reloading theme for nvim server $server"
+            nvim --server "$server" \
+                --remote-send ":so ~/.dotfiles/nvim/.config/lua/mrw/theme.lua<CR>"
+        done
+fi

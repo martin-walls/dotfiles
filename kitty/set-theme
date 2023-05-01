@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# != 1 ]; then
+    echo "Usage: set-theme light|dark"
+    exit 1
+fi
+
+# convert string to lowercase before matching
+case "${1,,}" in
+  light)
+    echo "Setting light theme for kitty"
+    ln -sf ~/.dotfiles/kitty/.config/themes/light.conf ~/.dotfiles/kitty/.config/current-theme.conf
+    ;;
+  dark)
+    echo "Setting dark theme for kitty"
+    ln -sf ~/.dotfiles/kitty/.config/themes/dark.conf ~/.dotfiles/kitty/.config/current-theme.conf
+    ;;
+  *)
+    echo "Invalid option '$1'"
+    exit 2
+    ;;
+esac
+
+# Reload all active kitty windows
+~/.dotfiles/kitty/reload-config-all-windows

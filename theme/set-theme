@@ -8,7 +8,7 @@ IFS=$'\n\t'
 
 # check number of arguments
 if [ $# != 1 ]; then
-  echo "Usage: set-theme light|dark"
+  echo "Usage: set-theme light|dark|toggle"
   exit 1
 fi
 
@@ -51,16 +51,20 @@ if [[ $variant == "toggle" ]]; then
   fi
 fi
 
-echo $variant > ~/.dotfiles/theme/CURRENT_THEME
-
-# vim
-echo "Setting vim theme"
-ln -sf ~/.dotfiles/theme/vim/$variant.vim ~/.dotfiles/nvim/.config/plugin/theme.vim
+echo "$variant" > ~/.dotfiles/theme/CURRENT_THEME
 
 # kitty
 echo "Setting kitty theme"
-ln -sf ~/.dotfiles/kitty/.config/themes/$variant.conf ~/.dotfiles/kitty/.config/current-theme.conf
+~/.dotfiles/kitty/set-theme "$variant"
 
 # bat
 echo "Setting bat theme"
-ln -sf ~/.dotfiles/theme/bat/$variant ~/.config/bat/config
+~/.dotfiles/bat.config/set-theme "$variant"
+
+# reload tmux
+tmux source-file ~/.config/tmux/tmux.conf
+
+# neovim
+echo "Setting neovim theme"
+sudo ~/.dotfiles/nvim/reload-theme-all-processes
+
