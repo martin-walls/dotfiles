@@ -57,3 +57,8 @@ vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
 -- Horizontal scrolling
 vim.keymap.set("n", "H", "zh")
 vim.keymap.set("n", "L", "zl")
+
+-- Mapping to reload theme, that can be sent remotely
+vim.keymap.set({"n", "v", "s", "x", "o", "i", "c", "t"},
+                "<F24>",
+                "<cmd>so ~/.dotfiles/nvim/.config/lua/mrw/theme.lua<CR>")

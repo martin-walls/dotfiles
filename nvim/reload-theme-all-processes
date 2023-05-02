@@ -6,9 +6,9 @@
 # (https://unix.stackexchange.com/questions/18830/how-to-run-a-specific-program-as-root-without-a-password-prompt)
 
 if [ -d "/run/user/1000" ]; then
-    for server in $(ls /run/user/1000/nvim.*); do
+    for server in $(ls /run/user/1000/nvim.*); do # putting quotes around the $() breaks it!
             echo "Reloading theme for nvim server $server"
             nvim --server "$server" \
-                --remote-send ":so ~/.dotfiles/nvim/.config/lua/mrw/theme.lua<CR>"
+                --remote-send "<F24>"
         done
 fi
