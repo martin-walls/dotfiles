@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# check number of arguments
+if [ $# != 1 ]; then
+    echo "Usage: external-monitor-brightness increase|decrease"
+    exit 1
+fi
+
+# convert string to lowercase before matching
+case "${1,,}" in
+    increase|inc)
+        echo "Increasing external monitor brightness by 10%"
+        brightness_update="+10"
+        ;;
+    decrease|dec)
+        echo "Decreasing external monitor brightness by 10%"
+        brightness_update="-10"
+        ;;
+    *)
+        echo "Invalid option '$1'"
+        exit 2
+        ;;
+esac
+
+monitor_device="dev:/dev/i2c-7"
+monitor_brightness_address="0x10"
+
+ddccontrol -r $monitor_brightness_address -W $brightness_update $monitor_device
