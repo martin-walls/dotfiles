@@ -15,4 +15,6 @@ set recolor-lightcolor rgba(255,255,255,0)
 # so page transparency can be switched off
 map <C-r> recolor toggle
 
+set selection-clipboard clipboard
+
 # vim:ft=conf
