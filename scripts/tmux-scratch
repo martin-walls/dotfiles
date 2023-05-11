@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Open or create a scratch session
+
+scratch_session_name="__scratch__"
+
+tmux_running=$(pgrep tmux)
+# If tmux isn't already running
+if [[ "$TMUX" = "" && "$tmux_running" = "" ]]; then
+    # create a scratch session starting in the home dir
+    tmux new-session -s "$scratch_session_name" -c "$HOME"
+    exit 0
+fi
+
+# Check if the scratch session already exists
+if ! tmux has-session -t="$scratch_session_name" 2> /dev/null; then
+    # -d: don't attach session to current terminal
+    tmux new-session -ds "$scratch_session_name" -c "$HOME"
+fi
+
+client_running=$(tmux list-clients)
+
+if [[ "$client_running" = "" ]]; then
+    tmux attach -t "$scratch_session_name"
+    exit 0
+fi
+
+tmux switch-client -t "$scratch_session_name"
