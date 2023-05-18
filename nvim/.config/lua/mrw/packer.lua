@@ -84,4 +84,6 @@ return require('packer').startup(function(use)
     use("tpope/vim-obsession")
     use("christoomey/vim-tmux-navigator")
     use("Canop/nvim-bacon")
+    -- Close unused buffers after x mins of inactivity
+    use("chrisgrieser/nvim-early-retirement")
 end)
