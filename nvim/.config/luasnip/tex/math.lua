@@ -153,6 +153,7 @@ return {
         {
             trig = "(%a)(%d)",
             regTrig = true,
+            wordTrig = false,
             dscr = "Auto subscript single digit",
             snippetType = "autosnippet",
             condition = in_math,
@@ -166,6 +167,7 @@ return {
         {
             trig = "(%a)_(%d%d)",
             regTrig = true,
+            wordTrig = false,
             dscr = "Auto subscript double digit",
             snippetType = "autosnippet",
             condition = in_math,
