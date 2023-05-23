@@ -7,7 +7,7 @@ return {
     --  │ Monospace │
     --  └───────────┘
     s(
-        { trig = ";tt", snippetType = "autosnippet", condition = in_text },
+        { trig = ";tt", snippetType = "autosnippet" },
         fmta(
             "\\texttt{<>}",
             { d(1, get_visual) }
