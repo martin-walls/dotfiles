@@ -86,4 +86,11 @@ return require('packer').startup(function(use)
     use("Canop/nvim-bacon")
     -- Close unused buffers after x mins of inactivity
     use("chrisgrieser/nvim-early-retirement")
+    -- Highlight TODO comments
+    use({
+        "folke/todo-comments.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        }
+    })
 end)
