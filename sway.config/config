@@ -23,8 +23,8 @@ set $browser firefox
 # Must be before `include ./*.sway`
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 # this next line not needed, it's handled by systemd
-# exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
-set $_wobcolors #282c34aa #ffffffdd #ffffffdd
+exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+set $_wobcolors 282c34aa ffffffdd ffffffdd
 
 include ./*.sway
 
