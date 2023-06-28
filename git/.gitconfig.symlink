@@ -11,6 +11,7 @@
 	co = checkout
 	sw = switch
 	df = difftool --no-symlinks --dir-diff
+    tagversion = "!f() { git tag -a v$1 -m \"Version $1\"; }; f"
 [core]
 	excludesFile = /home/martin/.gitignore_global
 	editor = nvim
