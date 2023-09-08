@@ -93,4 +93,6 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim"
         }
     })
+    -- Typescript // ^? queries
+    use("marilari88/twoslash-queries.nvim")
 end)

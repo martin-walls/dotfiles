@@ -29,6 +29,12 @@ lsp.on_attach(function(_, bufnr)
     end, { buffer = bufnr })
 end)
 
+lsp.configure("tsserver", {
+    on_attach = function(client, bufnr)
+        require("twoslash-queries").attach(client, bufnr)
+    end
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
