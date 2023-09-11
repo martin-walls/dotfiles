@@ -1,5 +1,11 @@
-local null_ls = require("null-ls")
+require("mason-null-ls").setup({
+    ensure_installed = {
+        "google-java-format"
+    },
+    automatic_installation = false,
+})
 
+local null_ls = require("null-ls")
 null_ls.setup({
     sources = {
         null_ls.builtins.diagnostics.eslint_d,
