@@ -10,6 +10,7 @@ lsp.ensure_installed({
     "rust_analyzer",
     "lua_ls",
     "jdtls",
+    "google-java-format",
 })
 
 -- (Optional) Configure lua language server for neovim
