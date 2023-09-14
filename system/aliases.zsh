@@ -25,5 +25,5 @@ if [ -f "/usr/bin/bat" ]; then
 fi
 
 # St Andrews SSH
-alias sta-ssh='ssh mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
-alias sta-jump='ssh -J mrw24@jump.cs.st-andrews.ac.uk mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
+alias stassh='ssh mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
+alias stajump='ssh -J mrw24@jump.cs.st-andrews.ac.uk mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
