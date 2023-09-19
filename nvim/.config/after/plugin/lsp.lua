@@ -8,6 +8,8 @@ local lsp = require('lsp-zero').preset({
 lsp.ensure_installed({
     "tsserver",
     "rust_analyzer",
+    "lua_ls",
+    "jdtls",
 })
 
 -- (Optional) Configure lua language server for neovim
