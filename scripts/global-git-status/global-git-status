@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while IFS= read -d '' repodir; do
+    echo $repodir
+done < <(find ~/.dotfiles/ -type d -name ".git" -print0)
