@@ -15,14 +15,23 @@ fi
 
 REPO_NAME=$(basename "$PWD")
 
+DIRTY=false
+
 UNCOMMITTED=$(git status --porcelain)
 
 if [ "$UNCOMMITTED" != "" ]; then
-    echo "$REPO_NAME has uncommitted changes."
+    echo "$(tput bold)$REPO_NAME$(tput sgr0) has uncommitted changes."
+    DIRTY=true
 fi
 
 AHEAD=$(git status --porcelain -b | grep "ahead")
 
 if [ "$AHEAD" != "" ]; then
-    echo "$REPO_NAME has unpushed commits."
+    echo "$(tput bold)$REPO_NAME$(tput sgr0) has unpushed commits."
+    DIRTY=true
+fi
+
+if [ "$DIRTY" = true ]; then
+    # print repo path relative to ~
+    echo -e "    \033[0;35m$(dirs +0)\033[0m"
 fi
