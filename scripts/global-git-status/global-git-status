@@ -1,5 +1,8 @@
 #!/bin/bash
 
-while IFS= read -d '' repodir; do
-    echo $repodir
-done < <(find ~/.dotfiles/ -type d -name ".git" -print0)
+# while IFS= read -d '' repodir; do
+#     echo $repodir
+# done < <(find ~/.dotfiles/ -type d -name ".git" -print0)
+
+find ~ -type d -name ".git" \
+    -execdir ~/.dotfiles/scripts/global-git-status/repostatus {} \;

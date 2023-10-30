@@ -1,0 +1,28 @@
+#!/bin/bash
+# This should be run from inside a git repo
+
+if [ ! -d ".git" ]; then
+    echo "Error: must be run from the root of a Git repository."
+    exit 1
+fi
+
+# check that it's a personal repo (ie the remote is to my github/gitlab)
+CONTAINS_MRW=$(cat .git/config | grep -E "(martin)|(mrw)")
+if [ "$CONTAINS_MRW" = "" ]; then
+    # ignore non-personal repos
+    exit 0
+fi
+
+REPO_NAME=$(basename "$PWD")
+
+UNCOMMITTED=$(git status --porcelain)
+
+if [ "$UNCOMMITTED" != "" ]; then
+    echo "$REPO_NAME has uncommitted changes."
+fi
+
+AHEAD=$(git status --porcelain -b | grep "ahead")
+
+if [ "$AHEAD" != "" ]; then
+    echo "$REPO_NAME has unpushed commits."
+fi
