@@ -101,4 +101,5 @@ return require('packer').startup(function(use)
     })
     -- Typescript // ^? queries
     use("marilari88/twoslash-queries.nvim")
+    use("ggandor/leap.nvim")
 end)
