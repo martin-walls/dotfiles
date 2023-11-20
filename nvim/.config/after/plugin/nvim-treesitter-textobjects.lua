@@ -10,8 +10,8 @@ require('nvim-treesitter.configs').setup({
                 -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
+                ["ac"] = "@comment.outer",
+                ["ic"] = "@comment.inner",
             },
             -- You can choose the select mode (default is charwise 'v')
             --
@@ -22,7 +22,7 @@ require('nvim-treesitter.configs').setup({
             -- mapping query_strings to modes.
             selection_modes = {
                 ['@function.outer'] = 'V', -- linewise
-                ['@class.outer'] = 'V',
+                ['@comment.outer'] = 'V',
             },
             -- If you set this to `true` (default is `false`) then any textobject is
             -- extended to include preceding or succeeding whitespace. Succeeding
