@@ -17,13 +17,13 @@ lsp.nvim_workspace()
 
 lsp.on_attach(function(_, bufnr)
     -- Format on save
-    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-        group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
-        buffer = bufnr,
-        callback = function()
-            vim.lsp.buf.format()
-        end
-    })
+    -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    --     group = vim.api.nvim_create_augroup("FormatOnSave", { clear = true }),
+    --     buffer = bufnr,
+    --     callback = function()
+    --         vim.lsp.buf.format()
+    --     end
+    -- })
 
     -- Run formatter
     vim.keymap.set({ "n", "x" }, "<leader>f", function()
