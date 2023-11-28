@@ -1,1 +1,9 @@
 for_window [app_id="btop"] floating enable
+
+for_window [app_id="imv" title=".*KB_Programmer_Dvorak.png.*"] {
+    floating enable
+    resize set height 150 px
+    resize set width 450 px
+    move position 100 ppt 0 px
+    move left 450 px
+}

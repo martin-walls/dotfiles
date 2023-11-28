@@ -118,7 +118,8 @@
   },
   "custom/keyboard-layout": {
     "interval": 1,
-    "exec": "~/.config/waybar/modules/keyboard-layout.sh"
+    "exec": "~/.config/waybar/modules/keyboard-layout.sh",
+    "on-click": "imv ~/.config/waybar/modules/KB_Programmer_Dvorak.png -c overlay"
   },
   "idle_inhibitor": {
     "format": "{icon}",
