@@ -43,11 +43,10 @@ output HEADLESS-1 {
 # }
 
 input type:keyboard {
-    # dvorak programmer, qwerty
-    xkb_layout us(dvp),gb
+    # qwerty, dvorak programmer
+    xkb_layout gb,us(dvp)
     xkb_numlock enable
-    # map caps to escape, toggle layout by pressing both alts together
-    xkb_options caps:escape,grp:alts_toggle
+    xkb_options caps:escape,grp:ctrls_toggle
 }
 
 input type:touchpad {
