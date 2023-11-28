@@ -36,11 +36,18 @@ output HEADLESS-1 {
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+# input type:keyboard {
+#     xkb_layout "gb"
+#     xkb_numlock enable
+#     xkb_options compose:ralt,caps:escape
+# }
+
 input type:keyboard {
-    xkb_layout "gb"
+    # dvorak programmer, qwerty
+    xkb_layout us(dvp),gb
     xkb_numlock enable
-    xkb_options compose:ralt
-    xkb_options caps:escape
+    # map caps to escape, toggle layout by pressing both alts together
+    xkb_options caps:escape,grp:alts_toggle
 }
 
 input type:touchpad {
