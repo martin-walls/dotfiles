@@ -7,9 +7,14 @@
 #   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0 mode 2560x1440
 # }
 
-profile external_left {
-  output eDP-1 position 2560,300 scale 1.5
-  output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0 mode 2560x1440
+# profile external_left {
+#   output eDP-1 position 2560,300 scale 1.5
+#   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0 mode 2560x1440
+# e
+
+profile external_above {
+    output eDP-1 position 427,1440 scale 1.5
+    output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
 }
 
 profile two_externals_right_home {
@@ -17,11 +22,6 @@ profile two_externals_right_home {
   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0 mode 2560x1440
   output "EMA E19T5W 573 50N 01805" position 4267,710 mode 1440x900
 }
-
-# profile external_above {
-#   output eDP-1 position 427,1440 scale 1.5
-#   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
-# }
 
 profile headlessvnc {
   output eDP-1 enable position 2360,0 scale 1.5
