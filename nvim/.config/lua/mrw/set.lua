@@ -6,6 +6,9 @@ vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
 
+-- Line length indicator
+vim.opt.colorcolumn = "80"
+
 vim.opt.showmode = false
 
 vim.opt.tabstop = 4
