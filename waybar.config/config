@@ -6,7 +6,7 @@
   "modules-center": ["sway/window"],
   "modules-right": [
     "custom/spotify",
-    "custom/keyboard-layout",
+    // "custom/keyboard-layout",
     "tray",
     // "cpu",
     // "memory",
