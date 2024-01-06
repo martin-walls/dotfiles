@@ -163,9 +163,3 @@ source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/autojump/autojump.zsh 2>/dev/null
 
 # source /home/martin/.config/broot/launcher/bash/br
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/martin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/martin/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/martin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/martin/google-cloud-sdk/completion.zsh.inc'; fi
