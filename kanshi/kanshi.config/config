@@ -7,15 +7,15 @@
 #   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0 mode 2560x1440
 # }
 
-# profile external_left {
-#   output eDP-1 position 2560,300 scale 1.5
-#   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0 mode 2560x1440
-# e
-
-profile external_above {
-    output eDP-1 position 427,1440 scale 1.5
-    output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
+profile external_left {
+  output eDP-1 position 2560,300 scale 1.5
+  output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0 mode 2560x1440
 }
+
+# profile external_above {
+#     output eDP-1 position 427,1440 scale 1.5
+#     output "Lenovo Group Limited LEN L27q-10 U433AG60" position 0,0
+# }
 
 profile two_externals_right_home {
   output eDP-1 position 0,360 scale 1.5
