@@ -27,10 +27,8 @@ require('nvim-treesitter.configs').setup {
             node_decremental = "<A-i>",
         }
     },
-
-    -- nvim-ts-context-commentstring
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
 }
+
+require('ts_context_commentstring').setup({})
+
+vim.g.skip_ts_context_commentstring_module = true
