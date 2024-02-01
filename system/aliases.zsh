@@ -29,5 +29,6 @@ alias stassh='ssh mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
 alias stajump='ssh -J mrw24@jump.cs.st-andrews.ac.uk mrw24@mrw24.teaching.cs.st-andrews.ac.uk'
 # Create an ssh tunnel to the teaching service; $1 is the remote port, $2 is the local port.
 function statunnel() {
+    echo "Forwarding local port $2 to remote port $1"
     ssh -J mrw24@jump.cs.st-andrews.ac.uk mrw24@mrw24.teaching.cs.st-andrews.ac.uk -L "$2":localhost:"$1" -N
 }
