@@ -16,3 +16,5 @@ alias glg='git lgb'
 # alias gd='git forgit diff'
 alias ga='git forgit add'
 alias gg='git forgit log'
+
+alias yoink='git pull'
