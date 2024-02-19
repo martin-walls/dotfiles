@@ -4,5 +4,9 @@
 #     echo $repodir
 # done < <(find ~/.dotfiles/ -type d -name ".git" -print0)
 
-find ~ -type d -name ".git" \
+find ~ \
+    -path ~/.local/share/Trash -prune \
+    -o \
+    -type d \
+    -name ".git" \
     -execdir ~/.dotfiles/scripts/global-git-status/repostatus {} \;
