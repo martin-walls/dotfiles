@@ -75,6 +75,17 @@ input type:touchpad {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+
+    # Caps + h -> Left
+    bindcode 66+43 exec ydotool key 105:1 105:0
+    # Caps + j -> Down
+    bindcode 66+44 exec ydotool key 108:1 108:0
+    # Caps + k -> Up
+    bindcode 66+45 exec ydotool key 103:1 103:0
+    # Caps + l -> Right
+    bindcode 66+46 exec ydotool key 106:1 106:0
+
+
 #
 # Scratchpad:
 #
