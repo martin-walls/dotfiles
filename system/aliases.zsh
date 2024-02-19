@@ -32,4 +32,7 @@ function statunnel() {
     echo "Forwarding local port $2 to remote port $1"
     ssh -J mrw24@jump.cs.st-andrews.ac.uk mrw24@mrw24.teaching.cs.st-andrews.ac.uk -L "$2":localhost:"$1" -N
 }
-alias staproxy='ssh -D 8123 -C -N mrw24@jump.cs.st-andrews.ac.uk'
+function staproxy() {
+    echo "Started SOCKS4 proxy on localhost:8123"
+    ssh -D 8123 -C -N mrw24@jump.cs.st-andrews.ac.uk
+}
