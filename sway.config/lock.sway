@@ -13,6 +13,9 @@ bindsym $mod+Shift+s exec $lock
 # Suspend
 bindsym --locked $mod+Ctrl+Shift+s exec $lock && systemctl suspend
 
+# Suspend when laptop lid closes
+bindswitch lid:on exec $lock && systemctl suspend
+
 # don't lock if an app is fullscreen
 for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
