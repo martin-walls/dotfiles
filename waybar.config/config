@@ -21,6 +21,7 @@
     "network",
     // "clock#canada",
     "clock",
+    "clock#date",
   ],
   "sway/window": {
     "format": {},
@@ -36,7 +37,7 @@
   "battery": {
     "format": "{icon} {capacity}%",
     "format-charging": "{icon}+{capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "states": {
       "full": 95,
       "warning": 20,
@@ -45,9 +46,11 @@
     "tooltip": false
   },
   "clock": {
-    // "format": " {:%H:%M %Y.%m.%d}",
-    "format": "{:%H:%M %Y.%m.%d}",
-    // "tooltip-format": "{:%a %d %b %H:%M}"
+    "format": "{:%H:%M}",
+    "timezone": "Europe/London"
+  },
+  "clock#date": {
+    "format": "{:%Y.%m.%d}",
     "tooltip-format": "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "timezone": "Europe/London"
   },
