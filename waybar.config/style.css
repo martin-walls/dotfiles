@@ -115,7 +115,7 @@
 }
 
 #custom-spotify {
-  font-family: DroidSans Nerd Font;
+  font-family: InputSerifCondensed Light, Symbols Nerd Font;
 }
 #custom-spotify.playing {
   color: @green;

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 playing=$(playerctl metadata --player=spotify --format '{{lc(status)}}')
-icon="阮"
+icon="󰓇"
 fulltrackinfo=""
 
 if [[ $playing == "playing" ]]; then
