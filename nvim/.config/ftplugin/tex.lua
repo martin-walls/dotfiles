@@ -1,7 +1,5 @@
 vim.opt.wrap = true
 
-vim.opt.titlestring = " %t%m"
-
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
