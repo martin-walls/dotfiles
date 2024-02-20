@@ -8,8 +8,7 @@
 @define-color purple #c678dd;
 
 window {
-  /* font-family: JetBrainsMono Nerd Font Mono; */
-  font-family: DejaVuSansMono Nerd Font Mono;
+  font-family: InputSerifCondensed Light, Symbols Nerd Font;
   background-color: transparent;
   color: @fgcolor;
 }
