@@ -12,7 +12,7 @@ swaylock -f \
   --timestr "%H:%M" \
   --datestr "%a %d %b" \
   --indicator \
-  --font "JetBrainsMono Nerd Font Mono" \
+  --font "InputSerifNarrow Light" \
   --inside-color "$blueblack" \
   --text-color "$white" \
   --ignore-empty-password
