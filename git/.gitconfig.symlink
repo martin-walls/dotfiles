@@ -21,3 +21,5 @@
 	path = ~/.gitconfig_local
 [init]
 	defaultBranch = main
+[merge]
+	conflictstyle = zdiff3
