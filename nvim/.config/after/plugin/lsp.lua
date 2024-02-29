@@ -37,6 +37,12 @@ lsp.configure("tsserver", {
     end
 })
 
+lsp.configure("typst_lsp", {
+    settings = {
+        exportPdf = "onType"
+    }
+})
+
 lsp.setup()
 
 vim.diagnostic.config({
