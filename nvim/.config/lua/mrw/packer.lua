@@ -104,4 +104,8 @@ return require('packer').startup(function(use)
     use("ggandor/leap.nvim")
     -- Lorem Ipsum generator
     use("derektata/lorem.nvim")
+    use({
+        "kaarmu/typst.vim",
+        ft = { "typst" }
+    })
 end)
