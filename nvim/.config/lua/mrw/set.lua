@@ -57,3 +57,10 @@ vim.opt.foldcolumn = "2"
 
 -- Use the system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- Detect Typst filetype correctly
+vim.filetype.add({
+    extension = {
+        typ = "typst"
+    }
+})
