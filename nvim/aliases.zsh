@@ -9,3 +9,5 @@ function vv() {
         nvim .
     fi
 }
+
+alias v2024='NVIM_APPNAME="nvim-2024" nvim'
