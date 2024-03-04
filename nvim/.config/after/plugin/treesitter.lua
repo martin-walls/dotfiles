@@ -27,6 +27,10 @@ require('nvim-treesitter.configs').setup {
             node_decremental = "<A-i>",
         }
     },
+
+    indent = {
+        enable = true
+    }
 }
 
 require('ts_context_commentstring').setup({})

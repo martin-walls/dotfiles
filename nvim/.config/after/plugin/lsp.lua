@@ -29,6 +29,12 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set({ "n", "x" }, "<leader>f", function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end, { buffer = bufnr })
+
+    -- rename symbol
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = bufnr })
+
+    -- code action
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = bufnr })
 end)
 
 lsp.configure("tsserver", {
@@ -40,6 +46,19 @@ lsp.configure("tsserver", {
 lsp.configure("typst_lsp", {
     settings = {
         exportPdf = "never"
+    }
+})
+
+lsp.configure("lua_ls", {
+    settings = {
+        Lua = {
+            workspace = {
+                library = {
+                    -- tell lua_ls where to find nvim lua files, for documentation etc.
+                    unpack(vim.api.nvim_get_runtime_file("", true))
+                }
+            }
+        }
     }
 })
 

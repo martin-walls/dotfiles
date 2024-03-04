@@ -26,7 +26,9 @@ vim.keymap.set("n", "gd", builtin.lsp_definitions)
 -- Definition(s) of type of symbol under cursor
 vim.keymap.set("n", "go", builtin.lsp_type_definitions)
 -- Symbols in the current buffer
-vim.keymap.set("n", "<leader>ps", builtin.lsp_document_symbols)
+vim.keymap.set("n", "<leader>ds", builtin.lsp_document_symbols)
+-- Symbols across whole project
+vim.keymap.set("n", "<leader>ws", builtin.lsp_dynamic_workspace_symbols)
 
 
 -- Resume last picker
