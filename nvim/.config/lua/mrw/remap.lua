@@ -58,6 +58,9 @@ vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
 vim.keymap.set("n", "H", "zh")
 vim.keymap.set("n", "L", "zl")
 
+-- Clear highlight after search
+vim.keymap.set("n", "<Esc>", ":noh<CR>", {silent=true})
+
 -- Mapping to reload theme, that can be sent remotely
 vim.keymap.set({"n", "v", "s", "x", "o", "i", "c", "t"},
                 "<F24>",
