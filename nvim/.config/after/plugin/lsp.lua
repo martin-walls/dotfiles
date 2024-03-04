@@ -39,7 +39,7 @@ lsp.configure("tsserver", {
 
 lsp.configure("typst_lsp", {
     settings = {
-        exportPdf = "onType"
+        exportPdf = "never"
     }
 })
 
