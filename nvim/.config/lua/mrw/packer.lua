@@ -108,4 +108,5 @@ return require('packer').startup(function(use)
         "kaarmu/typst.vim",
         ft = { "typst" }
     })
+    use("tpope/vim-sleuth")
 end)
