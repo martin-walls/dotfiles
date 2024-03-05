@@ -56,3 +56,8 @@ vim.keymap.set("i", "<A-j>", "<Esc>:m.+1<CR>==gi")
 vim.keymap.set("i", "<A-k>", "<Esc>:m.-2<CR>==gi")
 vim.keymap.set("v", "<A-j>", ":m'>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
+
+-- Move between diagnostics
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Goto previous [D]iagnostic message' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Goto next [D]iagnostic message' })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })

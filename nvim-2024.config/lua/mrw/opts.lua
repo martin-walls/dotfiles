@@ -1,6 +1,3 @@
--- Use <Space> as the leader key
-vim.g.mapleader = " "
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 
