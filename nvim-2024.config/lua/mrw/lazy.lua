@@ -14,4 +14,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load all plugin configs from the lua/plugins/ directory
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+    change_detection = {
+        -- don't show a notification when config changes are detected (it's annoying)
+        notify = false,
+    }
+})
