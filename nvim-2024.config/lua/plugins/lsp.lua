@@ -171,6 +171,7 @@ return {
                     prepend_args = { "--indent-type", "Spaces" },
                 },
             },
+            -- TODO: for files without a formatter, trim trialing whitespace
         },
     },
 

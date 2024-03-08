@@ -59,6 +59,6 @@ return {
             builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
                 previewer = false,
             })
-        end, { desc = "[/] Fuzzily search in current buffer" })
+        end, { desc = "Fuzzily search in current buffer" })
     end,
 }
