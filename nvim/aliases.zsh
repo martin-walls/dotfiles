@@ -1,13 +1,13 @@
-alias v='nvim'
+alias v23='nvim'
 
 function vv() {
     if [ -f "Session.vim" ]; then
         # restore session
-        nvim -S
+        NVIM_APPNAME="nvim-2024" nvim -S
     else
         # no session to restore
-        nvim .
+        NVIM_APPNAME="nvim-2024" nvim .
     fi
 }
 
-alias v2024='NVIM_APPNAME="nvim-2024" nvim'
+alias v='NVIM_APPNAME="nvim-2024" nvim'
