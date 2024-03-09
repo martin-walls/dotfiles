@@ -2,7 +2,11 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("mrw.packer")
-require("mrw.set")
-require("mrw.remap")
-require("mrw.theme")
+-- Use <Space> as the leader key
+vim.g.mapleader = " "
+
+require("mrw.lazy")
+require("mrw.opts")
+require("mrw.keymaps")
+require("mrw.filetypes")
+require("mrw.autocmds")
