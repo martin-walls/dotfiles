@@ -56,9 +56,6 @@ return {
                     --  See `:help K` for why this keymap
                     map("K", vim.lsp.buf.hover, "Hover Documentation")
 
-                    -- Run formatter
-                    map("<leader>f", require("conform").format, "[F]ormat code")
-
                     -- The following two autocommands are used to highlight references of the
                     -- word under your cursor when your cursor rests there for a little while.
                     --    See `:help CursorHold` for information about when this is executed
@@ -101,7 +98,12 @@ return {
                 -- Java
                 jdtls = {},
                 tsserver = {},
+                eslint = {},
+                html = {},
+                cssls = {},
+                emmet_language_server = {},
                 svelte = {},
+                marksman = {},
                 lua_ls = {
                     settings = {
                         Lua = {
@@ -125,7 +127,11 @@ return {
                         },
                     },
                 },
-                typst_lsp = {},
+                typst_lsp = {
+                    settings = {
+                        exportPdf = "never",
+                    },
+                },
             }
 
             -- Ensure the servers and tools above are installed
@@ -139,6 +145,9 @@ return {
                 "stylua",
                 -- Python formatter
                 "black",
+                "typstfmt",
+                "prettierd",
+                "shellharden",
             })
             require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -154,24 +163,42 @@ return {
                     end,
                 },
             })
+
+            vim.diagnostic.config({
+                update_in_insert = true,
+            })
         end,
     },
 
     { -- Autoformat
         "stevearc/conform.nvim",
+        -- lazy load on keymap
+        keys = {
+            {
+                "<leader>f",
+                function()
+                    require("conform").format({ async = true, lsp_fallback = true })
+                end,
+                mode = "n",
+                desc = "Format code",
+            },
+        },
         opts = {
-            notify_on_error = false,
             -- Which formatter to use for each filetype
             formatters_by_ft = {
                 lua = { "stylua" },
                 python = { "black" },
+                javascript = { "prettierd" },
+                typst = { "typstfmt" },
+                bash = { "shellharden" },
+                -- If language has no formatter, just trim whitespace
+                ["_"] = { "trim_whitespace" },
             },
             formatters = {
                 stylua = {
                     prepend_args = { "--indent-type", "Spaces" },
                 },
             },
-            -- TODO: for files without a formatter, trim trialing whitespace
         },
     },
 
