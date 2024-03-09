@@ -17,6 +17,7 @@ return {
                     "vimdoc",
                     "javascript",
                     "typescript",
+                    "svelte",
                     "rust",
                     "java",
                 },
