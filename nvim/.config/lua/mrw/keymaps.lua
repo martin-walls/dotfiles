@@ -14,6 +14,14 @@ map("x", "<leader>p", '"_dP', { desc = "Paste without clearing register" })
 -- map("n", "<C-j>", "<C-w>j")
 -- map("n", "<C-k>", "<C-w>k")
 
+-- disable arrow keys
+map("", "<Left>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map("", "<Right>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map("", "<Up>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map("", "<Down>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map("", "<Home>", '<cmd>echo "Home/End keys disabled!"<CR>')
+map("", "<End>", '<cmd>echo "Home/End keys disabled!"<CR>')
+
 -- Half-page jumps
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
@@ -34,19 +42,11 @@ map("v", "[", "xi[]<Esc>P")
 map("v", '"', 'xi""<Esc>P')
 map("v", "'", "xi''<Esc>P")
 
--- Move up/down one line as it appears on screen (i.e. handle wrapping)
+-- Move up/down/start/end of line as it appears on screen (i.e. handle wrapping)
 map("n", "j", "gj")
 map("n", "k", "gk")
-map("n", "<Down>", "gj")
-map("n", "<Up>", "gk")
-map("i", "<Down>", "<C-o>gj")
-map("i", "<Up>", "<C-o>gk")
-
--- Home/End for line as it appears on screen
-map("n", "<Home>", "g^")
-map("n", "<End>", "g$")
-map("i", "<Home>", "<C-o>g^")
-map("i", "<End>", "<C-o>g$")
+map("n", "^", "g^")
+map("n", "$", "g$")
 
 -- Horizontal scrolling
 map("n", "H", "zh")
