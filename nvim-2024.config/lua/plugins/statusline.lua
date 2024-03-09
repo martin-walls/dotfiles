@@ -1,5 +1,8 @@
 return {
     "nvim-lualine/lualine.nvim",
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
     config = function()
         -- show <currentline>/<linecount>
         local function location()
@@ -16,6 +19,15 @@ return {
                 lualine_x = { "filetype", "diagnostics" },
                 lualine_y = { location },
                 lualine_z = { "branch" },
+            },
+            -- The config for inactive (ie. not currently focused) windows
+            inactive_sections = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = { "filename" },
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {},
             },
             options = {
                 -- Separator between sections
