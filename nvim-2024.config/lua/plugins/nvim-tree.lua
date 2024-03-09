@@ -18,9 +18,6 @@ return {
                 signcolumn = "auto",
                 float = {
                     enable = true,
-                    -- this prevents errors when nvim-tree opens in a full buffer, notably
-                    -- when we start nvim in a directory so it opens to the tree.
-                    quit_on_focus_loss = false,
                     open_win_config = function()
                         -- dimens of the entire editor window
                         local screen_w = vim.opt.columns:get()

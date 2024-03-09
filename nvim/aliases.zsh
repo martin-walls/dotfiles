@@ -6,7 +6,7 @@ function vv() {
         NVIM_APPNAME="nvim-2024" nvim -S
     else
         # no session to restore
-        NVIM_APPNAME="nvim-2024" nvim .
+        NVIM_APPNAME="nvim-2024" nvim
     fi
 }
 
