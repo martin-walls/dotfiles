@@ -45,6 +45,14 @@ return {
                     end,
                 },
             },
+            on_attach = function(bufnr)
+                local api = require("nvim-tree.api")
+
+                api.config.mappings.default_on_attach(bufnr)
+
+                -- allow closing the window with <Esc>
+                vim.keymap.set("n", "<Esc>", api.tree.close, { desc = "nvim-tree: close", buffer = bufnr })
+            end,
         })
 
         vim.keymap.set("n", "<leader>-", vim.cmd.NvimTreeToggle, { desc = "Toggle file tree" })
