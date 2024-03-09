@@ -79,16 +79,6 @@ return {
                         -- and should return true or false
                         include_surrounding_whitespace = false,
                     },
-                    lsp_interop = {
-                        enable = true,
-                        border = "single",
-                        floating_preview_opts = {},
-                        peek_definition_code = {
-                            -- Show definition of surrounding textobject
-                            ["<leader>kf"] = "@function.outer",
-                            ["<leader>kc"] = "@class.outer",
-                        },
-                    },
                 },
             })
         end,

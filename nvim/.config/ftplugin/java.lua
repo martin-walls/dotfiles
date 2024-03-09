@@ -10,5 +10,5 @@ vim.keymap.set("n", "<leader>jd", function()
             end
         end,
         apply = true,
-    })
+    }, { desc = "Add Javadoc" })
 end)

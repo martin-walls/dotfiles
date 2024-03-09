@@ -3,7 +3,7 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Paste over the top of selection without losing what was copied from the register
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without clearing register" })
 
 -- Move between windows
 -- NOTE: these are no longer needed when using vim-tmux-navigator
@@ -59,6 +59,6 @@ vim.keymap.set("v", "<A-j>", ":m'>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m'<-2<CR>gv=gv")
 
 -- Move between diagnostics
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Goto previous [D]iagnostic message' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Goto next [D]iagnostic message' })
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic error messages' })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Goto previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Goto next [D]iagnostic message" })
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Show diagnostic error messages" })
