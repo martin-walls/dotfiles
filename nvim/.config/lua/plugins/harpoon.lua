@@ -1,3 +1,5 @@
+local map = require("mrw.utils").mapUnique
+
 return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -13,20 +15,20 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>ha", function()
+        map("n", "<leader>ha", function()
             harpoon:list():append()
         end, { desc = "Harpoon Add" })
 
-        vim.keymap.set("n", "<leader>hl", function()
+        map("n", "<leader>hl", function()
             harpoon.ui:toggle_quick_menu(harpoon:list())
         end, { desc = "Harpoon List" })
 
-        vim.keymap.set("n", "<leader>hc", function()
+        map("n", "<leader>hc", function()
             harpoon:list():clear()
         end, { desc = "Harpoon Clear" })
 
         for i = 1, 9 do
-            vim.keymap.set("n", "<leader>h" .. i, function()
+            map("n", "<leader>h" .. i, function()
                 harpoon:list():select(i)
             end, { desc = "Jump to harpoon file [" .. i .. "]" })
         end
@@ -50,7 +52,7 @@ return {
                 :find()
         end
 
-        vim.keymap.set("n", "<leader>ht", function()
+        map("n", "<leader>ht", function()
             toggle_telescope(harpoon:list())
         end, { desc = "Harpoon Telescope" })
     end,

@@ -1,5 +1,7 @@
+local map = require("mrw.utils").mapUnique
+
 -- Run the Javadoc code action if available
-vim.keymap.set("n", "<leader>jd", function()
+map("n", "<leader>jd", function()
     vim.lsp.buf.code_action({
         filter = function(code_action)
             -- vim.notify(vim.inspect(code_action))
