@@ -11,7 +11,7 @@ local function safeRequire(module)
     if success then
         return loadedModule
     end
-    vim.cmd.echo("Error loading " .. module)
+    vim.notify("Error loading " .. module .. "\n\n")
 end
 
 safeRequire("mrw.lazy")

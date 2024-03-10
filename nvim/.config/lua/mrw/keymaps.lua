@@ -2,7 +2,7 @@ local map = require("mrw.utils").mapUnique
 
 -- Highlight all matches on search, but clear the highlight on <Esc>
 vim.opt.hlsearch = true
-map("n", "<Esc>", "<cmd>nohlsearch<CR>")
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", {unique = false})
 
 -- Paste over the top of selection without losing what was copied from the register
 map("x", "<leader>p", '"_dP', { desc = "Paste without clearing register" })

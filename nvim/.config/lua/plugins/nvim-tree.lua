@@ -50,7 +50,7 @@ return {
                 api.config.mappings.default_on_attach(bufnr)
 
                 -- allow closing the window with <Esc>
-                map("n", "<Esc>", api.tree.close, { desc = "nvim-tree: close", buffer = bufnr })
+                map("n", "<Esc>", api.tree.close, { desc = "nvim-tree: close", buffer = bufnr, unique = false })
             end,
         })
 

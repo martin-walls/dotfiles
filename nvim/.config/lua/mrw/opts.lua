@@ -1,62 +1,84 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+local opt = vim.opt
+
+opt.number = true
+opt.relativenumber = true
 
 -- Don't show the mode in the command line, because we have it in the statusline anyway
-vim.opt.showmode = false
+opt.showmode = false
 
 -- Use the system clipboard
-vim.opt.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
+opt.wrap = true
 -- If lines are wrapped, use the same indent width as the start of the line.
 -- (This will preserve horizontal blocks of text.)
-vim.opt.breakindent = true
+opt.breakindent = true
 -- Break at sensible characters
-vim.opt.linebreak = true
+opt.linebreak = true
+opt.showbreak = "↪ "
+
+-- slightly transparent completion popup menu on the command line
+opt.pumblend = 15
 
 -- Save undo history
-vim.opt.undofile = true
+opt.undofile = true
 
 -- Case-insensitive searching
 -- (unless \C or capital in search)
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.signcolumn = "yes"
+opt.signcolumn = "yes"
 
 -- Decrease update time
 -- updatetime is used for the CursorHold event
-vim.opt.updatetime = 250
+opt.updatetime = 250
 -- timeoutlen is the length of time (ms) to wait for keymap sequences to complete
-vim.opt.timeoutlen = 300
+opt.timeoutlen = 300
 
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
 -- How to display whitespace
-vim.opt.list = true
-vim.opt.listchars = {
+opt.list = true
+opt.listchars = {
     tab = "» ",
     trail = "·",
     nbsp = "␣",
 }
 
 -- Preview substitutions live in a temporary window
-vim.opt.inccommand = "split"
+opt.inccommand = "split"
 
-vim.opt.cursorline = true
+-- cursorline, but only in the active buffer
+opt.cursorline = true
+local set_cursorline_group = vim.api.nvim_create_augroup("SetCursorLine", { clear = true })
+local set_cursorline = function(event, value, pattern)
+    vim.api.nvim_create_autocmd(event, {
+        group = set_cursorline_group,
+        pattern = pattern,
+        callback = function()
+            vim.opt_local.cursorline = value
+        end,
+    })
+end
+set_cursorline("WinLeave", false)
+set_cursorline("WinEnter", true)
+set_cursorline("FileType", false, "TelescopePrompt")
+
 -- Line length marker
-vim.opt.colorcolumn = "80"
+opt.colorcolumn = "80"
 
-vim.opt.scrolloff = 6
-vim.opt.sidescrolloff = 8
+opt.scrolloff = 12
+opt.sidescrolloff = 8
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 
 -- Autosave on close
-vim.opt.autowrite = true
-vim.opt.autowriteall = true
+opt.autowrite = true
+opt.autowriteall = true
 
-vim.opt.title = true
+opt.title = true
