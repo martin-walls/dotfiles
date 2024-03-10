@@ -22,10 +22,6 @@ map("", "<Down>", '<cmd>echo "Arrow keys disabled!"<CR>')
 map("", "<Home>", '<cmd>echo "Home/End keys disabled!"<CR>')
 map("", "<End>", '<cmd>echo "Home/End keys disabled!"<CR>')
 
--- Half-page jumps
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-
 -- Next and previous search result
 -- (center line vertically and open any folds)
 map("n", "n", "nzzzv")
@@ -42,15 +38,17 @@ map("v", "[", "xi[]<Esc>P")
 map("v", '"', 'xi""<Esc>P')
 map("v", "'", "xi''<Esc>P")
 
--- Move up/down/start/end of line as it appears on screen (i.e. handle wrapping)
+-- Move up/down line as it appears on screen (i.e. handle wrapping)
 map("n", "j", "gj")
 map("n", "k", "gk")
-map("n", "^", "g^")
-map("n", "$", "g$")
 
--- Horizontal scrolling
-map("n", "H", "zh")
-map("n", "L", "zl")
+-- Start/end of line
+map("n", "H", "g^")
+map("n", "L", "g_")
+
+-- Larger vertical jumps
+map("n", "<C-d>", "8<C-d>")
+map("n", "<C-u>", "8<C-u>")
 
 -- Move lines up/down, and reindent to match new position
 map("n", "<A-j>", ":m.+1<CR>==")
