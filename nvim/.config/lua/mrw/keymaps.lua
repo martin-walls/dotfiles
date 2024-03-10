@@ -2,10 +2,57 @@ local map = require("mrw.utils").mapUnique
 
 -- Highlight all matches on search, but clear the highlight on <Esc>
 vim.opt.hlsearch = true
-map("n", "<Esc>", "<cmd>nohlsearch<CR>", {unique = false})
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { unique = false })
 
 -- Paste over the top of selection without losing what was copied from the register
 map("x", "<leader>p", '"_dP', { desc = "Paste without clearing register" })
+-- Copy to black-hole register (_) for operators that are most likely just deleting,
+-- not copying
+map("n", "x", '"_x')
+map("n", "c", '"_c')
+
+-- Return the contents of the lines of the current visual selection.
+--
+-- Note: this returns the contents of the entire lines, even if the selection is
+-- charwise and doesn't include the entirety of the first/last lines.
+local function get_visual_selection_lines()
+    -- [bufnum, lnum, col, off]
+    -- "v" gets the current start of the visual area; the other end is where the
+    -- cursor currently is
+    local startpos = vim.fn.getpos("v")
+    local endpos = vim.fn.getcurpos()
+
+    -- check if startpos is after endpos
+    if startpos[2] > endpos[2] or (startpos[2] == endpos[2] and startpos[3] > endpos[3]) then
+        startpos, endpos = endpos, startpos
+    end
+
+    local lines = vim.api.nvim_buf_get_lines(0, startpos[2] - 1, endpos[2], false)
+
+    local result = table.concat(lines, "\n")
+
+    return result
+end
+
+-- Creates a function that checks if the currently selected lines contain
+-- only whitespace, and if so prefixes `operator` with `"_` so that it copies to
+-- the black hole register.
+local function copyToBlackHole(operator)
+    return function()
+        local selected_lines = get_visual_selection_lines()
+        if string.match(selected_lines, "[^%s%c]") then
+            -- Lines contain at least one non-whitespace char
+            return operator
+        end
+        return '"_' .. operator
+    end
+end
+
+-- both d and x can be used to delete the visual selection
+map("v", "d", copyToBlackHole("d"), { expr = true })
+map("v", "x", copyToBlackHole("x"), { expr = true })
+
+map("n", "dd", copyToBlackHole("dd"), { expr = true })
 
 -- Move between windows
 -- NOTE: these are no longer needed when using vim-tmux-navigator

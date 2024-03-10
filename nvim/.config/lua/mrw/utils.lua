@@ -12,7 +12,9 @@ M.mapUnique = function(modes, lhs, rhs, opts)
     if opts.unique == nil then
         opts.unique = true
     end
-    vim.keymap.set(modes, lhs, rhs, opts)
+
+    -- using pcall makes the error messages shorter by not showing the whole trace
+    pcall(vim.keymap.set, modes, lhs, rhs, opts)
 end
 
 return M

@@ -15,6 +15,7 @@ opt.wrap = true
 opt.breakindent = true
 -- Break at sensible characters
 opt.linebreak = true
+-- string to show at the start of wrapped lines
 opt.showbreak = "↪ "
 
 -- slightly transparent completion popup menu on the command line
@@ -46,9 +47,6 @@ opt.listchars = {
     trail = "·",
     nbsp = "␣",
 }
-
--- Preview substitutions live in a temporary window
-opt.inccommand = "split"
 
 -- cursorline, but only in the active buffer
 opt.cursorline = true

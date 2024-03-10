@@ -65,8 +65,8 @@ return {
                         -- and should return the mode ('v', 'V', or '<c-v>') or a table
                         -- mapping query_strings to modes.
                         selection_modes = {
-                            ["@function.outer"] = "V", -- linewise
-                            ["@comment.outer"] = "V",
+                            ["@function.outer"] = "v", -- charwise
+                            ["@comment.outer"] = "v",
                         },
                         -- If you set this to `true` (default is `false`) then any textobject is
                         -- extended to include preceding or succeeding whitespace. Succeeding
