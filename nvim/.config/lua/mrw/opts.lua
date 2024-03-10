@@ -1,7 +1,7 @@
 local opt = vim.opt
 
-opt.number = true
-opt.relativenumber = true
+-- opt.number = true
+-- opt.relativenumber = true
 
 -- Don't show the mode in the command line, because we have it in the statusline anyway
 opt.showmode = false
