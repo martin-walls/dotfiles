@@ -36,10 +36,11 @@ end
 
 -- Creates a function that checks if the currently selected lines contain
 -- only whitespace, and if so prefixes `operator` with `"_` so that it copies to
--- the black hole register.
+-- the black hole register (_).
 local function copyToBlackHole(operator)
     return function()
         local selected_lines = get_visual_selection_lines()
+        -- %s = space character, %c = control character
         if string.match(selected_lines, "[^%s%c]") then
             -- Lines contain at least one non-whitespace char
             return operator
@@ -52,7 +53,7 @@ end
 map("v", "d", copyToBlackHole("d"), { expr = true })
 map("v", "x", copyToBlackHole("x"), { expr = true })
 
-map("n", "dd", copyToBlackHole("dd"), { expr = true })
+map("n", "dd", copyToBlackHole("dd"), { expr = true, desc = "Line" })
 
 -- Move between windows
 -- NOTE: these are no longer needed when using vim-tmux-navigator
