@@ -79,6 +79,11 @@ map("n", "N", "Nzzzv")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+-- Disable J (join lines) in visual mode.
+-- Often when trying to execute Vj, the shift key is down slightly too long so
+-- VJ gets executed; this mapping prevents this and ensures the intended result.
+map("v", "J", "j")
+
 -- Add brackets/quotes around visual selection
 map("v", "{", "xi{}<Esc>P")
 map("v", "(", "xi()<Esc>P")
