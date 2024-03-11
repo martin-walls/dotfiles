@@ -98,7 +98,6 @@ return {
                 -- Java
                 jdtls = {},
                 tsserver = {},
-                eslint = {},
                 html = {},
                 cssls = {},
                 emmet_language_server = {},
