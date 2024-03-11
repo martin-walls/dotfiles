@@ -63,12 +63,12 @@ map("n", "dd", copyToBlackHole("dd"), { expr = true, desc = "Line" })
 -- map("n", "<C-k>", "<C-w>k")
 
 -- disable arrow keys
-map("", "<Left>", '<cmd>echo "Arrow keys disabled!"<CR>')
-map("", "<Right>", '<cmd>echo "Arrow keys disabled!"<CR>')
-map("", "<Up>", '<cmd>echo "Arrow keys disabled!"<CR>')
-map("", "<Down>", '<cmd>echo "Arrow keys disabled!"<CR>')
-map("", "<Home>", '<cmd>echo "Home/End keys disabled!"<CR>')
-map("", "<End>", '<cmd>echo "Home/End keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<Left>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<Right>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<Up>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<Down>", '<cmd>echo "Arrow keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<Home>", '<cmd>echo "Home/End keys disabled!"<CR>')
+map({ "n", "i", "v" }, "<End>", '<cmd>echo "Home/End keys disabled!"<CR>')
 
 -- Next and previous search result
 -- (center line vertically and open any folds)
