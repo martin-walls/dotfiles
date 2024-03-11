@@ -1,4 +1,4 @@
-local map = require("mrw.utils").mapUnique
+local map = vim.keymap.set
 
 return {
     "nvim-telescope/telescope.nvim",
@@ -53,6 +53,14 @@ return {
                         -- The editor width at which to switch to horizontal layout
                         flip_columns = 150,
                     },
+                },
+                file_ignore_patterns = {
+                    "node_modules",
+                },
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
                 },
             },
         })

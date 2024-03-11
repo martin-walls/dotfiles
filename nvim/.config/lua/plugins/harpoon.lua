@@ -1,4 +1,4 @@
-local map = require("mrw.utils").mapUnique
+local map = vim.keymap.set
 
 return {
     "ThePrimeagen/harpoon",

@@ -1,5 +1,3 @@
-local mapUnique = require("mrw.utils").mapUnique
-
 return {
     {
         "neovim/nvim-lspconfig",
@@ -20,7 +18,7 @@ return {
                     -- Function that lets us more easily define mappings specific
                     -- for LSP related items. It sets the mode, buffer and description for us each time.
                     local map = function(keys, func, desc)
-                        mapUnique("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+                        vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
                     end
 
                     local telescope_builtin = require("telescope.builtin")
