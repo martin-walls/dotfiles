@@ -34,6 +34,18 @@ return {
                     require("telescope.themes").get_dropdown(),
                 },
             },
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<Up>"] = false,
+                        ["<Down>"] = false,
+                    },
+                    n = {
+                        ["<Up>"] = false,
+                        ["<Down>"] = false,
+                    },
+                },
+            },
         })
 
         -- Enable telescope extensions, if they are installed
@@ -47,7 +59,7 @@ return {
         map("n", "<leader>ph", builtin.help_tags, { desc = "[P]ick [H]elp" })
         map("n", "<leader>pk", builtin.keymaps, { desc = "[P]ick [K]eymaps" })
         -- choose a telescope picker to open, from the list of all available pickers
-        map("n", "<leader>ps", builtin.builtin, { desc = "[P]ick [S]elect Telescope" })
+        map("n", "<leader>pT", builtin.builtin, { desc = "Pick a Telescope" })
         -- re-open the previous telescope picker
         map("n", "<leader>pr", builtin.resume, { desc = "[P]ick [R]esume" })
         map("n", "<leader>p.", builtin.oldfiles, { desc = '[P]ick Recent Files ("." for repeat)' })
