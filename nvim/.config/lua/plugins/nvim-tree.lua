@@ -2,6 +2,7 @@ local map = require("mrw.utils").mapUnique
 
 local HEIGHT_RATIO = 0.8
 local WIDTH_RATIO = 0.5
+local MIN_WIDTH = 60
 
 return {
     "nvim-tree/nvim-tree.lua",
@@ -24,11 +25,17 @@ return {
                         -- dimens of the entire editor window
                         local screen_w = vim.opt.columns:get()
                         local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+
                         -- dimens of the file tree floating window
                         local window_w = screen_w * WIDTH_RATIO
+                        -- don't go smaller than the min width ...
+                        window_w = math.max(window_w, MIN_WIDTH)
+                        -- ... but also not larger than the screen
+                        window_w = math.min(window_w, screen_w - 2)
                         local window_h = screen_h * HEIGHT_RATIO
                         local window_w_int = math.floor(window_w)
                         local window_h_int = math.floor(window_h)
+
                         -- offset of the floating window, such that it is centered on the screen
                         local offset_x = (screen_w - window_w) / 2
                         local offset_y = ((vim.opt.lines:get() - window_h) / 2) - vim.opt.cmdheight:get()
