@@ -80,3 +80,5 @@ opt.autowrite = true
 opt.autowriteall = true
 
 opt.title = true
+
+opt.spelllang = "en_gb"
