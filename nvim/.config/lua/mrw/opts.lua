@@ -47,6 +47,9 @@ opt.listchars = {
     trail = "·",
     nbsp = "␣",
 }
+opt.fillchars = {
+    eob = "~",
+}
 
 -- cursorline, but only in the active buffer
 opt.cursorline = true

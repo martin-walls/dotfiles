@@ -9,6 +9,14 @@ return {
             -- Don't need to change this for light/dark theme, it happens automatically
             -- when vim.o.background is changed
             style = "dark",
+            -- This line is technically unnecessary when overriding the EndOfBuffer
+            -- highlight group directly
+            ending_tildes = true,
+            highlights = {
+                EndOfBuffer = {
+                    fg = "$grey",
+                },
+            },
         })
         require("onedark").load()
     end,
