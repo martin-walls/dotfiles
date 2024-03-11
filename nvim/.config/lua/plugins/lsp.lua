@@ -210,6 +210,7 @@ return {
         dependencies = {
             -- Snippet Engine & its associated nvim-cmp source
             {
+                -- TODO: LuaSnip config setup (try nvim-scissors)
                 "L3MON4D3/LuaSnip",
                 build = (function()
                     -- Build Step is needed for regex support in snippets
@@ -228,12 +229,6 @@ return {
             --  into multiple repos for maintenance purposes.
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
-
-            -- If you want to add a bunch of pre-configured snippets,
-            --    you can use this plugin to help you. It even has snippets
-            --    for various frameworks/libraries/etc. but you will have to
-            --    set up the ones that are useful for you.
-            -- 'rafamadriz/friendly-snippets',
         },
         config = function()
             -- See `:help cmp`
