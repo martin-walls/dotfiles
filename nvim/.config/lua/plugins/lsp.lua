@@ -191,6 +191,10 @@ return {
                 lua = { "stylua" },
                 python = { "black" },
                 javascript = { "prettierd" },
+                typescript = { "prettierd" },
+                html = { "prettierd" },
+                css = { "prettierd" },
+                svelte = { "prettierd" },
                 typst = { "typstfmt" },
                 bash = { "shellharden" },
                 -- If language has no formatter, just trim whitespace
