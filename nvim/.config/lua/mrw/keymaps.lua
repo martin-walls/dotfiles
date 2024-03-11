@@ -1,4 +1,4 @@
-local map = require("mrw.utils").mapUnique
+local map = vim.keymap.set
 
 -- Highlight all matches on search, but clear the highlight on <Esc>
 vim.opt.hlsearch = true

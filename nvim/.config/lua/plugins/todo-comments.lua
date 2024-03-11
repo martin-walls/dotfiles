@@ -1,5 +1,3 @@
-local map = require("mrw.utils").mapUnique
-
 return {
     "folke/todo-comments.nvim",
     event = "VimEnter",
@@ -9,6 +7,6 @@ return {
     config = function()
         require("todo-comments").setup()
 
-        map("n", "<leader>pt", vim.cmd.TodoTelescope, { desc = "[P]ick [T]odos" })
+        vim.keymap.set("n", "<leader>pt", vim.cmd.TodoTelescope, { desc = "[P]ick [T]odos" })
     end,
 }

@@ -1,5 +1,3 @@
-local map = require("mrw.utils").mapUnique
-
 local HEIGHT_RATIO = 0.8
 local WIDTH_RATIO = 0.5
 local MIN_WIDTH = 60
@@ -57,10 +55,15 @@ return {
                 api.config.mappings.default_on_attach(bufnr)
 
                 -- allow closing the window with <Esc>
-                map("n", "<Esc>", api.tree.close, { desc = "nvim-tree: close", buffer = bufnr, unique = false })
+                vim.keymap.set(
+                    "n",
+                    "<Esc>",
+                    api.tree.close,
+                    { desc = "nvim-tree: close", buffer = bufnr, unique = false }
+                )
             end,
         })
 
-        map("n", "<leader>-", vim.cmd.NvimTreeToggle, { desc = "Toggle file tree" })
+        vim.keymap.set("n", "<leader>-", vim.cmd.NvimTreeToggle, { desc = "Toggle file tree" })
     end,
 }
