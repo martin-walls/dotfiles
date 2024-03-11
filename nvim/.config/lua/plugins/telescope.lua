@@ -45,6 +45,15 @@ return {
                         ["<Down>"] = false,
                     },
                 },
+                -- automatically switch between vertical layout (on narrow screens)
+                -- and horizontal layout (on wider screens)
+                layout_strategy = "flex",
+                layout_config = {
+                    flex = {
+                        -- The editor width at which to switch to horizontal layout
+                        flip_columns = 150,
+                    },
+                },
             },
         })
 
