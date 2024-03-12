@@ -1,3 +1,5 @@
+local snippetsDir = vim.fn.stdpath("config") .. "/snippets"
+
 return {
     {
         "L3MON4D3/LuaSnip",
@@ -11,7 +13,7 @@ return {
             return "make install_jsregexp"
         end)(),
         config = function()
-            require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
+            require("luasnip.loaders.from_vscode").lazy_load({ paths = { snippetsDir } })
         end,
     },
     {
@@ -24,7 +26,7 @@ return {
             local scissors = require("scissors")
             ---@diagnostic disable-next-line: missing-fields
             scissors.setup({
-                snippetDir = "./snippets",
+                snippetDir = snippetsDir,
                 jsonFormatter = "jq",
                 editSnippetPopup = {
                     ---@diagnostic disable-next-line: missing-fields
