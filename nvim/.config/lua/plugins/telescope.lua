@@ -57,10 +57,24 @@ return {
                 file_ignore_patterns = {
                     "node_modules",
                 },
+                vimgrep_arguments = {
+                    -- default config command ...
+                    "rg",
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                    "--smart-case",
+                    -- ... to here
+                    "--trim", -- removes indentation at start of lines
+                },
             },
             pickers = {
                 find_files = {
                     hidden = true,
+                    -- Remove the ./ prefix from results
+                    find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
                 },
             },
         })
