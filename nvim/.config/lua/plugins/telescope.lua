@@ -54,6 +54,11 @@ return {
                         flip_columns = 150,
                     },
                 },
+                preview = {
+                    -- Don't preview files bigger than this limit
+                    -- (This should prevent big files slowing down the picker)
+                    filesize_limit = 1, -- MB
+                },
                 file_ignore_patterns = {
                     "node_modules",
                 },
@@ -74,7 +79,8 @@ return {
                 find_files = {
                     hidden = true,
                     -- Remove the ./ prefix from results
-                    find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+                    -- NOTE: removed this for now, because it fails when fd isn't installed
+                    -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
                 },
             },
         })
