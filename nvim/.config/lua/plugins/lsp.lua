@@ -98,9 +98,9 @@ return {
                 -- Java
                 jdtls = {},
                 tsserver = {},
+                eslint = {},
                 html = {},
                 cssls = {},
-                emmet_language_server = {},
                 svelte = {},
                 marksman = {},
                 lua_ls = {
