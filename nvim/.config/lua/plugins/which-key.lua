@@ -15,6 +15,7 @@ return {
             ["<leader>h"] = { name = "Harpoon", _ = "which_key_ignore" },
             ["<leader>s"] = { name = "Surround", _ = "which_key_ignore" },
             ["<leader>S"] = { name = "Surround on new line", _ = "which_key_ignore" },
+            ["<leader>l"] = { name = "LuaSnip", _ = "which_key_ignore" },
         })
     end,
 }

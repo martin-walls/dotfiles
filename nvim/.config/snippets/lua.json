@@ -1,0 +1,6 @@
+{
+  "vim.keymap.set": {
+    "body": "vim.keymap.set(${1:\"n\"}, $2, $3, { desc = \"$4\" })$0",
+    "prefix": "vim.keymap.set"
+  }
+}
