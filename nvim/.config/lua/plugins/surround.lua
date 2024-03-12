@@ -1,6 +1,13 @@
 return {
-    -- TODO: use <leader>s mapping instead of ys
     "kylechui/nvim-surround",
     event = "VeryLazy",
-    opts = {}
+    opts = {
+        keymaps = {
+            normal = "<leader>s",
+            normal_cur = "<leader>ss",
+            normal_line = "<leader>S",
+            visual = "<leader>s",
+            visual_line = "<leader>S",
+        },
+    },
 }
