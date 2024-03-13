@@ -1,3 +1,4 @@
+local utils = require("mrw.utils")
 local opt = vim.opt
 
 -- opt.number = true
@@ -73,9 +74,7 @@ opt.colorcolumn = "80"
 opt.scrolloff = 12
 opt.sidescrolloff = 8
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+utils.indent_width(4, { global = true })
 opt.expandtab = true
 
 -- Autosave on close

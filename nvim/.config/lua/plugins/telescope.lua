@@ -78,9 +78,6 @@ return {
             pickers = {
                 find_files = {
                     hidden = true,
-                    -- Remove the ./ prefix from results
-                    -- NOTE: removed this for now, because it fails when fd isn't installed
-                    -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
                 },
             },
         })
