@@ -1,2 +1,2 @@
 -- treat "-" as part of word characters
-vim.cmd("setlocal iskeyword+=-")
+vim.opt_local.iskeyword:append("-")
