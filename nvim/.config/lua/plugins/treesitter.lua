@@ -84,12 +84,14 @@ return {
         end,
     },
     {
-        "nvim-treesitter/playground",
-    },
-    {
         "nvim-treesitter/nvim-treesitter-context",
         opts = {
             max_lines = 4,
         },
     },
+
+    -- Treesitter playground functionality is now natively included in Neovim.
+    -- Use :InspectTree instead of :TSPlaygroundToggle
+    -- :Inspect to show group info about the symbol under the cursor
+    -- :EditQuery to open live query editor
 }
