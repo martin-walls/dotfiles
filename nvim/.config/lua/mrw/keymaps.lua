@@ -100,8 +100,8 @@ map("n", "H", "g^")
 map("n", "L", "g_")
 
 -- Larger vertical jumps
-map("n", "<C-d>", "8<C-d>")
-map("n", "<C-u>", "8<C-u>")
+map("n", "<C-d>", "8j")
+map("n", "<C-u>", "8k")
 
 -- Move lines up/down, and reindent to match new position
 map("n", "<A-j>", ":m.+1<CR>==")
