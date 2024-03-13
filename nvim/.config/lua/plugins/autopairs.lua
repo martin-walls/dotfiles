@@ -15,7 +15,11 @@ return {
         local cond = require("nvim-autopairs.conds")
 
         -- Typst rules
-        autopairs.add_rule(Rule("*", "*", "typst"):with_pair(cond.not_after_regex("%w")))
-        autopairs.add_rule(Rule("_", "_", "typst"):with_pair(cond.not_after_regex("%w")))
+        autopairs.add_rule(Rule("*", "*", "typst")
+            -- not before a word character
+            :with_pair(cond.not_after_regex("%w"))
+            -- move to the right when typing the closing pair
+            :with_move(cond.done()))
+        autopairs.add_rule(Rule("_", "_", "typst"):with_pair(cond.not_after_regex("%w")):with_move(cond.done()))
     end,
 }
