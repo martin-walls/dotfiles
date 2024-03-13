@@ -1,5 +1,5 @@
 local utils = require("mrw.utils")
 
-vim.opt.spell = true
+vim.opt_local.spell = true
 
 utils.indent_width(2)
