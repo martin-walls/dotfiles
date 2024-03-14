@@ -21,24 +21,6 @@ return {
                         -- make comments stand out slightly more
                         bg = "$bg_d",
                     },
-                    RainbowDelimiter1 = {
-                        fg = "$yellow",
-                    },
-                    RainbowDelimiter2 = {
-                        fg = "$blue",
-                    },
-                    RainbowDelimiter3 = {
-                        fg = "$orange",
-                    },
-                    RainbowDelimiter4 = {
-                        fg = "$purple",
-                    },
-                    RainbowDelimiter5 = {
-                        fg = "$cyan",
-                    },
-                    RainbowDelimiter6 = {
-                        fg = "$red",
-                    },
                 },
             })
             require("onedark").load()
@@ -49,17 +31,11 @@ return {
         config = function()
             vim.g.rainbow_delimiters = {
                 highlight = {
-                    "RainbowDelimiter1",
                     "RainbowDelimiterYellow",
-                    "RainbowDelimiter2",
                     "RainbowDelimiterBlue",
-                    "RainbowDelimiter3",
                     "RainbowDelimiterOrange",
-                    "RainbowDelimiter4",
                     "RainbowDelimiterViolet",
-                    "RainbowDelimiter5",
                     "RainbowDelimiterCyan",
-                    "RainbowDelimiter6",
                     "RainbowDelimiterRed",
                 },
             }
