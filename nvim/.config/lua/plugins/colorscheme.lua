@@ -17,6 +17,10 @@ return {
                     EndOfBuffer = {
                         fg = "$grey",
                     },
+                    ["@comment"] = {
+                        -- make comments stand out slightly more
+                        bg = "$bg_d",
+                    },
                 },
             })
             require("onedark").load()
@@ -27,7 +31,6 @@ return {
         config = function()
             vim.g.rainbow_delimiters = {
                 highlight = {
-                    -- TODO: link to onedark colours
                     "RainbowDelimiterYellow",
                     "RainbowDelimiterBlue",
                     "RainbowDelimiterOrange",
