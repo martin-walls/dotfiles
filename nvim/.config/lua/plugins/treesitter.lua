@@ -8,6 +8,7 @@ return {
             ---@diagnostic disable-next-line: missing-fields
             require("nvim-treesitter.configs").setup({
                 ensure_installed = {
+                    "query", -- Treesitter query editor highlighting
                     "bash",
                     "c",
                     "html",
@@ -93,5 +94,9 @@ return {
     -- Treesitter playground functionality is now natively included in Neovim.
     -- Use :InspectTree instead of :TSPlaygroundToggle
     -- :Inspect to show group info about the symbol under the cursor
-    -- :EditQuery to open live query editor
+    -- :EditQuery to open live query editor (requires nvim 0.10+; until then, keep
+    -- playground around)
+    {
+        "nvim-treesitter/playground",
+    },
 }
