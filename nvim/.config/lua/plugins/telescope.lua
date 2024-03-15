@@ -57,7 +57,7 @@ return {
                 preview = {
                     -- Don't preview files bigger than this limit
                     -- (This should prevent big files slowing down the picker)
-                    filesize_limit = 1, -- MB
+                    filesize_limit = 0.5, -- MB
                 },
                 file_ignore_patterns = {
                     "node_modules",
