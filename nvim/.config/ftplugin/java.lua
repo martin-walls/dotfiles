@@ -1,5 +1,5 @@
 -- Run the Javadoc code action if available
-vim.api.nvim_buf_set_keymap(0, "n", "<leader>jd", function()
+vim.keymap.set("n", "<leader>jd", function()
     vim.lsp.buf.code_action({
         filter = function(code_action)
             if string.match(code_action.title, "Javadoc") then
@@ -9,5 +9,9 @@ vim.api.nvim_buf_set_keymap(0, "n", "<leader>jd", function()
             end
         end,
         apply = true,
-    }, { desc = "Add Javadoc" })
-end)
+    })
+end, {
+    desc = "Add Javadoc",
+    -- Only set for the current buffer
+    buffer = 0,
+})
