@@ -27,7 +27,9 @@ return {
         end,
     },
     {
-        "HiPhish/rainbow-delimiters.nvim",
+        -- "HiPhish/rainbow-delimiters.nvim",
+        "martin-walls/rainbow-delimiters.nvim",
+        branch = "typst",
         config = function()
             vim.g.rainbow_delimiters = {
                 highlight = {

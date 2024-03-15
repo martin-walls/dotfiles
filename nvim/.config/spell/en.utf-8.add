@@ -325,3 +325,6 @@ RDDs
 Femtocloud
 Serverless
 typstfmt
+inline
+standalone
+VSCode
