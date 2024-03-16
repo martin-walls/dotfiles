@@ -22,5 +22,6 @@ return {
             :with_move(cond.done()))
         autopairs.add_rule(Rule("_", "_", "typst"):with_pair(cond.not_after_regex("%w")):with_move(cond.done()))
         autopairs.add_rule(Rule("$", "$", "typst"):with_pair(cond.not_after_regex("%w")):with_move(cond.done()))
+        autopairs.add_rule(Rule("```", "```", "typst"):with_pair(cond.not_after_regex("%w")):with_move(cond.done()))
     end,
 }
