@@ -2,7 +2,7 @@
   output eDP-1 enable scale 1.5
 }
 
-erofile external_right {
+profile external_right {
   output eDP-1 position 0,300 scale 1.5
   output "Lenovo Group Limited LEN L27q-10 U433AG60" position 1707,0 mode 2560x1440
 }
