@@ -99,4 +99,9 @@ return {
     {
         "nvim-treesitter/playground",
     },
+
+    { -- Treesitter grammar for justfiles
+        "IndianBoy42/tree-sitter-just",
+        opts = {},
+    },
 }
