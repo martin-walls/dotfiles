@@ -45,6 +45,13 @@ return {
                         ["<Down>"] = false,
                     },
                 },
+                -- Ensure that file paths always fit inside the width of the window,
+                -- by truncating them.
+                path_display = {
+                    -- The value of truncate is the size of the gap between the end
+                    -- of the path and the edge of the window.
+                    truncate = 2,
+                },
                 -- automatically switch between vertical layout (on narrow screens)
                 -- and horizontal layout (on wider screens)
                 layout_strategy = "flex",
