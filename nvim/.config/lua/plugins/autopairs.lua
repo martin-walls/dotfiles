@@ -27,7 +27,7 @@ return {
         -- JSX fragments
         autopairs.add_rule(
             Rule("<>", "</>", { "typescriptreact", "javascriptreact" })
-                :with_pair(cond.not_after_regex("%w"))
+                :with_pair(cond.not_after_regex("[%S%C]"))
                 :with_move(cond.done())
         )
     end,
