@@ -196,6 +196,7 @@ return {
                 svelte = { "prettierd" },
                 typst = { "typstfmt" },
                 bash = { "shellharden" },
+                sh = { "shellharden" },
                 json = { "prettierd" }, -- TODO: system default prettier config
                 -- If language has no formatter, just trim whitespace
                 ["_"] = { "trim_whitespace" },
