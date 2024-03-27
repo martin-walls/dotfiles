@@ -18,8 +18,10 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
             buffer = bufnr,
             callback = function()
                 -- Check that buffer isn't readonly and that the file is readable
+                -- Also check that the file has been modified
                 if
                     vim.fn.getbufvar(bufnr, "&modifiable") == 1
+                    and vim.fn.getbufvar(bufnr, "&modified") == 1
                     and vim.fn.filereadable(vim.api.nvim_buf_get_name(bufnr))
                 then
                     -- Run the `write` cmd for the specific buffer to save
