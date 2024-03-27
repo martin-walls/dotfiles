@@ -169,3 +169,5 @@ if [ -f '/home/martin/google-cloud-sdk/path.zsh.inc' ]; then . '/home/martin/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/martin/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/martin/google-cloud-sdk/completion.zsh.inc'; fi
+
+source /home/martin/.config/broot/launcher/bash/br
